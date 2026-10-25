@@ -90,9 +90,8 @@
           <span class="visualmente-oculto">Título do filme também escrito em Braille</span>
         </p>
         <p class="abertura__servico">
-          <time datetime="2026-11-15T10:00-03:00">Domingo, 15 de novembro de 2026, às 10h</time>
-          <span aria-hidden="true">·</span> Espaço Petrobras de Cinema, sala 1
-          <span aria-hidden="true">·</span> São Paulo
+          <time datetime="2026-11-15T10:00-03:00">Domingo, 15 de novembro de 2026, às 10h</time> <span aria-hidden="true">·</span><br>
+          Espaço Petrobras de Cinema, sala 1 <span aria-hidden="true">·</span> São Paulo
         </p>
         <p class="abertura__chamada">Uma sessão com audiodescrição, Libras e legendas descritivas abertas para todo o público, seguida de um bate-papo sobre acessibilidade no cinema.</p>
         <ul class="selos" aria-label="Destaques da sessão">
@@ -191,6 +190,7 @@
             <p>Língua de modalidade gestual-visual, reconhecida por lei como meio de comunicação e expressão. É por meio dela que muitas pessoas surdas se comunicam. A interpretação em Libras aparece na tela.</p>
           </li>
         </ul>
+        <p class="credito-iguale">Os recursos de acessibilidade desta sessão foram produzidos pela <strong>Iguale</strong>.</p>
         <div class="no-local">
           <h3 class="subtitulo">No local</h3>
           <p>Uma equipe da Iguale recebe o público, com atendimento em Libras. A abertura e o bate-papo têm interpretação em Libras e audiodescrição ao vivo.</p>
@@ -200,7 +200,8 @@
 
     <!-- 5.7 Inscrição -->
     <section id="inscricao" class="secao secao--destaque" aria-labelledby="titulo-inscricao" tabindex="-1">
-      <div class="secao__interno secao__interno--estreito">
+      <div class="secao__interno inscricao">
+        <div class="inscricao__texto">
         <h2 id="titulo-inscricao" class="secao__titulo">Inscrição</h2>
         <ul class="lista-inscricao">
           <li>A entrada é gratuita, com inscrição prévia. As vagas são limitadas.</li>
@@ -210,6 +211,31 @@
         </ul>
         <a class="botao botao--primario" href="inscricao/" data-inscricao-aberta>Fazer inscrição</a>
         <p class="aviso-encerradas" data-inscricao-encerrada hidden>As inscrições estão encerradas.</p>
+        </div>
+        <svg class="inscricao__ilustracao" viewBox="0 0 330 250" aria-hidden="true" focusable="false">
+          <!-- ingresso -->
+          <g transform="translate(18 92) rotate(-14)">
+            <path class="il-ingresso" d="M0 0 H210 V42 a20 20 0 0 0 0 40 V124 H0 V82 a20 20 0 0 0 0 -40 Z"/>
+            <line class="il-picote" x1="158" y1="10" x2="158" y2="114"/>
+            <rect class="il-linha" x="28" y="30" width="96" height="11" rx="5"/>
+            <rect class="il-linha" x="28" y="56" width="72" height="11" rx="5"/>
+            <rect class="il-linha" x="28" y="82" width="104" height="11" rx="5"/>
+          </g>
+          <!-- balde de pipoca -->
+          <g transform="translate(176 46)">
+            <circle class="il-pipoca" cx="22" cy="42" r="19"/>
+            <circle class="il-pipoca" cx="98" cy="42" r="19"/>
+            <circle class="il-pipoca" cx="40" cy="22" r="20"/>
+            <circle class="il-pipoca" cx="80" cy="22" r="20"/>
+            <circle class="il-pipoca" cx="60" cy="14" r="21"/>
+            <circle class="il-pipoca" cx="60" cy="44" r="20"/>
+            <path class="il-balde" d="M0 52 H120 L104 196 H16 Z"/>
+            <path class="il-listra" d="M0 52 H24 L33 196 H16 Z"/>
+            <path class="il-listra" d="M48 52 H72 L69 196 H51 Z"/>
+            <path class="il-listra" d="M96 52 H120 L104 196 H87 Z"/>
+            <path class="il-contorno" d="M0 52 H120 L104 196 H16 Z"/>
+          </g>
+        </svg>
       </div>
     </section>
 
@@ -306,11 +332,11 @@
             <img class="regua__logo" src="assets/img/logos/ministerio-cultura.webp" width="1231" height="240" alt="Ministério da Cultura" loading="lazy">
           </div>
         </li>
-        <li class="regua__grupo">
-          <img class="regua__logo regua__logo--iguale" src="assets/img/logos/iguale.webp" width="240" height="240" alt="Iguale" loading="lazy">
-        </li>
-        <li class="regua__grupo">
-          <img class="regua__logo regua__logo--petrobras" src="assets/img/logos/espaco-petrobras-cinema.webp" width="574" height="31" alt="Espaço Petrobras de Cinema" loading="lazy">
+        <li class="regua__grupo regua__grupo--parceiros">
+          <div class="regua__logos">
+            <img class="regua__logo regua__logo--iguale" src="assets/img/logos/iguale.webp" width="240" height="240" alt="Iguale" loading="lazy">
+            <img class="regua__logo regua__logo--petrobras" src="assets/img/logos/espaco-petrobras-cinema.webp" width="574" height="31" alt="Espaço Petrobras de Cinema" loading="lazy">
+          </div>
         </li>
       </ul>
       <p class="marcador rodape__regras">[PREENCHER: regras de aplicação da régua de logos enviadas pela Lapfilme]</p>

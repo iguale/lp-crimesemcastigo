@@ -153,8 +153,10 @@ Os PNGs originais das camadas (de 8 a 19 MB cada) foram convertidos e tirados da
 - Selo "16" na cor da classificação indicativa de 16 anos e detalhe verde na "Entrada gratuita" (7,4:1 sobre o fundo).
 - Textos dos cards de recurso adaptados dos de Gramado.
 - Dúvidas frequentes sem as perguntas sobre acompanhantes, cadeira de rodas e o que levar no dia.
-- Ícones de AD, LSE e Libras: PNGs oficiais enviados pela Iguale, recortados só na margem transparente e usados como máscara (ganham a cor do contexto e funcionam nos modos de contraste).
-- Logos da Iguale e do Espaço Petrobras de Cinema no rodapé, sem rótulo de grupo até chegarem as regras da Lapfilme.
+- Ícones de AD, LSE e Libras: PNGs oficiais enviados pela Iguale (o fundo branco virou transparente) e usados como máscara (ganham a cor do contexto e funcionam nos modos de contraste).
+- Logos da Iguale e do Espaço Petrobras de Cinema juntos no rodapé, fora dos grupos "Uma produção" e "Realização".
+- Crédito "Os recursos de acessibilidade desta sessão foram produzidos pela Iguale." abaixo dos cards de recurso.
+- Ilustração decorativa (balde de pipoca listrado e ingresso, SVG no próprio HTML) ao lado da inscrição, só a partir de telas médias.
 
 **Decisões sobre o cartaz:**
 
