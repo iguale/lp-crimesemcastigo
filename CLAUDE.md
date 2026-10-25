@@ -155,7 +155,7 @@ Use HTML semântico: `header`, `nav` com `aria-label="Navegação principal"`, `
 - "A entrada é gratuita, com inscrição prévia. As vagas são limitadas."
 - "Cada pessoa faz a própria inscrição, inclusive acompanhantes."
 - "Depois de enviar o formulário, você recebe um e-mail de confirmação."
-- "Tem combo de pipoca e refrigerante gratuito."
+- "A sessão terá combo de pipoca e refrigerante gratuito."
 - Botão "Fazer inscrição". Se `inscricoesAbertas` for `false`, o botão some e entra o aviso "As inscrições estão encerradas."
 
 ### 5.8 Dúvidas frequentes
@@ -314,7 +314,7 @@ Se a abertura usar as camadas separadas, a camada do título leva `alt="Crime Se
 
 > Vídeo horizontal. À esquerda, sobre fundo claro, `[PREENCHER: autodescrição do(a) intérprete]` apresenta o convite em Libras, com legendas em uma faixa logo abaixo. À direita, o cartaz do filme Crime Sem Castigo: em preto e branco, o rosto sério de um homem de camisa branca e gravata; abaixo, dois homens de camisa clara, um de bigode, sério, e outro grisalho, sorrindo; ao fundo, mata e uma casa antiga. O título está em letras brancas, com o S de "sem" em forma de raio vermelho. No rodapé, os logos da Lapfilme, do Governo do Estado de São Paulo, da Lei Paulo Gustavo e do Ministério da Cultura.
 >
-> Texto do convite: "Olá! A Lapfilme e a Iguale convidam você para a Sessão Acessível do filme Crime Sem Castigo, no domingo, 15 de novembro, às 10 horas da manhã, no Espaço Petrobras de Cinema, sala 1, Rua Augusta, 1475, em São Paulo. Baseado em fatos reais, Crime Sem Castigo revela a vida clandestina do médico nazista Josef Mengele nos 18 anos em que viveu no Brasil como um fugitivo movido por um objetivo: sobreviver a qualquer custo. O filme tem direção de Luiz Alberto Pereira. A sessão terá recursos abertos para todo o público: audiodescrição no som da sala, Libras e legendas descritivas na tela. Depois do filme, vamos bater um papo sobre acessibilidade no cinema. A entrada é gratuita e tem pipoca e refrigerante! As vagas são limitadas. Faça sua inscrição no site iguale.com.br/crimesemcastigo e receba a confirmação por e-mail. Chegue a partir das 9h30 para aproveitar com calma. Dúvidas? Acesse iguale.com.br/crimesemcastigo para mais informações. Classificação indicativa: 16 anos. Esperamos você! Nos encontramos no cinema."
+> Texto do convite: "Olá! A Lapfilme e a Iguale convidam você para a Sessão Acessível do filme Crime Sem Castigo, no domingo, 15 de novembro, às 10 horas da manhã, no Espaço Petrobras de Cinema, sala 1, Rua Augusta, 1475, em São Paulo. Baseado em fatos reais, Crime Sem Castigo revela a vida clandestina do médico nazista Josef Mengele nos 18 anos em que viveu no Brasil como um fugitivo movido por um objetivo: sobreviver a qualquer custo. O filme tem direção de Luiz Alberto Pereira. A sessão terá recursos abertos para todo o público: audiodescrição no som da sala, Libras e legendas descritivas na tela. Depois do filme, vamos bater um papo sobre acessibilidade no cinema. A entrada é gratuita, com pipoca e refrigerante! As vagas são limitadas: faça sua inscrição e veja mais informações em iguale.com.br/crimesemcastigo. A confirmação chega por e-mail. No dia, chegue a partir das 9h30 para aproveitar com calma. Classificação indicativa: 16 anos. Venha viver essa experiência de cinema com a gente!"
 
 O texto acima é o do roteiro do vídeo; se o roteiro mudar, atualize aqui.
 
