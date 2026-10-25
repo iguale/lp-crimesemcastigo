@@ -40,13 +40,39 @@
     atualizar();
   }
 
-  /* ---------- Vídeo: o iframe só carrega depois do clique na capa ---------- */
+  /* ---------- Vídeo convite: abre numa janela; o iframe só carrega depois do clique na capa ---------- */
   function iniciarVideo() {
-    var caixa = document.querySelector("[data-video]");
-    if (!caixa) return;
+    var janela = document.getElementById("video");
+    if (!janela) return;
+    var caixa = janela.querySelector("[data-video]");
     var capa = caixa.querySelector("[data-video-capa]");
     var pendente = caixa.querySelector("[data-video-pendente]");
+    var titulo = janela.querySelector(".janela__titulo");
     var id = (config.youtubeId || "").trim();
+    var origem = null;
+
+    function abrir(ev) {
+      origem = ev.currentTarget;
+      if (typeof janela.showModal === "function") janela.showModal();
+      else janela.setAttribute("open", "");
+      titulo.focus();
+    }
+    function fechar() {
+      if (typeof janela.close === "function") janela.close();
+      else { janela.removeAttribute("open"); aoFechar(); }
+    }
+    function aoFechar() {
+      // para o vídeo: troca o iframe de volta pela capa
+      var iframe = caixa.querySelector("iframe");
+      if (iframe) iframe.replaceWith(capa);
+      if (origem) origem.focus();
+    }
+
+    document.querySelectorAll("[data-video-abrir]").forEach(function (b) { b.addEventListener("click", abrir); });
+    janela.querySelector("[data-video-fechar]").addEventListener("click", fechar);
+    janela.addEventListener("close", aoFechar);
+    // clique no fundo escurecido, fora da caixa, também fecha
+    janela.addEventListener("click", function (ev) { if (ev.target === janela) fechar(); });
 
     if (!id) {
       capa.setAttribute("aria-disabled", "true");

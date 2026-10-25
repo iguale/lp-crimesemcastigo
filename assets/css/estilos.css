@@ -10,12 +10,17 @@
   --sepia: #5E5548;
   --areia: #C9BCA4;
   --papel: #F2EFE8;
-  --vermelho: #B3261E;
+  --vermelho: #B3261E;             /* fundo de botões e selos com texto branco (6,5:1) e detalhes sobre papel/branco (5,7:1 / 6,5:1). Nunca texto vermelho sobre fundo escuro */
+  --vermelho-escuro: #8E1D17;      /* hover dos botões vermelhos (branco: 9:1) */
+  --branco: #FFFFFF;
+  --verde: #5BBF7A;                /* detalhe da entrada gratuita sobre grafite (7,4:1) */
+  --classind-16: var(--vermelho);  /* cor da classificação indicativa 16 anos */
 
   --texto: var(--papel);
   --texto-suave: #DDD6C9;          /* 11,9:1 sobre --grafite · 8,1:1 sobre --sepia-escuro */
   --linha: #6E6457;                 /* bordas decorativas */
   --foco: var(--areia);
+  --foco-halo: var(--grafite);
 
   --fonte-corpo: "Geist", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
   --fonte-titulo: "Oswald", "Arial Narrow", "Roboto Condensed", Impact, sans-serif;
@@ -68,7 +73,7 @@ button { cursor: pointer; }
 :focus-visible {
   outline: 3px solid var(--foco);
   outline-offset: 3px;
-  box-shadow: 0 0 0 6px var(--grafite);
+  box-shadow: 0 0 0 6px var(--foco-halo);
   border-radius: 2px;
 }
 main:focus-visible, section:focus-visible, nav:focus-visible, [tabindex="-1"]:focus-visible { outline-offset: -3px; box-shadow: none; }
@@ -308,10 +313,18 @@ main:focus-visible, section:focus-visible, nav:focus-visible, [tabindex="-1"]:fo
   text-align: center;
   text-decoration: none;
 }
-.botao--primario { background: var(--areia); color: var(--grafite); }
-.botao--primario:hover { background: var(--papel); border-color: var(--papel); }
+.botao--primario { background: var(--vermelho); color: var(--branco); border-color: var(--branco); }
+.botao--primario:hover { background: var(--vermelho-escuro); }
 .botao--secundario { background: transparent; color: var(--papel); }
 .botao--secundario:hover { background: var(--sepia-escuro); }
+.botao__play {
+  flex: none;
+  width: 0;
+  height: 0;
+  border-left: 0.7rem solid currentColor;
+  border-top: 0.45rem solid transparent;
+  border-bottom: 0.45rem solid transparent;
+}
 .botao[aria-disabled="true"], .botao:disabled { cursor: not-allowed; opacity: 0.75; }
 
 .aviso-encerradas {
@@ -340,6 +353,15 @@ main:focus-visible, section:focus-visible, nav:focus-visible, [tabindex="-1"]:fo
   letter-spacing: 0.04em;
   text-transform: uppercase;
   margin-bottom: 1.25rem;
+  text-wrap: balance;
+}
+.secao__titulo::after {
+  content: "";
+  display: block;
+  width: 3rem;
+  height: 4px;
+  margin-top: 0.5rem;
+  background: var(--vermelho);
 }
 .subtitulo {
   margin-top: 2.5rem;
@@ -413,11 +435,26 @@ main:focus-visible, section:focus-visible, nav:focus-visible, [tabindex="-1"]:fo
   width: 1.75rem;
   height: 1.75rem;
   border-radius: 0.25rem;
-  background: var(--papel);
-  color: var(--grafite);
+  background: var(--classind-16);
+  color: var(--branco);
   font-weight: 700;
   font-size: 0.875rem;
 }
+.selo--gratuito { border-color: var(--verde); }
+.selo__check {
+  flex: none;
+  display: inline-grid;
+  place-items: center;
+  width: 1.375rem;
+  height: 1.375rem;
+  border-radius: 50%;
+  background: var(--verde);
+  color: var(--grafite);
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 1;
+}
+.selo__check::before { content: "✓"; }
 
 .abertura__visual { position: relative; margin: 0; }
 .abertura__visual img {
@@ -451,10 +488,19 @@ main:focus-visible, section:focus-visible, nav:focus-visible, [tabindex="-1"]:fo
 /* ---------- Seções ---------- */
 .secao { padding: var(--espaco) 0; }
 .secao--sepia { background: rgba(58, 52, 46, 0.72); }
-.secao--destaque { background: var(--sepia); }
+.secao--destaque {
+  --foco: var(--grafite);
+  --foco-halo: var(--papel);
+  background: var(--papel);
+  color: var(--grafite);
+}
+.secao--destaque .secao__titulo { color: var(--grafite); }
+.secao--destaque a:not(.botao) { color: var(--grafite); }
+.secao--destaque .aviso-encerradas { border-color: var(--grafite); }
 .secao__interno { max-width: var(--largura); margin: 0 auto; padding: 0 1rem; }
-.secao__interno--estreito { max-width: var(--largura-estreita); }
-.secao__abertura { max-width: 42rem; font-size: 1.25rem; }
+.secao__interno--estreito > * { max-width: var(--largura-estreita); }
+.secao__abertura { font-size: 1.25rem; }
+@media (min-width: 72em) { .secao__abertura { white-space: nowrap; } }
 
 /* Vídeo */
 .video { margin: 1.5rem 0; }
@@ -483,8 +529,8 @@ main:focus-visible, section:focus-visible, nav:focus-visible, [tabindex="-1"]:fo
   max-width: calc(100% - 2rem);
   padding: 0.75rem 1.25rem;
   border-radius: var(--raio);
-  background: var(--areia);
-  color: var(--grafite);
+  background: var(--vermelho);
+  color: var(--branco);
   font-weight: 700;
   line-height: 1.3;
   text-align: left;
@@ -497,7 +543,7 @@ main:focus-visible, section:focus-visible, nav:focus-visible, [tabindex="-1"]:fo
   border-top: 0.55rem solid transparent;
   border-bottom: 0.55rem solid transparent;
 }
-.video__capa:hover .video__rotulo { background: var(--papel); }
+.video__capa:hover .video__rotulo { background: var(--vermelho-escuro); }
 .video__capa[aria-disabled="true"] { cursor: not-allowed; }
 .video__iframe { display: block; width: 100%; aspect-ratio: 16 / 9; border: 0; border-radius: var(--raio); }
 .video .marcador { margin-top: 0.5rem; }
@@ -507,6 +553,41 @@ main:focus-visible, section:focus-visible, nav:focus-visible, [tabindex="-1"]:fo
   .video__imagem { grid-area: 1 / 1; height: auto; }
   .video__rotulo { position: static; transform: none; width: 100%; max-width: none; border-radius: 0; }
 }
+
+/* Janela do vídeo convite */
+.janela {
+  width: min(56rem, calc(100% - 2rem));
+  max-width: none;
+  max-height: calc(100% - 2rem);
+  padding: 1.25rem 1.5rem 1.5rem;
+  border: 2px solid var(--areia);
+  border-radius: var(--raio);
+  background: var(--grafite);
+  color: var(--papel);
+  overflow-y: auto;
+}
+.janela::backdrop { background: rgba(0, 0, 0, 0.82); }
+.janela__topo { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; }
+.janela__titulo {
+  margin: 0.25rem 0 0.5rem;
+  font-family: var(--fonte-titulo);
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.janela__fechar {
+  flex: none;
+  min-height: 2.75rem;
+  padding: 0.25rem 1rem;
+  border: 2px solid var(--papel);
+  border-radius: var(--raio);
+  background: transparent;
+  color: var(--papel);
+  font-weight: 700;
+}
+.janela__fechar:hover { background: var(--sepia-escuro); }
+.janela .video { margin: 1rem 0 1.25rem; }
 
 /* details / summary */
 .detalhe {
@@ -596,27 +677,28 @@ main:focus-visible, section:focus-visible, nav:focus-visible, [tabindex="-1"]:fo
 }
 .recurso {
   padding: 1.5rem;
-  border: 1px solid var(--linha);
-  border-top: 4px solid var(--areia);
+  border: 1px solid var(--papel);
+  border-left: 6px solid var(--vermelho);
   border-radius: var(--raio);
-  background: var(--sepia-escuro);
+  background: var(--branco);
+  color: var(--grafite);
 }
-.recurso__titulo { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 0.75rem; font-size: 1.25rem; }
+.recurso__titulo { display: flex; flex-direction: column; align-items: flex-start; gap: 0.75rem; font-size: 1.375rem; color: var(--grafite); }
 .recurso__selo {
   display: inline-flex;
   align-items: center;
-  gap: 0.375rem;
   padding: 0.25rem 0.625rem;
   border-radius: 0.25rem;
-  background: var(--areia);
-  color: var(--grafite);
+  background: var(--vermelho);
+  color: var(--branco);
   font-family: var(--fonte-titulo);
   font-size: 1.125rem;
   font-weight: 600;
   letter-spacing: 0.06em;
 }
 .recurso__selo--caixa-alta { text-transform: uppercase; }
-.recurso__icone { display: block; width: 3rem; height: 3rem; margin-bottom: 0.75rem; color: var(--areia); }
+.recurso__icone { display: block; width: 3rem; height: 3rem; margin-bottom: 1rem; color: var(--vermelho); }
+.recurso p { color: var(--sepia-escuro); }
 .recurso p { margin: 0; }
 .no-local {
   margin-top: 2.5rem;
@@ -665,7 +747,8 @@ main:focus-visible, section:focus-visible, nav:focus-visible, [tabindex="-1"]:fo
 /* Inscrição */
 .lista-inscricao { padding-left: 1.25rem; margin-bottom: 1.75rem; }
 .lista-inscricao li + li { margin-top: 0.4rem; }
-.secao--destaque .marcador { color: var(--papel); border-color: var(--papel); }
+.secao--destaque .marcador { color: var(--grafite); border-color: var(--grafite); }
+.lista-inscricao li::marker { color: var(--vermelho); }
 
 /* Contato */
 .icom { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem; margin-top: 1.5rem; }

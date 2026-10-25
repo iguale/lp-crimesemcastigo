@@ -63,9 +63,9 @@
         <ul id="menu-lista" class="menu__lista">
           <li><a href="#o-filme">O filme</a></li>
           <li><a href="#a-sessao">A sessão</a></li>
+          <li><a href="#inscricao">Inscrição</a></li>
           <li><a href="#programacao">Programação</a></li>
           <li><a href="#local">Local</a></li>
-          <li><a href="#inscricao">Inscrição</a></li>
           <li><a href="#duvidas">Dúvidas</a></li>
         </ul>
       </nav>
@@ -99,13 +99,13 @@
           <li class="selo"><span class="icone icone--ad" aria-hidden="true"></span>Audiodescrição</li>
           <li class="selo"><span class="icone icone--lse" aria-hidden="true"></span>Legendas descritivas</li>
           <li class="selo"><span class="icone icone--libras" aria-hidden="true"></span>Libras</li>
-          <li class="selo selo--texto">Entrada gratuita</li>
-          <li class="selo selo--texto"><span class="selo__idade" aria-hidden="true">16</span>Classificação indicativa: 16 anos</li>
+          <li class="selo selo--gratuito"><span class="selo__check" aria-hidden="true"></span>Entrada gratuita</li>
+          <li class="selo"><span class="selo__idade" aria-hidden="true">16</span>Classificação indicativa: 16 anos</li>
         </ul>
         <div class="botoes">
           <a class="botao botao--primario" href="inscricao/" data-inscricao-aberta>Fazer inscrição</a>
           <p class="aviso-encerradas" data-inscricao-encerrada hidden>As inscrições estão encerradas.</p>
-          <a class="botao botao--secundario" href="#video">Ver o convite em vídeo</a>
+          <button type="button" class="botao botao--secundario" data-video-abrir aria-haspopup="dialog" aria-controls="video"><span class="botao__play" aria-hidden="true"></span>Vídeo convite acessível</button>
         </div>
       </div>
       <div class="abertura__visual">
@@ -114,28 +114,6 @@
           <img src="assets/img/cartaz/abertura-800.jpg" srcset="assets/img/cartaz/abertura-800.jpg 800w, assets/img/cartaz/abertura-1600.jpg 1600w" sizes="(min-width: 56em) 45vw, 100vw" width="800" height="1000" fetchpriority="high"
             alt="Imagem do cartaz do filme: em tons sépia, o rosto sério de um homem de cabelo escuro, em preto e branco, com camisa branca e gravata escura. À frente dele, dois homens de camisa clara: à esquerda, um de bigode escuro e expressão séria; à direita, outro de cabelo e bigode grisalhos, que sorri olhando para cima. Ao fundo, mata e uma casa antiga com telhado de barro.">
         </picture>
-      </div>
-    </section>
-
-    <!-- 5.2 Convite em vídeo -->
-    <section id="video" class="secao" aria-labelledby="titulo-video" tabindex="-1">
-      <div class="secao__interno secao__interno--estreito">
-        <h2 id="titulo-video" class="secao__titulo">Convite em vídeo</h2>
-        <p>Assista ao convite com Libras e legendas.</p>
-        <div class="video" data-video>
-          <button type="button" class="video__capa" data-video-capa>
-            <img class="video__imagem" src="assets/img/cartaz/og-crime-sem-castigo-1200x630.jpg" width="1200" height="630" alt="" loading="lazy">
-            <span class="video__rotulo"><span class="video__play" aria-hidden="true"></span>Reproduzir o vídeo convite, com Libras e legendas</span>
-          </button>
-          <p class="marcador" data-video-pendente>[PREENCHER: ID do vídeo]</p>
-        </div>
-        <details class="detalhe">
-          <summary>Descrição do vídeo (audiodescrição em texto)</summary>
-          <div class="detalhe__conteudo">
-            <p>Vídeo horizontal. À esquerda, sobre fundo claro, <span class="marcador">[PREENCHER: autodescrição do(a) intérprete]</span> apresenta o convite em Libras, com legendas em uma faixa logo abaixo. À direita, o cartaz do filme Crime Sem Castigo: em tons sépia, o rosto sério de um homem em preto e branco, de camisa branca e gravata; abaixo, dois homens de camisa clara, um de bigode, sério, e outro grisalho, sorrindo; ao fundo, mata e uma casa antiga. O título está em letras brancas, com o S de “sem” em forma de raio vermelho. No rodapé, os logos da Lapfilme, do Governo do Estado de São Paulo, da Lei Paulo Gustavo e do Ministério da Cultura.</p>
-            <p>Texto do convite: "Olá! A Lapfilme e a Iguale convidam você para a Sessão Acessível do filme Crime Sem Castigo, no domingo, 15 de novembro, às 10 horas da manhã, no Espaço Petrobras de Cinema, sala 1, Rua Augusta, 1475, em São Paulo. Baseado em fatos reais, Crime Sem Castigo revela a vida clandestina do médico nazista Josef Mengele nos 18 anos em que viveu no Brasil como um fugitivo movido por um objetivo: sobreviver a qualquer custo. O filme tem direção de Luiz Alberto Pereira. A sessão terá recursos abertos para todo o público: audiodescrição no som da sala, Libras e legendas descritivas na tela. Depois do filme, vamos bater um papo sobre acessibilidade no cinema. A entrada é gratuita, com pipoca e refrigerante! As vagas são limitadas: faça sua inscrição e veja mais informações em iguale.com.br/crimesemcastigo. A confirmação chega por e-mail. No dia, chegue a partir das 9h30 para aproveitar com calma. Classificação indicativa: 16 anos. Venha viver essa experiência de cinema com a gente!"</p>
-          </div>
-        </details>
       </div>
     </section>
 
@@ -167,7 +145,7 @@
           </figure>
         </div>
 
-        <h3 class="subtitulo">Personagens</h3>
+        <h3 class="subtitulo">Personagens principais</h3>
         <ul class="personagens">
           <li class="personagem">
             <div class="personagem__imagem marcador-caixa">[PREENCHER: imagem do personagem, com texto alternativo descritivo]</div>
@@ -200,23 +178,38 @@
           <li class="recurso">
             <span class="icone icone--ad recurso__icone" aria-hidden="true"></span>
             <h3 class="recurso__titulo"><span class="recurso__selo">AD</span> Audiodescrição</h3>
-            <p>A narração das informações visuais do filme sai no som da sala.</p>
+            <p>As imagens e o contexto visual do filme transformados em palavras, com o máximo de detalhes possível, para o melhor entendimento das pessoas com deficiência visual e de outros públicos. A narração sai no som da sala.</p>
           </li>
           <li class="recurso">
             <span class="icone icone--lse recurso__icone" aria-hidden="true"></span>
             <h3 class="recurso__titulo"><span class="recurso__selo">LSE</span> Legendas descritivas</h3>
-            <p>Falas, sons e músicas aparecem em legendas na tela.</p>
+            <p>Todo o universo sonoro do filme, como diálogos, ruídos, músicas e outros sons, aparece em forma de texto nas legendas para pessoas surdas e ensurdecidas, direto na tela.</p>
           </li>
           <li class="recurso">
             <span class="icone icone--libras recurso__icone" aria-hidden="true"></span>
             <h3 class="recurso__titulo"><span class="recurso__selo recurso__selo--caixa-alta">Libras</span> Língua Brasileira de Sinais</h3>
-            <p>A interpretação em Libras aparece na tela.</p>
+            <p>Língua de modalidade gestual-visual, reconhecida por lei como meio de comunicação e expressão. É por meio dela que muitas pessoas surdas se comunicam. A interpretação em Libras aparece na tela.</p>
           </li>
         </ul>
         <div class="no-local">
           <h3 class="subtitulo">No local</h3>
           <p>Uma equipe da Iguale recebe o público, com atendimento em Libras. A abertura e o bate-papo têm interpretação em Libras e audiodescrição ao vivo.</p>
         </div>
+      </div>
+    </section>
+
+    <!-- 5.7 Inscrição -->
+    <section id="inscricao" class="secao secao--destaque" aria-labelledby="titulo-inscricao" tabindex="-1">
+      <div class="secao__interno secao__interno--estreito">
+        <h2 id="titulo-inscricao" class="secao__titulo">Inscrição</h2>
+        <ul class="lista-inscricao">
+          <li>A entrada é gratuita, com inscrição prévia. As vagas são limitadas.</li>
+          <li>Cada pessoa faz a própria inscrição, inclusive acompanhantes.</li>
+          <li>Depois de enviar o formulário, você recebe um e-mail de confirmação.</li>
+          <li>A sessão terá combo de pipoca e refrigerante gratuito.</li>
+        </ul>
+        <a class="botao botao--primario" href="inscricao/" data-inscricao-aberta>Fazer inscrição</a>
+        <p class="aviso-encerradas" data-inscricao-encerrada hidden>As inscrições estão encerradas.</p>
       </div>
     </section>
 
@@ -243,29 +236,13 @@
         <h3 class="subtitulo">Acessibilidade do local</h3>
         <ul class="lista-local">
           <li><span class="icone icone--cadeira" aria-hidden="true"></span><span>A sala tem 241 lugares, incluindo 5 espaços reservados para pessoas em cadeira de rodas. <span class="marcador">[CONFIRMAR: se esses números são da sala 1]</span></span></li>
-          <li><span>Acesso e banheiro acessível: <span class="marcador">[PREENCHER]</span></span></li>
           <li><span>Como chegar de transporte público: <span class="marcador">[PREENCHER]</span></span></li>
         </ul>
       </div>
     </section>
 
-    <!-- 5.7 Inscrição -->
-    <section id="inscricao" class="secao secao--destaque" aria-labelledby="titulo-inscricao" tabindex="-1">
-      <div class="secao__interno secao__interno--estreito">
-        <h2 id="titulo-inscricao" class="secao__titulo">Inscrição</h2>
-        <ul class="lista-inscricao">
-          <li>A entrada é gratuita, com inscrição prévia. As vagas são limitadas.</li>
-          <li>Cada pessoa faz a própria inscrição, inclusive acompanhantes.</li>
-          <li>Depois de enviar o formulário, você recebe um e-mail de confirmação.</li>
-          <li>A sessão terá combo de pipoca e refrigerante gratuito.</li>
-        </ul>
-        <a class="botao botao--primario" href="inscricao/" data-inscricao-aberta>Fazer inscrição</a>
-        <p class="aviso-encerradas" data-inscricao-encerrada hidden>As inscrições estão encerradas.</p>
-      </div>
-    </section>
-
     <!-- 5.8 Dúvidas frequentes -->
-    <section id="duvidas" class="secao" aria-labelledby="titulo-duvidas" tabindex="-1">
+    <section id="duvidas" class="secao secao--sepia" aria-labelledby="titulo-duvidas" tabindex="-1">
       <div class="secao__interno secao__interno--estreito">
         <h2 id="titulo-duvidas" class="secao__titulo">Dúvidas frequentes</h2>
         <div class="faq">
@@ -310,7 +287,7 @@
     </section>
 
     <!-- 5.9 Contato -->
-    <section id="contato" class="secao secao--sepia" aria-labelledby="titulo-contato" tabindex="-1">
+    <section id="contato" class="secao" aria-labelledby="titulo-contato" tabindex="-1">
       <div class="secao__interno secao__interno--estreito">
         <h2 id="titulo-contato" class="secao__titulo">Contato</h2>
         <p>Ficou com alguma dúvida? Fale com a gente: <span class="marcador">[PREENCHER: e-mail e/ou WhatsApp]</span></p>
@@ -357,6 +334,29 @@
       </ul>
     </div>
   </footer>
+
+  <!-- 5.2 Vídeo convite acessível (abre pelo botão da abertura) -->
+  <dialog id="video" class="janela" aria-labelledby="titulo-video">
+    <div class="janela__topo">
+      <h2 id="titulo-video" class="janela__titulo" tabindex="-1">Vídeo convite acessível</h2>
+      <button type="button" class="janela__fechar" data-video-fechar>Fechar<span class="visualmente-oculto"> o vídeo convite</span></button>
+    </div>
+    <p>Assista ao convite com Libras e legendas.</p>
+    <div class="video" data-video>
+      <button type="button" class="video__capa" data-video-capa>
+        <img class="video__imagem" src="assets/img/cartaz/og-crime-sem-castigo-1200x630.jpg" width="1200" height="630" alt="">
+        <span class="video__rotulo"><span class="video__play" aria-hidden="true"></span>Reproduzir o vídeo convite, com Libras e legendas</span>
+      </button>
+      <p class="marcador" data-video-pendente>[PREENCHER: ID do vídeo]</p>
+    </div>
+    <details class="detalhe">
+      <summary>Descrição do vídeo (audiodescrição em texto)</summary>
+      <div class="detalhe__conteudo">
+        <p>Vídeo horizontal. À esquerda, sobre fundo claro, <span class="marcador">[PREENCHER: autodescrição do(a) intérprete]</span> apresenta o convite em Libras, com legendas em uma faixa logo abaixo. À direita, o cartaz do filme Crime Sem Castigo: em tons sépia, o rosto sério de um homem em preto e branco, de camisa branca e gravata; abaixo, dois homens de camisa clara, um de bigode, sério, e outro grisalho, sorrindo; ao fundo, mata e uma casa antiga. O título está em letras brancas, com o S de “sem” em forma de raio vermelho. No rodapé, os logos da Lapfilme, do Governo do Estado de São Paulo, da Lei Paulo Gustavo e do Ministério da Cultura.</p>
+        <p>Texto do convite: "Olá! A Lapfilme e a Iguale convidam você para a Sessão Acessível do filme Crime Sem Castigo, no domingo, 15 de novembro, às 10 horas da manhã, no Espaço Petrobras de Cinema, sala 1, Rua Augusta, 1475, em São Paulo. Baseado em fatos reais, Crime Sem Castigo revela a vida clandestina do médico nazista Josef Mengele nos 18 anos em que viveu no Brasil como um fugitivo movido por um objetivo: sobreviver a qualquer custo. O filme tem direção de Luiz Alberto Pereira. A sessão terá recursos abertos para todo o público: audiodescrição no som da sala, Libras e legendas descritivas na tela. Depois do filme, vamos bater um papo sobre acessibilidade no cinema. A entrada é gratuita, com pipoca e refrigerante! As vagas são limitadas: faça sua inscrição e veja mais informações em iguale.com.br/crimesemcastigo. A confirmação chega por e-mail. No dia, chegue a partir das 9h30 para aproveitar com calma. Classificação indicativa: 16 anos. Venha viver essa experiência de cinema com a gente!"</p>
+      </div>
+    </details>
+  </dialog>
 
   <!-- Menu flutuante "Acessibilidade" -->
   <div class="flutuante" data-flutuante>

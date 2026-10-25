@@ -145,6 +145,14 @@ Envie em texto real (não imagem), com versão em texto simples, uma coluna, cor
 
 Os PNGs originais das camadas (de 8 a 19 MB cada) foram convertidos e tirados da pasta publicada. Eles continuam no histórico do git (commit `d802bed`), se for preciso recuperar. O original do cartaz, de cerca de 65 MB, fica fora do repositório.
 
+**Ajustes de layout pedidos depois da primeira versão (diferem do `CLAUDE.md`):**
+
+- O vídeo convite não tem mais seção própria: o botão "Vídeo convite acessível", na abertura, abre uma janela (`<dialog>`) com o vídeo e a descrição em texto. Esc, o botão "Fechar" ou um clique fora fecham a janela, e o foco volta para o botão.
+- Ordem das seções e do menu: O filme · A sessão · Inscrição · Programação · Local · Dúvidas · Contato.
+- Detalhes em vermelho e branco: botões e selos vermelhos com texto branco (6,5:1), cards de recurso brancos com faixa vermelha, seção de inscrição em faixa clara e um traço vermelho decorativo sob os títulos. O vermelho nunca aparece como texto sobre fundo escuro (daria 2,6:1).
+- Selo "16" na cor da classificação indicativa de 16 anos e detalhe verde na "Entrada gratuita" (7,4:1 sobre o fundo).
+- Textos dos cards de recurso adaptados dos de Gramado.
+
 **Decisões sobre o cartaz:**
 
 - O **raio vermelho isolado** (`SIMBOLO.png`) não foi usado nem guardado: pela regra da seção 4 do `CLAUDE.md`, ele aparece só dentro do título e do cartaz.
@@ -166,7 +174,7 @@ Todos os marcadores aparecem visíveis na página, com borda tracejada, até ser
 | ID do vídeo no YouTube | `assets/js/config.js` → `youtubeId` | V1 |
 | Autodescrição do(a) intérprete | `index.html`, seção "Convite em vídeo" (Anexo B) | V1 |
 | Personagens: nome, descritivo, intérprete e imagem | `index.html`, seção "O filme" → 3 cards `.personagem`; as camadas em `assets/img/cartaz/camadas/` podem servir de imagem | P22 |
-| Acesso e banheiro acessível; como chegar de transporte público | `index.html`, seção "Local" | P03 |
+| Como chegar de transporte público | `index.html`, seção "Local" (a linha de acesso e banheiro acessível foi retirada a pedido) | P03 |
 | Capacidade da sala 1 (241 lugares e 5 espaços) | `index.html`, seção "Local" | P03 |
 | Contato para dúvidas (e-mail e/ou WhatsApp) | `index.html` (Contato), `acessibilidade/index.html` (Fale com a gente), `assets/js/inscricao.js` (constante `CONTATO`, usada nos estados "CPF duplicado" e "erro"), e-mail de confirmação | P11 |
 | Aviso de privacidade (texto final e link) | `inscricao/index.html`, checkbox `consentimento_lgpd` | P16 |
@@ -176,6 +184,7 @@ Todos os marcadores aparecem visíveis na página, com borda tracejada, até ser
 | ID do Google Tag Manager | `assets/js/config.js` → `gtmId` | — |
 | **[CONFIRMAR: validação do Braille]** — `⠨⠉⠗⠊⠍⠑ ⠨⠎⠑⠍ ⠨⠉⠁⠎⠞⠊⠛⠕` | `index.html`, abertura (`.braille__celas`) | P34 |
 | O que levar no dia (documento na entrada?) | `index.html`, FAQ "Preciso levar alguma coisa?" | — |
+| Ícones oficiais de AD, LSE e Libras | substituir `ad.svg`, `lse.svg` e `libras.svg` em `assets/img/icones/` (mesmos nomes). Os atuais são provisórios, desenhados para o projeto | — |
 | Favicon da Iguale | `<head>` das três páginas (linha comentada) | — |
 | **[CONFIRMAR: texto alternativo do cartaz e da descrição do vídeo]** — o Anexo A dizia "Em preto e branco"; o texto foi ajustado para "Em tons sépia, o rosto [...] em preto e branco", porque só o rosto central é P&B. O mesmo ajuste foi feito no Anexo B | `index.html` (abertura, cartaz em "O filme", descrição do vídeo) e `og:image:alt` | — |
 | Resultado dos testes com NVDA e VoiceOver | `acessibilidade/index.html`, seção "Avaliação" | — |
