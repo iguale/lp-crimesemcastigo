@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Acessibilidade desta página · Sessão Acessível · Crime Sem Castigo · Iguale</title>
+  <meta name="description" content="Declaração de acessibilidade da página da Sessão Acessível de Crime Sem Castigo: recursos disponíveis, padrão seguido, limitações conhecidas e como falar com a equipe.">
+  <link rel="canonical" href="https://iguale.com.br/crimesemcastigo/acessibilidade/">
+  <meta name="theme-color" content="#1E1C1A">
+  <!-- [PREENCHER: favicon da Iguale] <link rel="icon" href="../assets/img/favicon.png"> -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;700&amp;family=Oswald:wght@400;500;600&amp;display=swap">
+  <link rel="stylesheet" href="../assets/css/estilos.css">
+  <link rel="stylesheet" href="../id_a11y/id_a11y.css">
+  <script src="../assets/js/config.js"></script>
+  <script src="../assets/js/barra-acessibilidade.js"></script>
+  <script src="../assets/js/principal.js" defer></script>
+</head>
+<body>
+  <div id="topo" class="barra-a11y" role="region" aria-label="Barra de acessibilidade">
+    <div class="barra-a11y__interno">
+      <ul class="barra-a11y__atalhos">
+        <li><a href="#conteudo" accesskey="1">Ir para o conteúdo <span class="tecla">[1]</span></a></li>
+        <li><a href="#menu" accesskey="2">Ir para o menu <span class="tecla">[2]</span></a></li>
+      </ul>
+      <div class="barra-a11y__controles">
+        <div data-a11y-controles="barra"></div>
+      </div>
+    </div>
+  </div>
+
+  <header class="cabecalho">
+    <div class="cabecalho__interno">
+      <a class="marca" href="../">
+        <span class="marca__sessao">Sessão Acessível</span>
+        <span class="marca__filme">Crime Sem Castigo</span>
+      </a>
+      <nav id="menu" class="menu" aria-label="Navegação principal" tabindex="-1">
+        <button type="button" class="menu__botao" aria-expanded="false" aria-controls="menu-lista" hidden>
+          <span class="menu__icone" aria-hidden="true"></span>Menu
+        </button>
+        <ul id="menu-lista" class="menu__lista">
+          <li><a href="../#o-filme">O filme</a></li>
+          <li><a href="../#a-sessao">A sessão</a></li>
+          <li><a href="../#programacao">Programação</a></li>
+          <li><a href="../#local">Local</a></li>
+          <li><a href="../inscricao/">Inscrição</a></li>
+          <li><a href="../#duvidas">Dúvidas</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo" class="pagina-interna declaracao" tabindex="-1">
+    <p><a class="voltar" href="../"><span aria-hidden="true">←&nbsp;</span>Voltar para a página da sessão</a></p>
+    <p class="sobretitulo">Iguale Digital</p>
+    <h1>Acessibilidade desta página</h1>
+
+    <p>A Iguale é um hub de acessibilidade. Esta página foi feita para que qualquer pessoa consiga conhecer a Sessão Acessível de Crime Sem Castigo e fazer a inscrição com autonomia, usando ou não tecnologias assistivas.</p>
+
+    <h2>Padrão que seguimos</h2>
+    <p>A página foi desenvolvida para atender às Diretrizes de Acessibilidade para Conteúdo Web (WCAG) 2.2, no nível AA, e ao Modelo de Acessibilidade em Governo Eletrônico (eMAG) no que se aplica.</p>
+
+    <h2>Recursos disponíveis</h2>
+    <h3>Barra de acessibilidade</h3>
+    <ul>
+      <li><strong>Atalhos:</strong> “Ir para o conteúdo [1]” e “Ir para o menu [2]”, no topo de todas as páginas. Use Alt + 1 e Alt + 2 (no Mac, Control + Option + 1 e 2; no Firefox, Alt + Shift + 1 e 2).</li>
+      <li><strong>Tamanho do texto:</strong> botões para aumentar, diminuir e voltar ao tamanho original. A página também funciona com o zoom do navegador em até 200%, sem rolagem horizontal.</li>
+      <li><strong>Contraste:</strong> alto contraste, preto e amarelo, monocromático, escala de cinza invertida, cores invertidas e cores originais.</li>
+      <li>A sua escolha de texto e contraste fica guardada neste navegador para as próximas visitas.</li>
+    </ul>
+
+    <h3>Menu flutuante “Acessibilidade”</h3>
+    <p>No canto inferior esquerdo da tela, reúne os controles de texto e contraste, a tradução para Libras pelo VLibras e o atendimento em Libras pelo iCom.</p>
+
+    <h3>Libras</h3>
+    <ul>
+      <li><strong>VLibras:</strong> o plugin oficial do Governo Federal traduz os textos da página para Libras. O botão fica no canto direito da tela.</li>
+      <li><strong>iCom:</strong> atendimento em Libras com a equipe da Iguale. <a data-icom target="_blank" rel="noopener">Atendimento em Libras pelo iCom (abre em nova aba)</a> <span class="marcador" data-icom-pendente>[PREENCHER: link do iCom da Iguale]</span></li>
+    </ul>
+
+    <h3>Vídeo convite</h3>
+    <p>O vídeo tem interpretação em Libras e legendas, e a página traz a descrição completa do vídeo em texto (audiodescrição em texto). O vídeo só carrega quando você ativa o botão de reprodução.</p>
+
+    <h3>Formulário de inscrição</h3>
+    <ul>
+      <li>Todos os campos têm rótulo visível, e os obrigatórios são marcados com asterisco.</li>
+      <li>Os erros aparecem só ao enviar, em um resumo no topo com links para cada campo, e também ao lado de cada campo.</li>
+      <li>Não usamos CAPTCHA visual.</li>
+    </ul>
+
+    <h3>Estrutura da página</h3>
+    <ul>
+      <li>Títulos em ordem, regiões marcadas (cabeçalho, navegação, conteúdo e rodapé) e listas reais.</li>
+      <li>Tudo funciona pelo teclado, com o foco sempre visível.</li>
+      <li>Imagens informativas têm texto alternativo, e o título do filme também aparece escrito em Braille.</li>
+      <li>Nada pisca nem se move sozinho. Se o seu sistema pede menos movimento, a página respeita essa preferência.</li>
+    </ul>
+
+    <h2>Limitações conhecidas</h2>
+    <ul>
+      <li>Alguns conteúdos ainda estão sendo finalizados e aparecem marcados como pendentes.</li>
+      <li>O player do vídeo e o VLibras são serviços de terceiros (YouTube e Governo Federal), e a acessibilidade deles não depende da Iguale.</li>
+    </ul>
+
+    <h2>Avaliação</h2>
+    <p>A página foi testada com verificação automática (axe), navegação só por teclado, zoom de 200% e tela de 320 px de largura. Última revisão: <time datetime="2026-10-25">25 de outubro de 2026</time>. <span class="marcador">[PREENCHER: resultado dos testes com NVDA e VoiceOver]</span></p>
+
+    <h2>Fale com a gente</h2>
+    <p>Encontrou alguma barreira nesta página? Conte para a gente: <span class="marcador">[PREENCHER: e-mail e/ou WhatsApp]</span></p>
+  </main>
+
+  <footer class="rodape">
+    <div class="rodape__interno">
+      <ul class="rodape__links">
+        <li>Página desenvolvida pela Iguale Digital</li>
+        <li><a href="../">Página da sessão</a></li>
+        <li><a href="#topo">Voltar ao início da página</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <div class="flutuante" data-flutuante>
+    <button type="button" class="flutuante__botao" aria-expanded="false" aria-controls="flutuante-painel">
+      <span class="icone icone--acessibilidade" aria-hidden="true"></span>Acessibilidade
+    </button>
+    <div id="flutuante-painel" class="flutuante__painel" role="region" aria-labelledby="flutuante-titulo" hidden>
+      <h2 id="flutuante-titulo" class="flutuante__titulo">Recursos de acessibilidade</h2>
+      <div data-a11y-controles="painel"></div>
+      <div class="flutuante__grupo">
+        <button type="button" data-a11y-vlibras>Tradução para Libras (VLibras)</button>
+        <a data-icom target="_blank" rel="noopener">Atendimento em Libras pelo iCom (abre em nova aba)</a>
+        <span class="marcador" data-icom-pendente>[PREENCHER: link do iCom da Iguale]</span>
+      </div>
+    </div>
+  </div>
+  <p class="visualmente-oculto" aria-live="polite" data-a11y-anuncio></p>
+
+  <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script>
+    if (window.VLibras) { new window.VLibras.Widget('https://vlibras.gov.br/app'); }
+  </script>
+</body>
+</html>

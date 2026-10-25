@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Inscrição · Sessão Acessível · Crime Sem Castigo · Iguale</title>
+  <meta name="description" content="Faça sua inscrição gratuita na Sessão Acessível de Crime Sem Castigo, em 15/11/2026, no Espaço Petrobras de Cinema, com audiodescrição, Libras e legendas descritivas.">
+  <link rel="canonical" href="https://iguale.com.br/crimesemcastigo/inscricao/">
+  <meta name="theme-color" content="#1E1C1A">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:url" content="https://iguale.com.br/crimesemcastigo/inscricao/">
+  <meta property="og:title" content="Inscrição · Sessão Acessível · Crime Sem Castigo">
+  <meta property="og:description" content="Inscrição gratuita para a Sessão Acessível de Crime Sem Castigo, em 15/11/2026, no Espaço Petrobras de Cinema.">
+  <meta property="og:image" content="https://iguale.com.br/crimesemcastigo/assets/img/cartaz/og-crime-sem-castigo-1200x630.jpg">
+  <meta property="og:image:alt" content="Título Crime Sem Castigo em letras brancas, com o S de &quot;sem&quot; em forma de raio vermelho, ao lado de imagem do cartaz do filme.">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- [PREENCHER: favicon da Iguale] <link rel="icon" href="../assets/img/favicon.png"> -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;700&amp;family=Oswald:wght@400;500;600&amp;display=swap">
+  <link rel="stylesheet" href="../assets/css/estilos.css">
+  <link rel="stylesheet" href="../id_a11y/id_a11y.css">
+  <script src="../assets/js/config.js"></script>
+  <script src="../assets/js/barra-acessibilidade.js"></script>
+  <script src="../assets/js/principal.js" defer></script>
+  <script src="../assets/js/inscricao.js" defer></script>
+</head>
+<body>
+  <div id="topo" class="barra-a11y" role="region" aria-label="Barra de acessibilidade">
+    <div class="barra-a11y__interno">
+      <ul class="barra-a11y__atalhos">
+        <li><a href="#conteudo" accesskey="1">Ir para o conteúdo <span class="tecla">[1]</span></a></li>
+        <li><a href="#menu" accesskey="2">Ir para o menu <span class="tecla">[2]</span></a></li>
+      </ul>
+      <div class="barra-a11y__controles">
+        <div data-a11y-controles="barra"></div>
+        <a class="barra-a11y__link" href="../acessibilidade/">Acessibilidade desta página</a>
+      </div>
+    </div>
+  </div>
+
+  <header class="cabecalho">
+    <div class="cabecalho__interno">
+      <a class="marca" href="../">
+        <span class="marca__sessao">Sessão Acessível</span>
+        <span class="marca__filme">Crime Sem Castigo</span>
+      </a>
+      <nav id="menu" class="menu" aria-label="Navegação principal" tabindex="-1">
+        <button type="button" class="menu__botao" aria-expanded="false" aria-controls="menu-lista" hidden>
+          <span class="menu__icone" aria-hidden="true"></span>Menu
+        </button>
+        <ul id="menu-lista" class="menu__lista">
+          <li><a href="../#o-filme">O filme</a></li>
+          <li><a href="../#a-sessao">A sessão</a></li>
+          <li><a href="../#programacao">Programação</a></li>
+          <li><a href="../#local">Local</a></li>
+          <li><a href="./" aria-current="page">Inscrição</a></li>
+          <li><a href="../#duvidas">Dúvidas</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo" class="pagina-interna" tabindex="-1">
+    <p><a class="voltar" href="../"><span aria-hidden="true">←&nbsp;</span>Voltar para a página da sessão</a></p>
+    <p class="sobretitulo">Sessão Acessível · 15 de novembro de 2026</p>
+    <h1>Inscrição para a Sessão Acessível de Crime Sem Castigo</h1>
+
+    <div data-inscricao-encerrada hidden>
+      <p class="aviso-encerradas">As inscrições estão encerradas.</p>
+    </div>
+
+    <div data-inscricao-aberta>
+      <p>Preencha o formulário para garantir a sua vaga. A entrada é gratuita, e cada pessoa faz a própria inscrição.</p>
+      <p class="obrigatorios">Campos marcados com <span aria-hidden="true">*</span><span class="visualmente-oculto">asterisco</span> são obrigatórios.</p>
+
+      <div id="resumo-erros" class="resumo-erros" role="alert" tabindex="-1" hidden>
+        <h2 id="resumo-titulo">Corrija os campos abaixo</h2>
+        <ul></ul>
+      </div>
+
+      <div id="estado" class="estado" hidden></div>
+
+      <form id="formulario" class="formulario" action="#" method="post" novalidate>
+        <div class="campo">
+          <label for="nome">Nome completo <span aria-hidden="true">*</span></label>
+          <input type="text" id="nome" name="nome" autocomplete="name" required>
+          <p class="erro-campo" id="erro-nome" hidden></p>
+        </div>
+
+        <div class="campo">
+          <label for="cpf">CPF <span aria-hidden="true">*</span></label>
+          <span class="campo__dica" id="dica-cpf">Somente os 11 números. A pontuação é colocada automaticamente.</span>
+          <input type="text" id="cpf" name="cpf" inputmode="numeric" autocomplete="off" aria-describedby="dica-cpf" required>
+          <p class="erro-campo" id="erro-cpf" hidden></p>
+        </div>
+
+        <div class="campo">
+          <label for="email">E-mail <span aria-hidden="true">*</span></label>
+          <input type="email" id="email" name="email" autocomplete="email" required>
+          <p class="erro-campo" id="erro-email" hidden></p>
+        </div>
+
+        <div class="campo">
+          <label for="telefone">Telefone com DDD <span aria-hidden="true">*</span></label>
+          <span class="campo__dica" id="dica-telefone">Somente números, com DDD.</span>
+          <input type="tel" id="telefone" name="telefone" autocomplete="tel" inputmode="tel" aria-describedby="dica-telefone" required>
+          <p class="erro-campo" id="erro-telefone" hidden></p>
+        </div>
+
+        <fieldset class="grupo" id="grupo-recursos">
+          <legend>Quais recursos de acessibilidade você vai utilizar? <span aria-hidden="true">*</span><span class="visualmente-oculto">(obrigatório)</span></legend>
+          <span class="campo__dica" id="dica-recursos">Marque pelo menos uma opção.</span>
+          <div class="opcao"><input type="checkbox" id="recurso-ad" name="recursos" value="ad" aria-describedby="dica-recursos"><label for="recurso-ad">Audiodescrição (AD)</label></div>
+          <div class="opcao"><input type="checkbox" id="recurso-lse" name="recursos" value="lse" aria-describedby="dica-recursos"><label for="recurso-lse">Legendas descritivas (LSE)</label></div>
+          <div class="opcao"><input type="checkbox" id="recurso-libras" name="recursos" value="libras" aria-describedby="dica-recursos"><label for="recurso-libras">Libras</label></div>
+          <div class="opcao opcao--destaque"><input type="checkbox" id="recurso-nenhum" name="recursos" value="nenhum" aria-describedby="dica-recursos"><label for="recurso-nenhum">Não preciso de recursos de acessibilidade</label></div>
+          <p class="erro-campo" id="erro-recursos" hidden></p>
+          <p class="visualmente-oculto" id="aviso-recursos" aria-live="polite"></p>
+        </fieldset>
+
+        <fieldset class="grupo" id="grupo-necessidades">
+          <legend>Você tem alguma necessidade de acesso? (opcional)</legend>
+          <span class="campo__dica" id="dica-necessidades">A sala tem espaços reservados para cadeira de rodas. Essa informação ajuda a equipe a organizar o seu lugar.</span>
+          <div class="opcao"><input type="checkbox" id="nec-cadeira" name="necessidades" value="cadeira_de_rodas" aria-describedby="dica-necessidades"><label for="nec-cadeira">Uso cadeira de rodas</label></div>
+          <div class="opcao"><input type="checkbox" id="nec-mobilidade" name="necessidades" value="mobilidade_reduzida" aria-describedby="dica-necessidades"><label for="nec-mobilidade">Tenho mobilidade reduzida</label></div>
+          <div class="opcao"><input type="checkbox" id="nec-cao" name="necessidades" value="cao_guia" aria-describedby="dica-necessidades"><label for="nec-cao">Vou com cão-guia</label></div>
+          <div class="opcao"><input type="checkbox" id="nec-outra" name="necessidades" value="outra" aria-describedby="dica-necessidades" aria-controls="campo-necessidade-outra"><label for="nec-outra">Outra</label></div>
+          <div class="campo" id="campo-necessidade-outra" hidden>
+            <label for="necessidade_outra">Conte qual <span aria-hidden="true">*</span></label>
+            <input type="text" id="necessidade_outra" name="necessidade_outra" maxlength="300">
+            <p class="erro-campo" id="erro-necessidade_outra" hidden></p>
+          </div>
+        </fieldset>
+
+        <div class="campo">
+          <label for="como_soube">Como você soube da sessão? (opcional)</label>
+          <select id="como_soube" name="como_soube">
+            <option value="">Selecione uma opção</option>
+            <option value="instagram">Instagram</option>
+            <option value="whatsapp">WhatsApp</option>
+            <option value="email">E-mail</option>
+            <option value="instituicao">Instituição ou associação</option>
+            <option value="indicacao">Indicação</option>
+            <option value="outro">Outro</option>
+          </select>
+        </div>
+
+        <div class="grupo">
+          <div class="opcao">
+            <input type="checkbox" id="consentimento_lgpd" name="consentimento_lgpd" value="true" required>
+            <label for="consentimento_lgpd">Li e concordo com o uso dos meus dados para a organização desta sessão, conforme o aviso de privacidade. <span aria-hidden="true">*</span> <span class="marcador">[PREENCHER: texto final e link do aviso de privacidade]</span></label>
+          </div>
+          <p class="erro-campo" id="erro-consentimento_lgpd" hidden></p>
+        </div>
+
+        <div class="grupo">
+          <div class="opcao">
+            <input type="checkbox" id="autorizacao_imagem_voz" name="autorizacao_imagem_voz" value="true" required>
+            <label for="autorizacao_imagem_voz">Autorizo o uso da minha imagem e da minha voz, captadas em fotos e vídeos durante a sessão, na divulgação da Sessão Acessível pela Lapfilme e pela Iguale. <span aria-hidden="true">*</span> <span class="marcador">[CONFIRMAR: texto final com o jurídico, incluindo quem recebe a autorização e por quanto tempo]</span></label>
+          </div>
+          <p class="erro-campo" id="erro-autorizacao_imagem_voz" hidden></p>
+        </div>
+
+        <div class="armadilha" aria-hidden="true">
+          <label for="site">Não preencha este campo</label>
+          <input type="text" id="site" name="site" tabindex="-1" autocomplete="off">
+        </div>
+
+        <section class="quadro" aria-labelledby="titulo-informacoes">
+          <h2 id="titulo-informacoes">Informações importantes</h2>
+          <ul>
+            <li>Domingo, 15/11/2026. A casa abre às 9h30, e a sessão começa às 10h.</li>
+            <li>Espaço Petrobras de Cinema, sala 1 – Rua Augusta, 1475, São Paulo.</li>
+            <li>Combo de pipoca e refrigerante gratuito.</li>
+            <li>Classificação indicativa: 16 anos.</li>
+            <li>A sessão terá fotos e vídeos para divulgação.</li>
+            <li>Você recebe um e-mail confirmando a inscrição. Se não encontrar, confira a caixa de spam.</li>
+          </ul>
+        </section>
+
+        <div class="acoes">
+          <button type="submit" class="botao botao--primario" id="enviar">Enviar inscrição</button>
+          <a class="link-cancelar" href="../">Cancelar e voltar</a>
+        </div>
+        <p class="status-envio" id="status-envio" aria-live="polite"></p>
+      </form>
+
+    </div>
+  </main>
+
+  <footer class="rodape">
+    <div class="rodape__interno">
+      <p class="rodape__lei">Produzido com recursos da Lei Paulo Gustavo – Governo Federal, Ministério da Cultura e Governo do Estado de São Paulo, por meio da Secretaria da Cultura, Economia e Indústria Criativas.</p>
+      <ul class="rodape__links">
+        <li>Página desenvolvida pela Iguale Digital</li>
+        <li><a href="../acessibilidade/">Acessibilidade desta página</a></li>
+        <li><a href="#topo">Voltar ao início da página</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <div class="flutuante" data-flutuante>
+    <button type="button" class="flutuante__botao" aria-expanded="false" aria-controls="flutuante-painel">
+      <span class="icone icone--acessibilidade" aria-hidden="true"></span>Acessibilidade
+    </button>
+    <div id="flutuante-painel" class="flutuante__painel" role="region" aria-labelledby="flutuante-titulo" hidden>
+      <h2 id="flutuante-titulo" class="flutuante__titulo">Recursos de acessibilidade</h2>
+      <div data-a11y-controles="painel"></div>
+      <div class="flutuante__grupo">
+        <button type="button" data-a11y-vlibras>Tradução para Libras (VLibras)</button>
+        <a data-icom target="_blank" rel="noopener">Atendimento em Libras pelo iCom (abre em nova aba)</a>
+        <span class="marcador" data-icom-pendente>[PREENCHER: link do iCom da Iguale]</span>
+        <a href="../acessibilidade/">Acessibilidade desta página</a>
+      </div>
+    </div>
+  </div>
+  <p class="visualmente-oculto" aria-live="polite" data-a11y-anuncio></p>
+
+  <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script>
+    if (window.VLibras) { new window.VLibras.Widget('https://vlibras.gov.br/app'); }
+  </script>
+</body>
+</html>

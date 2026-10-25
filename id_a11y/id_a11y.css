@@ -1,0 +1,88 @@
+/* ==========================================================================
+   id_a11y · modos de contraste da barra da Iguale Digital
+   Equivalente ao kit de Gramado. As classes são aplicadas no <html> por
+   assets/js/barra-acessibilidade.js e sobrescrevem todo o tema da página.
+   ========================================================================== */
+
+/* ---------- Filtros: monocromático, cinza invertido e cores invertidas ---------- */
+html.a11y-monocromatico,
+html.a11y-cinza-invertido,
+html.a11y-cores-invertidas { background: #1E1C1A; }
+html.a11y-monocromatico { filter: grayscale(1); }
+html.a11y-cinza-invertido { filter: grayscale(1) invert(1); }
+html.a11y-cores-invertidas { filter: invert(1); }
+
+/* ---------- Alto contraste (preto, branco e amarelo nos links) ---------- */
+html.a11y-alto-contraste,
+html.a11y-alto-contraste body,
+html.a11y-alto-contraste :where(*:not([vw], [vw] *)),
+html.a11y-alto-contraste :where(*:not([vw], [vw] *))::before,
+html.a11y-alto-contraste :where(*:not([vw], [vw] *))::after {
+  background-color: #000 !important;
+  background-image: none !important;
+  color: #fff !important;
+  border-color: #fff !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
+}
+html.a11y-alto-contraste a,
+html.a11y-alto-contraste a * { color: #ff0 !important; }
+html.a11y-alto-contraste a { text-decoration: underline !important; }
+html.a11y-alto-contraste button,
+html.a11y-alto-contraste .botao,
+html.a11y-alto-contraste input,
+html.a11y-alto-contraste select,
+html.a11y-alto-contraste summary { border: 2px solid #fff !important; }
+html.a11y-alto-contraste .botao,
+html.a11y-alto-contraste .botao * { color: #ff0 !important; border-color: #ff0 !important; }
+html.a11y-alto-contraste [aria-pressed="true"] { outline: 3px solid #ff0 !important; }
+html.a11y-alto-contraste .erro-campo,
+html.a11y-alto-contraste .resumo-erros { border: 3px solid #ff0 !important; }
+html.a11y-alto-contraste :focus-visible { outline: 3px solid #ff0 !important; outline-offset: 3px !important; }
+
+/* ---------- Preto e amarelo ---------- */
+html.a11y-preto-amarelo,
+html.a11y-preto-amarelo body,
+html.a11y-preto-amarelo :where(*:not([vw], [vw] *)),
+html.a11y-preto-amarelo :where(*:not([vw], [vw] *))::before,
+html.a11y-preto-amarelo :where(*:not([vw], [vw] *))::after {
+  background-color: #000 !important;
+  background-image: none !important;
+  color: #ff0 !important;
+  border-color: #ff0 !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
+}
+html.a11y-preto-amarelo a { text-decoration: underline !important; }
+html.a11y-preto-amarelo button,
+html.a11y-preto-amarelo .botao,
+html.a11y-preto-amarelo input,
+html.a11y-preto-amarelo select,
+html.a11y-preto-amarelo summary { border: 2px solid #ff0 !important; }
+html.a11y-preto-amarelo [aria-pressed="true"] { outline: 3px solid #fff !important; }
+html.a11y-preto-amarelo .erro-campo,
+html.a11y-preto-amarelo .resumo-erros { border: 3px solid #ff0 !important; }
+html.a11y-preto-amarelo :focus-visible { outline: 3px solid #fff !important; outline-offset: 3px !important; }
+
+/* Em ambos: ícones continuam pintados com a cor do texto, e os elementos
+   desenhados só com fundo (ícone do menu, seta do vídeo) continuam visíveis */
+html.a11y-alto-contraste .icone,
+html.a11y-preto-amarelo .icone { background-color: currentColor !important; }
+html.a11y-alto-contraste .menu__icone,
+html.a11y-alto-contraste .menu__icone::before,
+html.a11y-alto-contraste .menu__icone::after { background-color: #fff !important; }
+html.a11y-preto-amarelo .menu__icone,
+html.a11y-preto-amarelo .menu__icone::before,
+html.a11y-preto-amarelo .menu__icone::after { background-color: #ff0 !important; }
+html.a11y-alto-contraste .menu__botao[aria-expanded="true"] .menu__icone,
+html.a11y-preto-amarelo .menu__botao[aria-expanded="true"] .menu__icone { background-color: transparent !important; }
+html.a11y-alto-contraste .video__play,
+html.a11y-preto-amarelo .video__play { border-top-color: transparent !important; border-bottom-color: transparent !important; }
+html.a11y-alto-contraste .video__imagem,
+html.a11y-preto-amarelo .video__imagem { opacity: 0.35; }
+html.a11y-alto-contraste .abertura__visual img,
+html.a11y-preto-amarelo .abertura__visual img { -webkit-mask-image: none !important; mask-image: none !important; }
+html.a11y-alto-contraste .armadilha,
+html.a11y-preto-amarelo .armadilha { position: absolute !important; }
+
+/* O widget do VLibras fica fora dos seletores acima e mantém o visual próprio. */
