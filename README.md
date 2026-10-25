@@ -127,7 +127,7 @@ Envie em texto real (não imagem), com versão em texto simples, uma coluna, cor
 │   ├── img/cartaz/             # cartaz, abertura, título, textura e imagem de compartilhamento
 │   │   └── camadas/            # camadas do cartaz em versão web, guardadas para uso futuro
 │   ├── img/logos/              # régua de logos recortada (WebP para a página, PNG para o e-mail)
-│   └── img/icones/             # AD, LSE, Libras, cadeira de rodas e acessibilidade (SVG)
+│   └── img/icones/             # AD, LSE e Libras (PNG oficiais enviados pela Iguale), cadeira de rodas e acessibilidade (SVG)
 └── id_a11y/id_a11y.css         # modos de contraste da barra
 ```
 
@@ -152,6 +152,9 @@ Os PNGs originais das camadas (de 8 a 19 MB cada) foram convertidos e tirados da
 - Detalhes em vermelho e branco: botões e selos vermelhos com texto branco (6,5:1), cards de recurso brancos com faixa vermelha, seção de inscrição em faixa clara e um traço vermelho decorativo sob os títulos. O vermelho nunca aparece como texto sobre fundo escuro (daria 2,6:1).
 - Selo "16" na cor da classificação indicativa de 16 anos e detalhe verde na "Entrada gratuita" (7,4:1 sobre o fundo).
 - Textos dos cards de recurso adaptados dos de Gramado.
+- Dúvidas frequentes sem as perguntas sobre acompanhantes, cadeira de rodas e o que levar no dia.
+- Ícones de AD, LSE e Libras: PNGs oficiais enviados pela Iguale, recortados só na margem transparente e usados como máscara (ganham a cor do contexto e funcionam nos modos de contraste).
+- Logos da Iguale e do Espaço Petrobras de Cinema no rodapé, sem rótulo de grupo até chegarem as regras da Lapfilme.
 
 **Decisões sobre o cartaz:**
 
@@ -169,7 +172,7 @@ Todos os marcadores aparecem visíveis na página, com borda tracejada, até ser
 
 | Marcador | Onde trocar | Pendência |
 |---|---|---|
-| Logo da Iguale e do Espaço Petrobras de Cinema (se aprovado) | `index.html`, rodapé (`.regua__pendente`) → colocar os arquivos em `assets/img/logos/` | P05 |
+| Aprovação do logo do Espaço Petrobras de Cinema na régua (o arquivo já está no rodapé) e versão maior ou em SVG desse logo (o enviado tem 57 px de altura) | `assets/img/logos/espaco-petrobras-cinema.*` | P05 |
 | Regras de aplicação da régua de logos | `index.html`, rodapé (`.rodape__regras`); ajustar ordem, rótulos "Uma produção"/"Realização" e tamanhos | P05 |
 | ID do vídeo no YouTube | `assets/js/config.js` → `youtubeId` | V1 |
 | Autodescrição do(a) intérprete | `index.html`, seção "Convite em vídeo" (Anexo B) | V1 |
@@ -183,8 +186,6 @@ Todos os marcadores aparecem visíveis na página, com borda tracejada, até ser
 | Endpoint do back-end | `assets/js/config.js` → `endpoint` | P09 |
 | ID do Google Tag Manager | `assets/js/config.js` → `gtmId` | — |
 | **[CONFIRMAR: validação do Braille]** — `⠨⠉⠗⠊⠍⠑ ⠨⠎⠑⠍ ⠨⠉⠁⠎⠞⠊⠛⠕` | `index.html`, abertura (`.braille__celas`) | P34 |
-| O que levar no dia (documento na entrada?) | `index.html`, FAQ "Preciso levar alguma coisa?" | — |
-| Ícones oficiais de AD, LSE e Libras | substituir `ad.svg`, `lse.svg` e `libras.svg` em `assets/img/icones/` (mesmos nomes). Os atuais são provisórios, desenhados para o projeto | — |
 | Favicon da Iguale | `<head>` das três páginas (linha comentada) | — |
 | **[CONFIRMAR: texto alternativo do cartaz e da descrição do vídeo]** — o Anexo A dizia "Em preto e branco"; o texto foi ajustado para "Em tons sépia, o rosto [...] em preto e branco", porque só o rosto central é P&B. O mesmo ajuste foi feito no Anexo B | `index.html` (abertura, cartaz em "O filme", descrição do vídeo) e `og:image:alt` | — |
 | Resultado dos testes com NVDA e VoiceOver | `acessibilidade/index.html`, seção "Avaliação" | — |
