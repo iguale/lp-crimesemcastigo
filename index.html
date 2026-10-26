@@ -104,7 +104,7 @@
         <div class="botoes">
           <a class="botao botao--primario" href="inscricao/" data-inscricao-aberta>Fazer inscrição</a>
           <p class="aviso-encerradas" data-inscricao-encerrada hidden>As inscrições estão encerradas.</p>
-          <button type="button" class="botao botao--secundario" data-video-abrir aria-haspopup="dialog" aria-controls="video"><span class="botao__play" aria-hidden="true"></span>Vídeo convite acessível</button>
+          <button type="button" class="botao botao--secundario" data-video-abrir="video" aria-haspopup="dialog" aria-controls="video"><span class="botao__play" aria-hidden="true"></span>Vídeo convite acessível</button>
         </div>
       </div>
       <div class="abertura__visual">
@@ -123,6 +123,7 @@
         <div class="filme">
           <div class="filme__texto">
             <p class="filme__sinopse">Baseado em fatos reais, <span class="caixa-alta">Crime Sem Castigo</span> revela a vida clandestina do médico nazista Josef Mengele, durante os 18 anos em que viveu no Brasil (1961-1979). Acusado pela morte de 400.000 pessoas no campo de concentração de Auschwitz, o criminoso de guerra mais procurado do mundo, outrora um carrasco a sangue frio, se torna um fugitivo paranoico movido por um objetivo singular e primordial: sobreviver a qualquer custo.</p>
+            <p><button type="button" class="botao botao--secundario" data-video-abrir="video-sinopse" aria-haspopup="dialog" aria-controls="video-sinopse"><span class="botao__play" aria-hidden="true"></span>Vídeo sinopse acessível</button></p>
             <h3 class="subtitulo">Ficha técnica</h3>
             <dl class="ficha">
               <div><dt>Gênero</dt><dd>Ficção, drama</dd></div>
@@ -175,22 +176,25 @@
         <p class="secao__abertura">Os recursos de acessibilidade estarão abertos para todo o público, direto na tela e no som da sala.</p>
         <ul class="recursos">
           <li class="recurso">
-            <span class="icone icone--ad recurso__icone" aria-hidden="true"></span>
-            <h3 class="recurso__titulo"><span class="recurso__selo">AD</span> Audiodescrição</h3>
+            <span class="recurso__selo recurso__selo--ad" aria-hidden="true"><span class="icone icone--ad"></span></span>
+            <h3 class="recurso__titulo">Audiodescrição</h3>
             <p>As imagens e o contexto visual do filme transformados em palavras, com o máximo de detalhes possível, para o melhor entendimento das pessoas com deficiência visual e de outros públicos. A narração sai no som da sala.</p>
           </li>
           <li class="recurso">
-            <span class="icone icone--lse recurso__icone" aria-hidden="true"></span>
-            <h3 class="recurso__titulo"><span class="recurso__selo">LSE</span> Legendas descritivas</h3>
+            <span class="recurso__selo recurso__selo--lse" aria-hidden="true"><span class="icone icone--lse"></span></span>
+            <h3 class="recurso__titulo">Legendas descritivas</h3>
             <p>Todo o universo sonoro do filme, como diálogos, ruídos, músicas e outros sons, aparece em forma de texto nas legendas para pessoas surdas e ensurdecidas, direto na tela.</p>
           </li>
           <li class="recurso">
-            <span class="icone icone--libras recurso__icone" aria-hidden="true"></span>
-            <h3 class="recurso__titulo"><span class="recurso__selo recurso__selo--caixa-alta">Libras</span> Língua Brasileira de Sinais</h3>
+            <span class="recurso__selo recurso__selo--libras" aria-hidden="true"><span class="icone icone--libras"></span></span>
+            <h3 class="recurso__titulo">Língua Brasileira de Sinais</h3>
             <p>Língua de modalidade gestual-visual, reconhecida por lei como meio de comunicação e expressão. É por meio dela que muitas pessoas surdas se comunicam. A interpretação em Libras aparece na tela.</p>
           </li>
         </ul>
-        <p class="credito-iguale">Os recursos de acessibilidade desta sessão foram produzidos pela <strong>Iguale</strong>.</p>
+        <div class="credito-iguale">
+          <img class="credito-iguale__logo" src="assets/img/logos/iguale.webp" width="240" height="240" alt="" loading="lazy">
+          <p class="credito-iguale__texto">Os recursos de acessibilidade desta sessão foram produzidos pela <strong>Iguale</strong>.</p>
+        </div>
         <div class="no-local">
           <h3 class="subtitulo">No local</h3>
           <p>Uma equipe da Iguale recebe o público, com atendimento em Libras. A abertura e o bate-papo têm interpretação em Libras e audiodescrição ao vivo.</p>
@@ -212,30 +216,10 @@
         <a class="botao botao--primario" href="inscricao/" data-inscricao-aberta>Fazer inscrição</a>
         <p class="aviso-encerradas" data-inscricao-encerrada hidden>As inscrições estão encerradas.</p>
         </div>
-        <svg class="inscricao__ilustracao" viewBox="0 0 330 250" aria-hidden="true" focusable="false">
-          <!-- ingresso -->
-          <g transform="translate(18 92) rotate(-14)">
-            <path class="il-ingresso" d="M0 0 H210 V42 a20 20 0 0 0 0 40 V124 H0 V82 a20 20 0 0 0 0 -40 Z"/>
-            <line class="il-picote" x1="158" y1="10" x2="158" y2="114"/>
-            <rect class="il-linha" x="28" y="30" width="96" height="11" rx="5"/>
-            <rect class="il-linha" x="28" y="56" width="72" height="11" rx="5"/>
-            <rect class="il-linha" x="28" y="82" width="104" height="11" rx="5"/>
-          </g>
-          <!-- balde de pipoca -->
-          <g transform="translate(176 46)">
-            <circle class="il-pipoca" cx="22" cy="42" r="19"/>
-            <circle class="il-pipoca" cx="98" cy="42" r="19"/>
-            <circle class="il-pipoca" cx="40" cy="22" r="20"/>
-            <circle class="il-pipoca" cx="80" cy="22" r="20"/>
-            <circle class="il-pipoca" cx="60" cy="14" r="21"/>
-            <circle class="il-pipoca" cx="60" cy="44" r="20"/>
-            <path class="il-balde" d="M0 52 H120 L104 196 H16 Z"/>
-            <path class="il-listra" d="M0 52 H24 L33 196 H16 Z"/>
-            <path class="il-listra" d="M48 52 H72 L69 196 H51 Z"/>
-            <path class="il-listra" d="M96 52 H120 L104 196 H87 Z"/>
-            <path class="il-contorno" d="M0 52 H120 L104 196 H16 Z"/>
-          </g>
-        </svg>
+        <picture class="inscricao__ilustracao">
+          <source type="image/webp" srcset="assets/img/ilustracoes/pipoca-ingressos-600.webp 600w, assets/img/ilustracoes/pipoca-ingressos-1200.webp 1200w" sizes="22rem">
+          <img src="assets/img/ilustracoes/pipoca-ingressos-600.png" width="600" height="499" alt="" loading="lazy">
+        </picture>
       </div>
     </section>
 
@@ -258,11 +242,11 @@
         <h2 id="titulo-local" class="secao__titulo">Local</h2>
         <p class="local__nome">Espaço Petrobras de Cinema – Sala 1</p>
         <p class="local__endereco">Rua Augusta, 1475 – Consolação, São Paulo (SP)</p>
+        <p class="local__transporte"><strong>Como chegar de transporte público:</strong> de metrô, a estação mais próxima é a Consolação (Linha 2-Verde), a cerca de 250 metros do cinema. A estação Paulista (Linha 4-Amarela) é ligada à Consolação por um corredor subterrâneo.</p>
         <p><a class="link-seta" href="https://www.google.com/maps/search/?api=1&amp;query=Espa%C3%A7o%20Petrobras%20de%20Cinema%2C%20Rua%20Augusta%2C%201475%2C%20Consola%C3%A7%C3%A3o%2C%20S%C3%A3o%20Paulo" target="_blank" rel="noopener">Abrir o endereço no Google Maps (abre em nova aba)</a></p>
         <h3 class="subtitulo">Acessibilidade do local</h3>
         <ul class="lista-local">
           <li><span class="icone icone--cadeira" aria-hidden="true"></span><span>A sala tem 241 lugares, incluindo 5 espaços reservados para pessoas em cadeira de rodas. <span class="marcador">[CONFIRMAR: se esses números são da sala 1]</span></span></li>
-          <li><span>Como chegar de transporte público: <span class="marcador">[PREENCHER]</span></span></li>
         </ul>
       </div>
     </section>
@@ -350,7 +334,7 @@
   </footer>
 
   <!-- 5.2 Vídeo convite acessível (abre pelo botão da abertura) -->
-  <dialog id="video" class="janela" aria-labelledby="titulo-video">
+  <dialog id="video" class="janela" aria-labelledby="titulo-video" data-video-config="youtubeId" data-video-titulo="Vídeo convite da Sessão Acessível de Crime Sem Castigo, com Libras e legendas">
     <div class="janela__topo">
       <h2 id="titulo-video" class="janela__titulo" tabindex="-1">Vídeo convite acessível</h2>
       <button type="button" class="janela__fechar" data-video-fechar>Fechar<span class="visualmente-oculto"> o vídeo convite</span></button>
@@ -368,6 +352,28 @@
       <div class="detalhe__conteudo">
         <p>Vídeo horizontal. À esquerda, sobre fundo claro, <span class="marcador">[PREENCHER: autodescrição do(a) intérprete]</span> apresenta o convite em Libras, com legendas em uma faixa logo abaixo. À direita, o cartaz do filme Crime Sem Castigo: em tons sépia, o rosto sério de um homem em preto e branco, de camisa branca e gravata; abaixo, dois homens de camisa clara, um de bigode, sério, e outro grisalho, sorrindo; ao fundo, mata e uma casa antiga. O título está em letras brancas, com o S de “sem” em forma de raio vermelho. No rodapé, os logos da Lapfilme, do Governo do Estado de São Paulo, da Lei Paulo Gustavo e do Ministério da Cultura.</p>
         <p>Texto do convite: "Olá! A Lapfilme e a Iguale convidam você para a Sessão Acessível do filme Crime Sem Castigo, no domingo, 15 de novembro, às 10 horas da manhã, no Espaço Petrobras de Cinema, sala 1, Rua Augusta, 1475, em São Paulo. Baseado em fatos reais, Crime Sem Castigo revela a vida clandestina do médico nazista Josef Mengele nos 18 anos em que viveu no Brasil como um fugitivo movido por um objetivo: sobreviver a qualquer custo. O filme tem direção de Luiz Alberto Pereira. A sessão terá recursos abertos para todo o público: audiodescrição no som da sala, Libras e legendas descritivas na tela. Depois do filme, vamos bater um papo sobre acessibilidade no cinema. A entrada é gratuita, com pipoca e refrigerante! As vagas são limitadas: faça sua inscrição e veja mais informações em iguale.com.br/crimesemcastigo. A confirmação chega por e-mail. No dia, chegue a partir das 9h30 para aproveitar com calma. Classificação indicativa: 16 anos. Venha viver essa experiência de cinema com a gente!"</p>
+      </div>
+    </details>
+  </dialog>
+
+  <!-- Vídeo sinopse acessível (abre pelo botão em "O filme") -->
+  <dialog id="video-sinopse" class="janela" aria-labelledby="titulo-video-sinopse" data-video-config="youtubeIdSinopse" data-video-titulo="Vídeo sinopse acessível de Crime Sem Castigo">
+    <div class="janela__topo">
+      <h2 id="titulo-video-sinopse" class="janela__titulo" tabindex="-1">Vídeo sinopse acessível</h2>
+      <button type="button" class="janela__fechar" data-video-fechar>Fechar<span class="visualmente-oculto"> o vídeo sinopse</span></button>
+    </div>
+    <p>Assista à sinopse do filme com recursos de acessibilidade. <span class="marcador">[PREENCHER: recursos do vídeo sinopse, por exemplo Libras e legendas]</span></p>
+    <div class="video" data-video>
+      <button type="button" class="video__capa" data-video-capa>
+        <img class="video__imagem" src="assets/img/cartaz/og-crime-sem-castigo-1200x630.jpg" width="1200" height="630" alt="">
+        <span class="video__rotulo"><span class="video__play" aria-hidden="true"></span>Reproduzir o vídeo sinopse</span>
+      </button>
+      <p class="marcador" data-video-pendente>[PREENCHER: ID do vídeo sinopse]</p>
+    </div>
+    <details class="detalhe">
+      <summary>Descrição do vídeo (audiodescrição em texto)</summary>
+      <div class="detalhe__conteudo">
+        <p><span class="marcador">[PREENCHER: descrição do vídeo sinopse em texto]</span></p>
       </div>
     </details>
   </dialog>

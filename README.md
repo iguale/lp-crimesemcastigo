@@ -157,7 +157,10 @@ Os PNGs originais das camadas (de 8 a 19 MB cada) foram convertidos e tirados da
 - Ícones de AD, LSE e Libras: PNGs oficiais enviados pela Iguale (o fundo branco virou transparente) e usados como máscara (ganham a cor do contexto e funcionam nos modos de contraste).
 - Logos da Iguale e do Espaço Petrobras de Cinema juntos no rodapé, fora dos grupos "Uma produção" e "Realização".
 - Crédito "Os recursos de acessibilidade desta sessão foram produzidos pela Iguale." abaixo dos cards de recurso.
-- Ilustração decorativa (balde de pipoca listrado e ingresso, SVG no próprio HTML) ao lado da inscrição, só a partir de telas médias.
+- Ilustração "Cinema Snacks and Accessible Tickets" (enviada pela Iguale) ao lado da inscrição, só a partir de telas médias e escondida nos modos alto contraste e preto e amarelo.
+- Botão "Vídeo sinopse acessível" em "O filme", que abre uma janela igual à do vídeo convite.
+- Cards de recurso: box vermelho com o ícone em branco e o nome do recurso abaixo.
+- Crédito da Iguale em destaque: faixa vermelha com o logo e o texto em fonte maior.
 
 **Decisões sobre o cartaz:**
 
@@ -178,9 +181,11 @@ Todos os marcadores aparecem visíveis na página, com borda tracejada, até ser
 | Aprovação do logo do Espaço Petrobras de Cinema na régua (o arquivo já está no rodapé) e versão maior ou em SVG desse logo (o enviado tem 57 px de altura) | `assets/img/logos/espaco-petrobras-cinema.*` | P05 |
 | Regras de aplicação da régua de logos | `index.html`, rodapé (`.rodape__regras`); ajustar ordem, rótulos "Uma produção"/"Realização" e tamanhos | P05 |
 | ID do vídeo no YouTube | `assets/js/config.js` → `youtubeId` | V1 |
+| Vídeo sinopse acessível: ID no YouTube, recursos do vídeo e descrição em texto | `assets/js/config.js` → `youtubeIdSinopse`; `index.html`, janela `#video-sinopse` | — |
+| Versão da ilustração de pipoca e ingressos com transparência de verdade (o PNG enviado tinha o quadriculado gravado na imagem; o fundo foi removido automaticamente e a ponta direita da tampa do copo perdeu um pouco do contorno) | `assets/img/ilustracoes/` | — |
 | Autodescrição do(a) intérprete | `index.html`, seção "Convite em vídeo" (Anexo B) | V1 |
 | Personagens: nome, descritivo, intérprete e imagem | `index.html`, seção "O filme" → 3 cards `.personagem`; as camadas em `assets/img/cartaz/camadas/` podem servir de imagem | P22 |
-| Como chegar de transporte público | `index.html`, seção "Local" (a linha de acesso e banheiro acessível foi retirada a pedido) | P03 |
+| Confirmar com o cinema o trecho "Como chegar de transporte público" (metrô Consolação, Linha 2-Verde, a cerca de 250 m; Paulista, Linha 4-Amarela, ligada por corredor). Fonte: [Radar 360](https://radar360.com.br/cine-espaco-augusta/) | `index.html`, seção "Local" | P03 |
 | Capacidade da sala 1 (241 lugares e 5 espaços) | `index.html`, seção "Local" | P03 |
 | Contato para dúvidas (e-mail e/ou WhatsApp) | `index.html` (Contato), `acessibilidade/index.html` (Fale com a gente), `assets/js/inscricao.js` (constante `CONTATO`, usada nos estados "CPF duplicado" e "erro"), e-mail de confirmação | P11 |
 | Aviso de privacidade (texto final e link) | `inscricao/index.html`, checkbox `consentimento_lgpd` | P16 |

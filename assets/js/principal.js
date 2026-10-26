@@ -1,5 +1,5 @@
 /*
- * Comportamentos comuns: menu no celular, vídeo convite sob clique,
+ * Comportamentos comuns: menu no celular, vídeos convite e sinopse sob clique,
  * inscrições abertas/encerradas, link do iCom, <details> por âncora e Google Tag Manager.
  * Usado nas três páginas; cada parte só age se o elemento existir.
  */
@@ -40,15 +40,17 @@
     atualizar();
   }
 
-  /* ---------- Vídeo convite: abre numa janela; o iframe só carrega depois do clique na capa ---------- */
-  function iniciarVideo() {
-    var janela = document.getElementById("video");
-    if (!janela) return;
+  /* ---------- Vídeos (convite e sinopse): cada um abre numa janela; o iframe só carrega depois do clique na capa ---------- */
+  function iniciarVideos() {
+    document.querySelectorAll("dialog[data-video-config]").forEach(iniciarJanelaDeVideo);
+  }
+
+  function iniciarJanelaDeVideo(janela) {
     var caixa = janela.querySelector("[data-video]");
     var capa = caixa.querySelector("[data-video-capa]");
     var pendente = caixa.querySelector("[data-video-pendente]");
     var titulo = janela.querySelector(".janela__titulo");
-    var id = (config.youtubeId || "").trim();
+    var id = (config[janela.getAttribute("data-video-config")] || "").trim();
     var origem = null;
 
     function abrir(ev) {
@@ -68,16 +70,17 @@
       if (origem) origem.focus();
     }
 
-    document.querySelectorAll("[data-video-abrir]").forEach(function (b) { b.addEventListener("click", abrir); });
+    document.querySelectorAll('[data-video-abrir="' + janela.id + '"]').forEach(function (b) { b.addEventListener("click", abrir); });
     janela.querySelector("[data-video-fechar]").addEventListener("click", fechar);
     janela.addEventListener("close", aoFechar);
     // clique no fundo escurecido, fora da caixa, também fecha
     janela.addEventListener("click", function (ev) { if (ev.target === janela) fechar(); });
 
     if (!id) {
+      var idPendente = janela.id + "-pendente";
       capa.setAttribute("aria-disabled", "true");
-      capa.setAttribute("aria-describedby", "video-pendente");
-      if (pendente) pendente.id = "video-pendente";
+      capa.setAttribute("aria-describedby", idPendente);
+      if (pendente) pendente.id = idPendente;
       return;
     }
     if (pendente) pendente.hidden = true;
@@ -87,7 +90,7 @@
       iframe.className = "video__iframe";
       iframe.src = "https://www.youtube-nocookie.com/embed/" + encodeURIComponent(id) +
         "?autoplay=1&rel=0&cc_load_policy=1&cc_lang_pref=pt&hl=pt-BR";
-      iframe.title = "Vídeo convite da Sessão Acessível de Crime Sem Castigo, com Libras e legendas";
+      iframe.title = janela.getAttribute("data-video-titulo");
       iframe.setAttribute("allow", "autoplay; encrypted-media; picture-in-picture; fullscreen");
       iframe.setAttribute("allowfullscreen", "");
       iframe.setAttribute("referrerpolicy", "strict-origin-when-cross-origin");
@@ -136,7 +139,7 @@
 
   function iniciar() {
     iniciarMenu();
-    iniciarVideo();
+    iniciarVideos();
     iniciarInscricoes();
     iniciarIcom();
     abrirDetalhesDaAncora();

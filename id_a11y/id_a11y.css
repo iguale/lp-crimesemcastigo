@@ -82,6 +82,9 @@ html.a11y-alto-contraste .video__imagem,
 html.a11y-preto-amarelo .video__imagem { opacity: 0.35; }
 html.a11y-alto-contraste .abertura__visual img,
 html.a11y-preto-amarelo .abertura__visual img { -webkit-mask-image: none !important; mask-image: none !important; }
+/* Ilustração com recorte feito sobre fundo claro: some quando o fundo vira preto */
+html.a11y-alto-contraste .inscricao__ilustracao,
+html.a11y-preto-amarelo .inscricao__ilustracao { display: none !important; }
 html.a11y-alto-contraste .armadilha,
 html.a11y-preto-amarelo .armadilha { position: absolute !important; }
 

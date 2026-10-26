@@ -15,6 +15,10 @@ window.CSC_CONFIG = {
   // [PREENCHER: ID do vídeo · pendência V1]
   youtubeId: "",
 
+  // ID do vídeo sinopse acessível no YouTube (botão "Vídeo sinopse acessível", em "O filme").
+  // [PREENCHER: ID do vídeo sinopse]
+  youtubeIdSinopse: "",
+
   // Link do atendimento em Libras pelo iCom da Iguale.
   // [PREENCHER: link do iCom da Iguale]
   icomUrl: "",
