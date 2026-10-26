@@ -86,3 +86,52 @@ html.a11y-alto-contraste .armadilha,
 html.a11y-preto-amarelo .armadilha { position: absolute !important; }
 
 /* O widget do VLibras fica fora dos seletores acima e mantém o visual próprio. */
+
+/* ==========================================================================
+   Opções extras do painel "Acessibilidade"
+   ========================================================================== */
+
+/* Espaçamento do texto (valores da WCAG 1.4.12) */
+html.a11y-espacamento body :where(p, li, dd, dt, summary, label, legend, a, button, td, th, figcaption, span):not(.braille__celas):not(.braille__celas *) {
+  line-height: 1.8 !important;
+  letter-spacing: 0.12em !important;
+  word-spacing: 0.16em !important;
+}
+html.a11y-espacamento body :where(h1, h2, h3, h4) { line-height: 1.5 !important; letter-spacing: 0.08em !important; word-spacing: 0.16em !important; }
+html.a11y-espacamento body p { margin-bottom: 2em !important; }
+html.a11y-espacamento .secao__abertura,
+html.a11y-espacamento .rodape__lei { white-space: normal !important; }
+
+/* Fonte mais legível (Atkinson Hyperlegible, do Braille Institute) */
+html.a11y-fonte-legivel body :where(*):not(.braille__celas):not(.icone):not([vw]):not([vw] *) {
+  font-family: "Atkinson Hyperlegible", Verdana, Tahoma, sans-serif !important;
+}
+
+/* Destacar links e botões */
+html.a11y-links a { text-decoration: underline !important; text-decoration-thickness: 0.15em !important; text-underline-offset: 0.2em !important; }
+html.a11y-links:not(.a11y-alto-contraste):not(.a11y-preto-amarelo) a:not(.botao),
+html.a11y-links:not(.a11y-alto-contraste):not(.a11y-preto-amarelo) a:not(.botao) * {
+  background-color: #FFE45C !important;
+  color: #1E1C1A !important;
+  padding: 0 0.15em;
+  border-radius: 2px;
+}
+html.a11y-links :where(a, button, summary, select, input[type="checkbox"]) { outline: 3px dashed currentColor; outline-offset: 2px; }
+html.a11y-links :where(a, button, summary, select, input[type="checkbox"]):focus-visible { outline-style: solid; }
+
+/* Guia de leitura: faixa que acompanha o mouse e escurece o resto */
+.a11y-guia-faixa {
+  position: fixed;
+  z-index: 45;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4.5rem;
+  pointer-events: none;
+  border-top: 3px solid #F2EFE8;
+  border-bottom: 3px solid #F2EFE8;
+  box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.6);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .a11y-guia-faixa { transition: transform 60ms linear; }
+}

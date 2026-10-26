@@ -153,6 +153,7 @@ Os PNGs originais das camadas (de 8 a 19 MB cada) foram convertidos e tirados da
 - Selo "16" na cor da classificação indicativa de 16 anos e detalhe verde na "Entrada gratuita" (7,4:1 sobre o fundo).
 - Textos dos cards de recurso adaptados dos de Gramado.
 - Dúvidas frequentes sem as perguntas sobre acompanhantes, cadeira de rodas e o que levar no dia.
+- Painel "Acessibilidade" ampliado, em quatro grupos: **Leitura** (tamanho do texto, espaçar o texto pelos valores da WCAG 1.4.12, fonte mais legível com Atkinson Hyperlegible carregada só quando ativada, guia de leitura só em telas com mouse), **Cores** (contrastes e destacar links e botões), **Libras** (VLibras e iCom) e **Ajuda** (atalhos de teclado e "Restaurar tudo ao padrão"). As escolhas ficam no `localStorage` (`id_a11y_fonte`, `id_a11y_contraste`, `id_a11y_opcoes`).
 - Ícones de AD, LSE e Libras: PNGs oficiais enviados pela Iguale (o fundo branco virou transparente) e usados como máscara (ganham a cor do contexto e funcionam nos modos de contraste).
 - Logos da Iguale e do Espaço Petrobras de Cinema juntos no rodapé, fora dos grupos "Uma produção" e "Realização".
 - Crédito "Os recursos de acessibilidade desta sessão foram produzidos pela Iguale." abaixo dos cards de recurso.

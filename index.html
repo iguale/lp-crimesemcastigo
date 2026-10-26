@@ -380,11 +380,23 @@
     <div id="flutuante-painel" class="flutuante__painel" role="region" aria-labelledby="flutuante-titulo" hidden>
       <h2 id="flutuante-titulo" class="flutuante__titulo">Recursos de acessibilidade</h2>
       <div data-a11y-controles="painel"></div>
-      <div class="flutuante__grupo">
+      <div class="flutuante__grupo" role="group" aria-labelledby="flutuante-libras">
+        <h3 id="flutuante-libras" class="a11y-controles__titulo">Libras</h3>
         <button type="button" data-a11y-vlibras>Tradução para Libras (VLibras)</button>
         <a data-icom target="_blank" rel="noopener">Atendimento em Libras pelo iCom (abre em nova aba)</a>
         <span class="marcador" data-icom-pendente>[PREENCHER: link do iCom da Iguale]</span>
-        <a href="acessibilidade/">Acessibilidade desta página</a>
+      </div>
+      <div class="flutuante__grupo" role="group" aria-labelledby="flutuante-ajuda">
+        <h3 id="flutuante-ajuda" class="a11y-controles__titulo">Ajuda</h3>
+        <p class="a11y-controles__rotulo">Atalhos de teclado</p>
+        <ul class="flutuante__atalhos">
+          <li><kbd>Alt</kbd> + <kbd>1</kbd> ir para o conteúdo</li>
+          <li><kbd>Alt</kbd> + <kbd>2</kbd> ir para o menu</li>
+          <li><kbd>Esc</kbd> fechar menus e janelas</li>
+        </ul>
+        <p class="flutuante__nota">No Mac, use Option no lugar de Alt.</p>
+        <button type="button" class="flutuante__restaurar" data-a11y-restaurar>Restaurar tudo ao padrão</button>
+          <a href="acessibilidade/">Declaração de acessibilidade desta página</a>
       </div>
     </div>
   </div>
