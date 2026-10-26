@@ -87,30 +87,22 @@
     });
   });
 
-  /* ---------- Necessidade "Outra" mostra o campo "Conte qual" ---------- */
-  var outra = $("nec-outra");
-  var campoOutra = $("campo-necessidade-outra");
-  function atualizarOutra() { campoOutra.hidden = !outra.checked; }
-  outra.addEventListener("change", atualizarOutra);
-  atualizarOutra();
-
   /* ---------- Erros ---------- */
   // Campo do servidor -> elemento que recebe o foco e o erro
   var ALVOS = {
     nome: "nome", cpf: "cpf", email: "email", telefone: "telefone",
-    recursos: "recurso-ad", necessidades: "nec-cadeira", necessidade_outra: "necessidade_outra",
+    recursos: "recurso-ad",
     como_soube: "como_soube", consentimento_lgpd: "consentimento_lgpd", autorizacao_imagem_voz: "autorizacao_imagem_voz"
   };
   var ROTULOS = {
     nome: "Nome completo", cpf: "CPF", email: "E-mail", telefone: "Telefone com DDD",
-    recursos: "Recursos de acessibilidade", necessidades: "Necessidade de acesso", necessidade_outra: "Conte qual",
+    recursos: "Recursos de acessibilidade",
     como_soube: "Como você soube da sessão", consentimento_lgpd: "Uso dos dados",
     autorizacao_imagem_voz: "Autorização de imagem e voz"
   };
 
   function camposDo(nome) {
     if (nome === "recursos") return recursos;
-    if (nome === "necessidades") return Array.prototype.slice.call(form.querySelectorAll('input[name="necessidades"]'));
     var el = $(ALVOS[nome] || nome);
     return el ? [el] : [];
   }
@@ -191,9 +183,6 @@
     if (!recursos.some(function (r) { return r.checked; }))
       erros.push({ campo: "recursos", mensagem: "Marque pelo menos um recurso de acessibilidade ou a opção “Não preciso de recursos de acessibilidade”." });
 
-    if (outra.checked && !$("necessidade_outra").value.trim())
-      erros.push({ campo: "necessidade_outra", mensagem: "Conte qual é a sua necessidade de acesso." });
-
     if (!$("consentimento_lgpd").checked)
       erros.push({ campo: "consentimento_lgpd", mensagem: "Para concluir a inscrição, marque que concorda com o uso dos seus dados." });
 
@@ -220,7 +209,6 @@
     }
     var rec = marcados("recursos");
     if (rec.indexOf("nenhum") !== -1) rec = ["nenhum"];
-    var nec = marcados("necessidades");
     return {
       evento: config.evento || "crime-sem-castigo-2026-11-15",
       nome: $("nome").value.trim().replace(/\s+/g, " "),
@@ -228,8 +216,9 @@
       email: $("email").value.trim(),
       telefone: soNumeros($("telefone").value),
       recursos: rec,
-      necessidades: nec,
-      necessidade_outra: nec.indexOf("outra") !== -1 ? $("necessidade_outra").value.trim() : "",
+      // A pergunta sobre necessidade de acesso saiu do formulário; os campos seguem vazios para manter o contrato
+      necessidades: [],
+      necessidade_outra: "",
       como_soube: $("como_soube").value,
       consentimento_lgpd: $("consentimento_lgpd").checked,
       autorizacao_imagem_voz: $("autorizacao_imagem_voz").checked,

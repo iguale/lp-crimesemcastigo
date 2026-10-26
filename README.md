@@ -80,8 +80,7 @@ O exemplo é fictício e serve só para mostrar o formato.
 
 - `cpf` e `telefone` vão **só com números** (o front-end tira pontos, traços, parênteses e espaços).
 - `recursos`: um ou mais entre `ad`, `lse`, `libras`. Quando a pessoa marca "Não preciso de recursos de acessibilidade", vai `["nenhum"]`.
-- `necessidades`: zero ou mais entre `cadeira_de_rodas`, `mobilidade_reduzida`, `cao_guia`, `outra`. Pode ser `[]`.
-- `necessidade_outra`: texto livre (até 300 caracteres), preenchido só quando `necessidades` tem `outra`; senão, `""`.
+- `necessidades` e `necessidade_outra`: **a pergunta "Você tem alguma necessidade de acesso?" saiu do formulário**, então esses campos vão sempre como `[]` e `""`. Eles continuam no JSON para não quebrar o contrato; se o back-end preferir, podem ser retirados nos dois lados.
 - `como_soube`: `instagram`, `whatsapp`, `email`, `instituicao`, `indicacao`, `outro` ou `""` (não respondido).
 - `consentimento_lgpd` e `autorizacao_imagem_voz`: sempre `true` (o formulário não envia sem os dois marcados).
 - `enviado_em`: data e hora do navegador, em ISO 8601 com o fuso da pessoa.
