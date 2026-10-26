@@ -1,0 +1,260 @@
+<title>Convite – Sessão Acessível de Crime Sem Castigo</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+  /* Moldura da prévia (fora do e-mail): uma coluna central que imita um cliente de e-mail. O e-mail usa cores fixas, como no Mailchimp. */
+  :root {
+    --fundo: #E4E1DA;
+    --cartao: #FFFFFF;
+    --texto: #1E1C1A;
+    --texto-suave: #57514A;
+    --linha: #CFC9BE;
+    --foco: #1E1C1A;
+    --marca: #3A342E;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --fundo: #141311; --cartao: #23211E; --texto: #F2EFE8; --texto-suave: #B9B1A3; --linha: #3F3A34; --foco: #F2EFE8; --marca: #C9BCA4; color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --fundo: #141311; --cartao: #23211E; --texto: #F2EFE8; --texto-suave: #B9B1A3; --linha: #3F3A34; --foco: #F2EFE8; --marca: #C9BCA4; color-scheme: dark;
+  }
+  body { background: var(--fundo); color: var(--texto); font-family: Arial, Helvetica, sans-serif; font-size: 16px; line-height: 1.5; }
+  .moldura { max-width: 640px; margin: 0 auto; padding-block: 24px 48px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); display: grid; gap: 20px; }
+  .rotulo { margin: 0; font-size: 13px; font-weight: bold; letter-spacing: 0.06em; text-transform: uppercase; color: var(--texto-suave); }
+
+  /* Caixa de entrada simulada */
+  .caixa { background: var(--cartao); border: 1px solid var(--linha); border-radius: 8px; padding: 16px; display: grid; grid-template-columns: 44px 1fr; gap: 4px 12px; align-items: start; }
+  .caixa__avatar { grid-row: span 3; width: 44px; height: 44px; border-radius: 50%; background: var(--marca); color: var(--cartao); display: grid; place-items: center; font-weight: bold; font-size: 18px; }
+  .caixa__topo { display: flex; justify-content: space-between; gap: 8px; min-width: 0; }
+  .caixa__de { font-weight: bold; }
+  .caixa__hora { color: var(--texto-suave); font-size: 14px; white-space: nowrap; }
+  .caixa__assunto { font-weight: bold; min-width: 0; }
+  .caixa__pre { color: var(--texto-suave); font-size: 15px; min-width: 0; }
+  .caixa__responder { grid-column: 2; color: var(--texto-suave); font-size: 14px; margin-top: 6px; }
+
+  /* Controles da prévia */
+  .controles { display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; }
+  .controles fieldset { border: 0; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+  .controles legend { padding: 0; margin-bottom: 6px; font-size: 14px; color: var(--texto-suave); }
+  .controles label { display: inline-flex; align-items: center; gap: 6px; min-height: 44px; padding: 0 14px; border: 1px solid var(--linha); border-radius: 22px; background: var(--cartao); cursor: pointer; font-size: 15px; }
+  .controles input:checked + span { font-weight: bold; }
+  .controles label:has(input:checked) { border-color: var(--texto); box-shadow: inset 0 0 0 1px var(--texto); }
+  .controles input:focus-visible { outline: 2px solid var(--foco); outline-offset: 2px; }
+
+  .palco { display: flex; justify-content: center; }
+  .email-caixa { width: 100%; max-width: 600px; transition: max-width .2s; box-shadow: 0 1px 3px rgba(0,0,0,.18); }
+  .palco.celular .email-caixa { max-width: 360px; }
+  @media (prefers-reduced-motion: reduce) { .email-caixa { transition: none; } }
+
+  /* Simulação aproximada da inversão de cores do modo escuro (Gmail no celular) */
+  .palco.escuro .email-caixa { filter: invert(1) hue-rotate(180deg); }
+  .palco.escuro .email-caixa img { filter: invert(1) hue-rotate(180deg); }
+
+  /* Regras de celular do e-mail: as mesmas do @media do HTML de e-mail */
+  @media (max-width: 620px) {
+    .e-pad { padding-left: 20px !important; padding-right: 20px !important; }
+    .e-btn, .e-btn a { display: block !important; width: 100% !important; box-sizing: border-box; }
+  }
+  .palco.celular .e-pad { padding-left: 20px !important; padding-right: 20px !important; }
+  .palco.celular .e-btn, .palco.celular .e-btn a { display: block !important; width: 100% !important; box-sizing: border-box; }
+  .email-caixa a:focus-visible { outline: 3px solid #C9BCA4; outline-offset: 2px; }
+  .email-caixa .e-claro a:focus-visible { outline-color: #1E1C1A; }
+
+  /* Faixa e seção de arquivos */
+  .faixa { margin: 12px 0 0; padding: 14px 16px; border-radius: 6px; background: var(--marca); color: var(--cartao); font-weight: bold; text-align: center; }
+  .arquivos h2 { font-size: 22px; margin: 0 0 4px; text-wrap: balance; }
+  .arquivos > p { margin: 0 0 16px; color: var(--texto-suave); }
+  .arquivos ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+  .arquivo { background: var(--cartao); border: 1px solid var(--linha); border-radius: 8px; padding: 16px; display: grid; gap: 6px; min-width: 0; }
+  .arquivo__nome { font-family: "JetBrains Mono", Consolas, monospace; font-size: 15px; font-weight: bold; overflow-wrap: anywhere; }
+  .arquivo__meta { font-size: 14px; color: var(--texto-suave); font-variant-numeric: tabular-nums; }
+  .arquivo__alt { font-size: 14px; margin: 0; }
+  .arquivo a { color: var(--texto); font-weight: bold; display: inline-flex; align-items: center; min-height: 44px; }
+  .arquivo a:focus-visible { outline: 2px solid var(--foco); outline-offset: 2px; }
+  .arquivo--pendente { border-style: dashed; }
+  .mk { font-family: "JetBrains Mono", Consolas, monospace; font-size: 13px; }
+</style>
+
+<div class="moldura">
+  <p class="rotulo">Caixa de entrada (simulação)</p>
+  <div class="caixa" aria-label="Como o e-mail aparece na caixa de entrada">
+    <div class="caixa__avatar" aria-hidden="true">I</div>
+    <div class="caixa__topo"><span class="caixa__de">Iguale e Lapfilme</span><span class="caixa__hora">9:00</span></div>
+    <div class="caixa__assunto">Um convite para você: cinema acessível em 15/11</div>
+    <div class="caixa__pre">Crime Sem Castigo com audiodescrição, Libras e legendas descritivas. Entrada gratuita.</div>
+    <div class="caixa__responder">Responder para: <span class="mk">[PREENCHER: e-mail de resposta]</span></div>
+  </div>
+
+  <div class="controles">
+    <fieldset>
+      <legend>Largura</legend>
+      <label><input type="radio" name="largura" id="largura-600" value="600" checked><span>Computador (600 px)</span></label>
+      <label><input type="radio" name="largura" id="largura-360" value="360"><span>Celular (360 px)</span></label>
+    </fieldset>
+    <fieldset>
+      <legend>Cores</legend>
+      <label><input type="radio" name="cores" id="cores-normal" value="normal" checked><span>Normais</span></label>
+      <label><input type="radio" name="cores" id="cores-escuro" value="escuro"><span>Modo escuro com inversão (aproximação)</span></label>
+    </fieldset>
+  </div>
+
+  <p class="rotulo">E-mail</p>
+  <div class="palco" id="palco">
+  <div class="email-caixa" lang="pt-BR">
+  <!-- ===== Início do e-mail ===== -->
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="width:100%;max-width:600px;margin:0 auto;border-collapse:collapse;font-family:Arial,Helvetica,sans-serif;">
+
+    <!-- Bloco 1 · Imagem de topo -->
+    <tr><td style="background-color:#1E1C1A;padding:0;">
+      <a href="https://iguale.com.br/crimesemcastigo/?utm_source=mailchimp&amp;utm_medium=email&amp;utm_campaign=sessao-acessivel-csc" target="_blank" style="display:block;">
+        <img src="topo-1200.jpg" width="600" height="350" alt="“Crime Sem Castigo”, em letras brancas, com o S de “sem” em forma de raio vermelho. Ao lado, em tons sépia, o rosto sério de um homem de cabelo escuro, com camisa branca e gravata escura." style="display:block;width:100%;max-width:600px;height:auto;border:0;">
+      </a>
+    </td></tr>
+
+    <!-- Bloco 2 · Abertura -->
+    <tr><td class="e-pad" style="background-color:#1E1C1A;padding:32px 40px 40px;color:#F2EFE8;">
+      <p style="margin:0 0 8px;font-size:14px;line-height:1.5;font-weight:bold;letter-spacing:1px;color:#C9BCA4;">Lapfilme apresenta</p>
+      <h1 style="margin:0 0 16px;font-size:30px;line-height:1.2;font-weight:bold;color:#F2EFE8;">Sessão Acessível de Crime Sem Castigo</h1>
+      <p style="margin:0 0 20px;font-size:16px;line-height:1.5;font-weight:bold;color:#C9BCA4;">Domingo, 15 de novembro, às 10h · Espaço Petrobras de Cinema · São Paulo</p>
+      <p style="margin:0 0 28px;font-size:16px;line-height:1.5;color:#F2EFE8;">Olá! A Lapfilme e a Iguale convidam você para uma sessão de cinema com recursos de acessibilidade abertos para todo o público: audiodescrição, Libras e legendas descritivas. A entrada é gratuita, com pipoca e refrigerante.</p>
+      <table role="presentation" cellpadding="0" cellspacing="0" border="0" class="e-btn" style="border-collapse:separate;">
+        <tr><td style="background-color:#C9BCA4;border-radius:4px;text-align:center;">
+          <a href="https://iguale.com.br/crimesemcastigo/inscricao/?utm_source=mailchimp&amp;utm_medium=email&amp;utm_campaign=sessao-acessivel-csc" target="_blank" style="display:inline-block;padding:14px 28px;font-size:16px;line-height:1.5;font-weight:bold;color:#1E1C1A;text-decoration:none;">Fazer minha inscrição gratuita</a>
+        </td></tr>
+      </table>
+      <p style="margin:12px 0 0;font-size:14px;line-height:1.5;color:#C9BCA4;">As vagas são limitadas.</p>
+    </td></tr>
+
+    <!-- Bloco 3 · O filme -->
+    <tr><td class="e-pad e-claro" style="background-color:#F2EFE8;padding:40px 40px 32px;color:#1E1C1A;">
+      <h2 style="margin:0 0 12px;font-size:22px;line-height:1.3;font-weight:bold;color:#1E1C1A;">O filme</h2>
+      <p style="margin:0 0 16px;font-size:16px;line-height:1.5;color:#1E1C1A;">Baseado em fatos reais, Crime Sem Castigo revela a vida clandestina do médico nazista Josef Mengele nos 18 anos em que viveu no Brasil, como um fugitivo movido por um objetivo: sobreviver a qualquer custo.</p>
+      <p style="margin:0 0 16px;font-size:14px;line-height:1.5;color:#5E5548;">Direção de Luiz Alberto Pereira · 105 minutos · Classificação indicativa: 16 anos</p>
+      <p style="margin:0;font-size:16px;line-height:1.5;"><a href="https://iguale.com.br/crimesemcastigo/?utm_source=mailchimp&amp;utm_medium=email&amp;utm_campaign=sessao-acessivel-csc#o-filme" target="_blank" style="color:#1E1C1A;text-decoration:underline;font-weight:bold;">Leia a sinopse completa e a ficha técnica na página da sessão</a></p>
+    </td></tr>
+
+    <!-- Divisor -->
+    <tr><td class="e-pad" style="background-color:#F2EFE8;padding:0 40px;"><div style="border-top:1px solid #5E5548;font-size:0;line-height:0;">&nbsp;</div></td></tr>
+
+    <!-- Bloco 4 · Acessibilidade -->
+    <tr><td class="e-pad e-claro" style="background-color:#F2EFE8;padding:32px 40px;color:#1E1C1A;">
+      <h2 style="margin:0 0 12px;font-size:22px;line-height:1.3;font-weight:bold;color:#1E1C1A;">Acessibilidade aberta para todo o público</h2>
+      <p style="margin:0 0 12px;font-size:16px;line-height:1.5;color:#1E1C1A;">Os recursos ficam abertos para todo mundo, direto na tela e no som da sala:</p>
+      <ul style="margin:0 0 16px;padding-left:24px;font-size:16px;line-height:1.5;color:#1E1C1A;">
+        <li style="margin:0 0 8px;"><strong>Audiodescrição:</strong> a narração das imagens e do contexto visual do filme sai no som da sala. <span style="display:inline-block;padding:0 6px;border:1px dashed #1E1C1A;background-color:#C9BCA4;color:#1E1C1A;font-size:14px;">[CONFIRMAR: AD aberta no som da sala – P25]</span></li>
+        <li style="margin:0 0 8px;"><strong>Legendas descritivas:</strong> falas, ruídos, músicas e outros sons aparecem em legendas na tela.</li>
+        <li style="margin:0;"><strong>Libras:</strong> a interpretação em Língua Brasileira de Sinais aparece na tela.</li>
+      </ul>
+      <p style="margin:0 0 16px;font-size:16px;line-height:1.5;color:#1E1C1A;">Depois do filme, vamos bater um papo sobre acessibilidade no cinema. A abertura e o bate-papo têm interpretação em Libras e audiodescrição ao vivo, e a equipe da Iguale recebe o público com atendimento em Libras.</p>
+      <p style="margin:0;font-size:14px;line-height:1.5;color:#5E5548;">Os recursos de acessibilidade desta sessão foram produzidos pela Iguale.</p>
+    </td></tr>
+
+    <!-- Divisor -->
+    <tr><td class="e-pad" style="background-color:#F2EFE8;padding:0 40px;"><div style="border-top:1px solid #5E5548;font-size:0;line-height:0;">&nbsp;</div></td></tr>
+
+    <!-- Bloco 5 · Serviço -->
+    <tr><td class="e-pad e-claro" style="background-color:#F2EFE8;padding:32px 40px 40px;color:#1E1C1A;">
+      <h2 style="margin:0 0 12px;font-size:22px;line-height:1.3;font-weight:bold;color:#1E1C1A;">Anote na agenda</h2>
+      <p style="margin:0 0 8px;font-size:16px;line-height:1.5;color:#1E1C1A;">📅 Domingo, 15 de novembro de 2026</p>
+      <p style="margin:0 0 8px;font-size:16px;line-height:1.5;color:#1E1C1A;">⌚ A casa abre às 9h30, e a sessão começa às 10h. Depois do filme, bate-papo de cerca de 30 minutos.</p>
+      <p style="margin:0 0 8px;font-size:16px;line-height:1.5;color:#1E1C1A;">📍 Espaço Petrobras de Cinema, sala 1 – Rua Augusta, 1475 – Consolação, São Paulo (SP)</p>
+      <p style="margin:0 0 8px;font-size:16px;line-height:1.5;color:#1E1C1A;">🎟️ Entrada gratuita, com inscrição prévia e combo de pipoca e refrigerante.</p>
+      <p style="margin:0 0 16px;font-size:16px;line-height:1.5;color:#1E1C1A;">Classificação indicativa: 16 anos.</p>
+      <p style="margin:0 0 16px;font-size:16px;line-height:1.5;color:#1E1C1A;">A sala tem espaços reservados para pessoas em cadeira de rodas. Se você usa cadeira de rodas, informe na inscrição para a equipe organizar o seu lugar.</p>
+      <p style="margin:0;font-size:16px;line-height:1.5;"><a href="https://iguale.com.br/crimesemcastigo/?utm_source=mailchimp&amp;utm_medium=email&amp;utm_campaign=sessao-acessivel-csc#local" target="_blank" style="color:#1E1C1A;text-decoration:underline;font-weight:bold;">Veja como chegar de transporte público na página da sessão</a></p>
+    </td></tr>
+
+    <!-- Bloco 6 · Inscrição (destaque em sépia escuro) -->
+    <tr><td class="e-pad" style="background-color:#3A342E;padding:40px 40px 44px;color:#F2EFE8;">
+      <img src="pipoca-ingressos-480.png" width="200" height="166" alt="" style="display:block;width:200px;max-width:100%;height:auto;border:0;margin:0 auto 24px;">
+      <h2 style="margin:0 0 12px;font-size:22px;line-height:1.3;font-weight:bold;color:#F2EFE8;">Como garantir sua vaga</h2>
+      <ol style="margin:0 0 28px;padding-left:24px;font-size:16px;line-height:1.5;color:#F2EFE8;">
+        <li style="margin:0 0 8px;">Acesse a página da sessão e preencha o formulário.</li>
+        <li style="margin:0 0 8px;">Cada pessoa faz a própria inscrição, inclusive acompanhantes.</li>
+        <li style="margin:0;">Você recebe a confirmação por e-mail. Se não encontrar, confira a caixa de spam.</li>
+      </ol>
+      <table role="presentation" cellpadding="0" cellspacing="0" border="0" class="e-btn" style="border-collapse:separate;">
+        <tr><td style="background-color:#C9BCA4;border-radius:4px;text-align:center;">
+          <a href="https://iguale.com.br/crimesemcastigo/inscricao/?utm_source=mailchimp&amp;utm_medium=email&amp;utm_campaign=sessao-acessivel-csc" target="_blank" style="display:inline-block;padding:14px 28px;font-size:16px;line-height:1.5;font-weight:bold;color:#1E1C1A;text-decoration:none;">Fazer minha inscrição gratuita</a>
+        </td></tr>
+      </table>
+    </td></tr>
+
+    <!-- Bloco 7 · Compartilhar -->
+    <tr><td class="e-pad e-claro" style="background-color:#F2EFE8;padding:40px 40px;color:#1E1C1A;">
+      <h2 style="margin:0 0 12px;font-size:22px;line-height:1.3;font-weight:bold;color:#1E1C1A;">Conhece alguém que vai gostar?</h2>
+      <p style="margin:0;font-size:16px;line-height:1.5;color:#1E1C1A;">Encaminhe este convite para amigos, familiares, colegas e para a instituição ou associação de que você participa. Para compartilhar, use o endereço iguale.com.br/crimesemcastigo.</p>
+    </td></tr>
+
+    <!-- Bloco 8 · Régua de logos -->
+    <tr><td style="background-color:#1E1C1A;padding:16px 0 0;">
+      <img src="regua-logos-1200.png" width="600" height="176" alt="Uma produção Lapfilme. Governo do Estado de São Paulo – Secretaria da Cultura, Economia e Indústria Criativas. Realização: Lei Paulo Gustavo e Ministério da Cultura. Iguale. Espaço Petrobras de Cinema." style="display:block;width:100%;max-width:600px;height:auto;border:0;">
+    </td></tr>
+    <tr><td class="e-pad" style="background-color:#1E1C1A;padding:8px 40px 28px;color:#C9BCA4;">
+      <p style="margin:0 0 12px;"><span style="display:inline-block;padding:0 6px;border:1px dashed #1E1C1A;background-color:#C9BCA4;color:#1E1C1A;font-size:14px;">[CONFIRMAR: regras de aplicação da régua – P05]</span></p>
+      <p style="margin:0;font-size:14px;line-height:1.5;color:#C9BCA4;">Produzido com recursos da Lei Paulo Gustavo – Governo Federal, Ministério da Cultura e Governo do Estado de São Paulo, por meio da Secretaria da Cultura, Economia e Indústria Criativas.</p>
+    </td></tr>
+
+    <!-- Bloco 9 · Rodapé -->
+    <tr><td class="e-pad" style="background-color:#1E1C1A;padding:0 40px;"><div style="border-top:1px solid #5E5548;font-size:0;line-height:0;">&nbsp;</div></td></tr>
+    <tr><td class="e-pad" style="background-color:#1E1C1A;padding:28px 40px 36px;color:#F2EFE8;">
+      <p style="margin:0 0 8px;font-size:16px;line-height:1.5;color:#F2EFE8;">Dúvidas? Fale com a gente: <span style="display:inline-block;padding:0 6px;border:1px dashed #1E1C1A;background-color:#C9BCA4;color:#1E1C1A;font-size:14px;">[PREENCHER: e-mail e/ou WhatsApp – P11]</span></p>
+      <p style="margin:0 0 24px;font-size:16px;line-height:1.5;color:#F2EFE8;"><a href="https://www.instagram.com/iguale_acessibilidade/" target="_blank" style="color:#F2EFE8;text-decoration:underline;">Siga a Iguale no Instagram: @iguale_acessibilidade</a></p>
+      <p style="margin:0 0 8px;font-size:14px;line-height:1.5;color:#C9BCA4;">Você recebeu este e-mail porque <span style="display:inline-block;padding:0 6px;border:1px dashed #1E1C1A;background-color:#C9BCA4;color:#1E1C1A;font-size:14px;">[PREENCHER: motivo – por exemplo, acompanha os projetos da Iguale]</span>.</p>
+      <p style="margin:0 0 8px;font-size:14px;line-height:1.5;color:#C9BCA4;">Iguale · Rua Girassol, 34, conjunto 73/74, São Paulo (SP)</p>
+      <p style="margin:0 0 20px;font-size:14px;line-height:1.5;color:#C9BCA4;"><a href="#descadastro" style="color:#C9BCA4;text-decoration:underline;">Não quer mais receber nossos e-mails? Cancele a inscrição</a></p>
+      <p style="margin:0;font-size:13px;line-height:1.5;color:#C9BCA4;border:1px dashed #5E5548;padding:8px 12px;text-align:center;">Selo do Mailchimp (inserido automaticamente pelo plano gratuito)</p>
+    </td></tr>
+
+  </table>
+  <!-- ===== Fim do e-mail ===== -->
+  </div>
+  </div>
+
+  <p class="faixa">Fim do e-mail · Arquivos para o Mailchimp</p>
+
+  <section class="arquivos" aria-labelledby="titulo-arquivos">
+    <h2 id="titulo-arquivos">Arquivos para o Mailchimp</h2>
+    <p>Cada link abre o arquivo em uma nova aba. Para baixar, use “Salvar imagem como…”.</p>
+    <ul>
+      <li class="arquivo">
+        <span class="arquivo__nome">topo-1200.jpg</span>
+        <span class="arquivo__meta">Bloco 1 · 1200 × 700 px, exibida a 600 px · JPG · 57 KB · link: página da sessão</span>
+        <p class="arquivo__alt"><strong>Texto alternativo:</strong> “Crime Sem Castigo”, em letras brancas, com o S de “sem” em forma de raio vermelho. Ao lado, em tons sépia, o rosto sério de um homem de cabelo escuro, com camisa branca e gravata escura.</p>
+        <a href="topo-1200.jpg" target="_blank">Abrir topo-1200.jpg (abre em nova aba)</a>
+      </li>
+      <li class="arquivo">
+        <span class="arquivo__nome">regua-logos-1200.png</span>
+        <span class="arquivo__meta">Bloco 8 · 1200 × 352 px, exibida a 600 px · PNG · 30 KB · sem link</span>
+        <p class="arquivo__alt"><strong>Texto alternativo:</strong> Uma produção Lapfilme. Governo do Estado de São Paulo – Secretaria da Cultura, Economia e Indústria Criativas. Realização: Lei Paulo Gustavo e Ministério da Cultura. Iguale. Espaço Petrobras de Cinema. <span class="mk">[CONFIRMAR: regras de aplicação da régua – P05]</span></p>
+        <a href="regua-logos-1200.png" target="_blank">Abrir regua-logos-1200.png (abre em nova aba)</a>
+      </li>
+      <li class="arquivo">
+        <span class="arquivo__nome">pipoca-ingressos-480.png</span>
+        <span class="arquivo__meta">Bloco 6 · 480 × 399 px, exibida a 200 px · PNG · 43 KB · sem link</span>
+        <p class="arquivo__alt"><strong>Texto alternativo:</strong> vazio (imagem decorativa).</p>
+        <a href="pipoca-ingressos-480.png" target="_blank">Abrir pipoca-ingressos-480.png (abre em nova aba)</a>
+      </li>
+      <li class="arquivo arquivo--pendente">
+        <span class="arquivo__nome">texto-simples.txt</span>
+        <span class="arquivo__meta">Versão em texto simples · entra na próxima etapa</span>
+      </li>
+    </ul>
+  </section>
+</div>
+
+<script>
+  document.documentElement.lang = 'pt-BR';
+  (function () {
+    var palco = document.getElementById('palco');
+    function aplicar() {
+      var largura = document.querySelector('input[name="largura"]:checked').value;
+      var cores = document.querySelector('input[name="cores"]:checked').value;
+      palco.classList.toggle('celular', largura === '360');
+      palco.classList.toggle('escuro', cores === 'escuro');
+    }
+    document.querySelectorAll('.controles input').forEach(function (i) { i.addEventListener('change', aplicar); });
+    aplicar();
+  })();
+</script>
