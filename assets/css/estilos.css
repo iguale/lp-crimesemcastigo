@@ -650,8 +650,9 @@ main:focus-visible, section:focus-visible, nav:focus-visible, [tabindex="-1"]:fo
   display: grid;
   grid-template-columns: minmax(0, 1fr);
   gap: 0 1.5rem;
-  padding: 0.6rem 0;
+  padding: 0.5rem 0;
   border-top: 1px solid var(--linha);
+  align-content: start;
 }
 .ficha dt { font-weight: 700; color: var(--areia); }
 .ficha dd { margin: 0; }
@@ -660,11 +661,14 @@ main:focus-visible, section:focus-visible, nav:focus-visible, [tabindex="-1"]:fo
 .filme__cartaz figcaption { margin-top: 0.5rem; font-size: 0.9375rem; color: var(--texto-suave); }
 
 @media (min-width: 40em) {
-  .ficha > div { grid-template-columns: 12rem minmax(0, 1fr); }
+  /* Ficha compacta: dois itens por linha, rótulo acima do valor; elenco na linha inteira */
+  .ficha { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 1.5rem; }
+  .ficha .ficha__elenco { grid-column: 1 / -1; }
 }
 @media (min-width: 56em) {
-  .filme { grid-template-columns: minmax(0, 1fr) 22rem; align-items: start; }
-  .filme__texto .subtitulo:first-of-type { margin-top: 2rem; }
+  .filme { grid-template-columns: minmax(0, 1fr) 28rem; align-items: start; gap: 3rem; }
+  .filme__cartaz img { max-width: none; }
+  .filme__texto .subtitulo:first-of-type { margin-top: 1.5rem; }
 }
 
 .personagens {

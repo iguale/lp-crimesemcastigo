@@ -184,7 +184,7 @@ Todos os marcadores aparecem visíveis na página, com borda tracejada, até ser
 | Vídeo sinopse acessível: ID no YouTube, recursos do vídeo e descrição em texto | `assets/js/config.js` → `youtubeIdSinopse`; `index.html`, janela `#video-sinopse` | — |
 | Versão da ilustração de pipoca e ingressos com transparência de verdade (o PNG enviado tinha o quadriculado gravado na imagem; o fundo foi removido automaticamente e a ponta direita da tampa do copo perdeu um pouco do contorno) | `assets/img/ilustracoes/` | — |
 | Autodescrição do(a) intérprete | `index.html`, seção "Convite em vídeo" (Anexo B) | V1 |
-| Personagens: nome, descritivo, intérprete e imagem | `index.html`, seção "O filme" → 3 cards `.personagem`; as camadas em `assets/img/cartaz/camadas/` podem servir de imagem | P22 |
+| Personagens: nome, descritivo, intérprete e imagem. **O bloco "Personagens principais" está fora da página por enquanto** (guardado num comentário HTML em "O filme"; para voltar, é só tirar o comentário) | `index.html`, seção "O filme" → 3 cards `.personagem`; as camadas em `assets/img/cartaz/camadas/` podem servir de imagem | P22 |
 | Confirmar com o cinema o trecho "Como chegar de transporte público" (metrô Consolação, Linha 2-Verde, a cerca de 250 m; Paulista, Linha 4-Amarela, ligada por corredor). Fonte: [Radar 360](https://radar360.com.br/cine-espaco-augusta/) | `index.html`, seção "Local" | P03 |
 | Capacidade da sala 1 (241 lugares e 5 espaços) | `index.html`, seção "Local" | P03 |
 | Contato para dúvidas (e-mail e/ou WhatsApp) | `index.html` (Contato), `acessibilidade/index.html` (Fale com a gente), `assets/js/inscricao.js` (constante `CONTATO`, usada nos estados "CPF duplicado" e "erro"), e-mail de confirmação | P11 |
