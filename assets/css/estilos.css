@@ -772,7 +772,9 @@ main:focus-visible, section:focus-visible, nav:focus-visible, [tabindex="-1"]:fo
 /* Local */
 .local__nome { font-family: var(--fonte-titulo); font-size: 1.5rem; letter-spacing: 0.03em; margin-bottom: 0.25rem; }
 .local__endereco { font-size: 1.1875rem; }
-.local__transporte { max-width: 46rem; }
+.lista-transporte { margin: 0 0 1.25rem; padding: 0; list-style: none; }
+.lista-transporte li { padding: 0.6rem 0; border-top: 1px solid var(--linha); }
+.lista-transporte li:last-child { border-bottom: 1px solid var(--linha); }
 .link-seta { font-weight: 700; }
 .lista-local { padding: 0; list-style: none; }
 .lista-local li {
