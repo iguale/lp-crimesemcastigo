@@ -160,7 +160,7 @@ Os PNGs originais das camadas (de 8 a 19 MB cada) foram convertidos e tirados da
 - Ilustração "Cinema Snacks and Accessible Tickets" (enviada pela Iguale) ao lado da inscrição, só a partir de telas médias e escondida nos modos alto contraste e preto e amarelo.
 - Botão "Vídeo sinopse acessível" em "O filme", que abre uma janela igual à do vídeo convite.
 - Cards de recurso: box vermelho com o ícone em branco e o nome do recurso abaixo.
-- Crédito da Iguale em destaque: faixa vermelha com o logo e o texto em fonte maior.
+- Crédito da Iguale em destaque: logo da Iguale ao lado do texto em fonte maior, sem fundo.
 
 **Decisões sobre o cartaz:**
 
