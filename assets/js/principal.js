@@ -116,6 +116,17 @@
     document.querySelectorAll("[data-icom-pendente]").forEach(function (m) { m.hidden = !!url; });
   }
 
+  /* ---------- Links do MovieReading nas lojas: viram link quando a URL está no config ---------- */
+  function iniciarLojas() {
+    var todas = true;
+    document.querySelectorAll("[data-loja]").forEach(function (link) {
+      var url = (config[link.getAttribute("data-loja")] || "").trim();
+      if (url) link.href = url;
+      else todas = false;
+    });
+    document.querySelectorAll("[data-loja-pendente]").forEach(function (m) { m.hidden = todas; });
+  }
+
   /* ---------- Abre o <details> quando a âncora aponta para dentro dele ---------- */
   function abrirDetalhesDaAncora() {
     if (!location.hash) return;
@@ -123,6 +134,25 @@
     try { alvo = document.querySelector(location.hash); } catch (e) { return; }
     var detalhe = alvo && alvo.closest("details");
     if (detalhe) detalhe.open = true;
+  }
+
+  /* ---------- Âncora no endereço (ex.: #audiodescricao-app, usada no e-mail marketing) ----------
+     As fontes e as imagens mudam a altura da página depois da primeira rolagem;
+     quando tudo carrega, rola de novo até o alvo, se a pessoa ainda não tiver rolado. */
+  function corrigirAncoraInicial() {
+    if (!location.hash) return;
+    var alvo;
+    try { alvo = document.querySelector(location.hash); } catch (e) { return; }
+    if (!alvo) return;
+    var rolouSozinha = false;
+    function marcar() { rolouSozinha = true; }
+    ["wheel", "touchstart", "keydown"].forEach(function (t) { window.addEventListener(t, marcar, { once: true, passive: true }); });
+    function ir() { if (!rolouSozinha) alvo.scrollIntoView({ block: "start", behavior: "instant" }); }
+    var fontes = document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve();
+    fontes.then(function () {
+      if (document.readyState === "complete") ir();
+      else window.addEventListener("load", ir, { once: true });
+    });
   }
 
   /* ---------- Google Tag Manager (só se o ID estiver preenchido) ---------- */
@@ -142,7 +172,9 @@
     iniciarVideos();
     iniciarInscricoes();
     iniciarIcom();
+    iniciarLojas();
     abrirDetalhesDaAncora();
+    corrigirAncoraInicial();
     window.addEventListener("hashchange", abrirDetalhesDaAncora);
     iniciarGtm();
   }

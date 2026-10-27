@@ -41,7 +41,6 @@ html {
   scroll-padding-bottom: 5rem; /* o botão fixo "Acessibilidade" não cobre o elemento em foco */
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
-  scroll-behavior: smooth;
 }
 
 body {
@@ -504,7 +503,9 @@ main:focus-visible, section:focus-visible, nav:focus-visible, [tabindex="-1"]:fo
 }
 
 /* ---------- Seções ---------- */
-.secao { padding: var(--espaco) 0; }
+.secao { padding: var(--espaco) 0; scroll-margin-top: 0; }
+[id] { scroll-margin-top: 1rem; }
+.secao[id] { scroll-margin-top: 0; }
 .secao--sepia { background: rgba(58, 52, 46, 0.72); }
 .secao--destaque {
   --foco: var(--grafite);
@@ -517,8 +518,7 @@ main:focus-visible, section:focus-visible, nav:focus-visible, [tabindex="-1"]:fo
 .secao--destaque .aviso-encerradas { border-color: var(--grafite); }
 .secao__interno { max-width: var(--largura); margin: 0 auto; padding: 0 1rem; }
 .secao__interno--estreito > * { max-width: var(--largura-estreita); }
-.secao__abertura { font-size: 1.25rem; }
-@media (min-width: 72em) { .secao__abertura { white-space: nowrap; } }
+.secao__abertura { font-size: 1.25rem; max-width: 60rem; }
 
 /* Vídeo */
 .video { margin: 1.5rem 0; }
@@ -721,6 +721,36 @@ main:focus-visible, section:focus-visible, nav:focus-visible, [tabindex="-1"]:fo
 .recurso__selo .icone { width: 1.375rem; height: 1.375rem; }
 .recurso__selo--ad .icone, .recurso__selo--lse .icone { width: 3rem; height: 1.25rem; }
 .recurso p { color: var(--sepia-escuro); margin: 0; }
+
+/* Como usar a audiodescrição pelo MovieReading (âncora do e-mail marketing) */
+.ad-app {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  border-left: 4px solid var(--vermelho);
+  border-radius: var(--raio);
+  background: rgba(30, 28, 26, 0.6);
+  scroll-margin-top: 1rem;
+}
+.ad-app .subtitulo { margin-top: 0; }
+.passos { counter-reset: passo; margin: 0; padding: 0; list-style: none; display: grid; gap: 1rem; }
+.passos > li { counter-increment: passo; display: grid; grid-template-columns: 2.25rem minmax(0, 1fr); gap: 0 1rem; align-items: start; }
+.passos > li::before {
+  content: counter(passo);
+  display: grid;
+  place-items: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  background: var(--vermelho);
+  color: var(--branco);
+  font-family: var(--fonte-titulo);
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+.passos > li > * { grid-column: 2; }
+.passos p { margin: 0.35rem 0 0; font-size: 1.125rem; }
+.passos__lojas { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 1.25rem; }
+.passos__lojas a { display: inline-flex; align-items: center; min-height: 2.75rem; font-weight: 700; }
 
 /* Crédito da Iguale em destaque */
 .credito-iguale {
@@ -1013,7 +1043,6 @@ kbd {
 
 /* ---------- Movimento reduzido ---------- */
 @media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;

@@ -102,7 +102,6 @@ html.a11y-espacamento body :where(p, li, dd, dt, summary, label, legend, a, butt
 }
 html.a11y-espacamento body :where(h1, h2, h3, h4) { line-height: 1.5 !important; letter-spacing: 0.08em !important; word-spacing: 0.16em !important; }
 html.a11y-espacamento body p { margin-bottom: 2em !important; }
-html.a11y-espacamento .secao__abertura,
 html.a11y-espacamento .rodape__lei { white-space: normal !important; }
 
 /* Fonte mais legível (Atkinson Hyperlegible, do Braille Institute) */

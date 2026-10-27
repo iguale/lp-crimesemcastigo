@@ -30,6 +30,7 @@ python3 -m http.server 8000
 | `endpoint` | URL do back-end que recebe as inscrições. `"mock"` simula as respostas | `"mock"` · `[PREENCHER]` (P09) |
 | `evento` | identificador enviado no campo `evento` | `"crime-sem-castigo-2026-11-15"` |
 | `youtubeId` | só o ID do vídeo convite no YouTube | `""` · `[PREENCHER]` (V1) |
+| `appStoreUrl`, `googlePlayUrl` | links do app MovieReading nas lojas, no bloco "Como usar a audiodescrição pelo MovieReading" (`#audiodescricao-app`). Vazios, o texto dos links aparece sem link, com o marcador ao lado | `""` · `[PREENCHER]` |
 | `icomUrl` | link do atendimento em Libras pelo iCom da Iguale | `""` · `[PREENCHER]` |
 | `gtmId` | ID do Google Tag Manager (`GTM-XXXXXXX`). Vazio = sem analytics | `""` · `[PREENCHER]` |
 | `inscricoesAbertas` | `false` esconde os botões "Fazer inscrição" e o formulário, e mostra "As inscrições estão encerradas." | `true` |
@@ -189,6 +190,7 @@ Todos os marcadores aparecem visíveis na página, com borda tracejada, até ser
 | Contato para dúvidas (e-mail e/ou WhatsApp) | `index.html` (Contato), `acessibilidade/index.html` (Fale com a gente), `assets/js/inscricao.js` (constante `CONTATO`, usada nos estados "CPF duplicado" e "erro"), e-mail de confirmação | P11 |
 | Aviso de privacidade (texto final e link) | `inscricao/index.html`, checkbox `consentimento_lgpd` | P16 |
 | Autorização de imagem e voz (texto final, quem recebe, por quanto tempo) | `inscricao/index.html`, checkbox `autorizacao_imagem_voz`; `index.html`, FAQ "A sessão vai ser gravada?" | P16 |
+| Links do MovieReading na App Store e no Google Play | `assets/js/config.js` → `appStoreUrl` e `googlePlayUrl` | — |
 | Link do iCom da Iguale | `assets/js/config.js` → `icomUrl` | — |
 | Endpoint do back-end | `assets/js/config.js` → `endpoint` | P09 |
 | ID do Google Tag Manager | `assets/js/config.js` → `gtmId` | — |
@@ -206,6 +208,6 @@ Com Chromium (Playwright) e axe-core 4.10, nas três páginas:
 - **Formulário:** envio vazio (resumo com foco, `aria-invalid`, mensagens ligadas por `aria-describedby`, links do resumo levam ao campo), máscara do CPF digitando e colando, dígitos verificadores, regra "Não preciso" nos dois sentidos com anúncio em `aria-live`, campo "Conte qual", botão "Enviando…" desabilitado, os cinco estados com foco no título, e o JSON conferido contra o contrato.
 - **Teclado:** atalhos `[1]`/`[2]`, menu no celular (`aria-expanded`, Esc), painel "Acessibilidade" (Esc fecha e devolve o foco), escolha de contraste e texto guardada depois de recarregar.
 - **Configuração:** `inscricoesAbertas: false`, `youtubeId` (o `iframe` do `youtube-nocookie.com` só aparece depois do clique) e `icomUrl`.
-- **Terminologia:** nenhuma ocorrência de "aplicativo", "fone", "MovieReading", "deficiente", "portador", "pessoas especiais" ou "linguagem de sinais", e nenhum texto inteiro em caixa alta no HTML. A sinopse oficial cita o título em caixa alta; ele está escrito normalmente no HTML e fica em caixa alta pelo CSS, então o visual continua igual ao texto oficial.
+- **Terminologia:** nenhuma ocorrência de "deficiente", "portador", "pessoas especiais" ou "linguagem de sinais", e nenhum texto inteiro em caixa alta no HTML. A sinopse oficial cita o título em caixa alta; ele está escrito normalmente no HTML e fica em caixa alta pelo CSS, então o visual continua igual ao texto oficial.
 
 **Ainda falta fazer (manual):** Lighthouse Acessibilidade (não estava disponível no ambiente de desenvolvimento), NVDA ou VoiceOver nas duas páginas, e teste em celulares reais, incluindo o widget do VLibras, que é de terceiros e não entrou na verificação do axe.

@@ -15,11 +15,10 @@ Tudo marcado com `[PREENCHER]` ou `[CONFIRMAR]` ainda não foi definido. **Não 
 - **Data e hora:** domingo, 15/11/2026. A casa abre às 9h30, e a sessão começa às 10h.
 - **Local:** Espaço Petrobras de Cinema, sala 1 – Rua Augusta, 1475 – Consolação, São Paulo (SP).
 - **Quem faz:** a Lapfilme (produtora do filme) assina; a Iguale é parceira e cuida da acessibilidade.
-- **Recursos da sessão:** abertos para todo o público. A audiodescrição sai no som da sala; Libras e legendas descritivas aparecem na tela. Depois do filme, bate-papo de cerca de 30 minutos sobre acessibilidade no cinema.
+- **Recursos da sessão:** Libras e legendas descritivas abertas para todo o público, projetadas na tela. A audiodescrição é oferecida pelo app MovieReading: a pessoa ouve no próprio celular, com fone de ouvido. Depois do filme, bate-papo de cerca de 30 minutos sobre acessibilidade no cinema.
 - **Ingresso:** gratuito, com inscrição prévia. Cada pessoa faz a própria inscrição (não existe campo de acompanhante). Há combo de pipoca e refrigerante gratuito.
 - **Endereço da página:** `iguale.com.br/crimesemcastigo`, com a inscrição em `iguale.com.br/crimesemcastigo/inscricao`.
-- **Referência:** a página do 54º Festival de Cinema de Gramado (moviereading.com.br/festival-cinema-gramado/) e o cadastro dela. Use a mesma lógica de organização e de acessibilidade, com três diferenças:
-  - **Sem MovieReading:** não há app nem tutorial. Não mencione aplicativo nem fone em nenhum lugar da página.
+- **Referência:** a página do 54º Festival de Cinema de Gramado (moviereading.com.br/festival-cinema-gramado/) e o cadastro dela. Use a mesma lógica de organização e de acessibilidade, com duas diferenças:
   - **Sessão única:** a programação é um dia só, não uma grade por dia.
   - **Visual do filme:** o visual parte do cartaz de *Crime Sem Castigo*, não da identidade do MovieReading.
 
@@ -127,12 +126,18 @@ Use HTML semântico: `header`, `nav` com `aria-label="Navegação principal"`, `
 
 ### 5.4 A sessão
 - `h2`: "Acessibilidade na sessão"
-- Texto de abertura: "Os recursos de acessibilidade estarão abertos para todo o público, direto na tela e no som da sala."
+- Texto de abertura: "Libras e legendas descritivas estarão abertas para todo o público, direto na tela. A audiodescrição estará disponível pelo app MovieReading, para ouvir no próprio celular, com fone de ouvido."
 - Três cards:
-  - **AD · Audiodescrição:** "A narração das informações visuais do filme sai no som da sala."
+  - **AD · Audiodescrição:** "A narração das informações visuais do filme. Na sessão, a narração fica disponível no app MovieReading, para ouvir no próprio celular, com fone de ouvido."
   - **LSE · Legendas descritivas:** "Falas, sons e músicas aparecem em legendas na tela."
   - **LIBRAS · Língua Brasileira de Sinais:** "A interpretação em Libras aparece na tela."
-- Bloco "No local": "Uma equipe da Iguale recebe o público, com atendimento em Libras. A abertura e o bate-papo têm interpretação em Libras e audiodescrição ao vivo."
+- Logo depois dos cards, bloco com `id="audiodescricao-app"` (o e-mail marketing aponta para essa âncora), com o visual da LP, não a identidade do MovieReading:
+  - `h3`: "Como usar a audiodescrição pelo MovieReading"
+  - Lista numerada, sem passos além destes:
+    1. "Antes da sessão, baixe o app MovieReading no seu celular." Em seguida, os links "Baixar o MovieReading na App Store (abre em nova aba)" e "Baixar o MovieReading no Google Play (abre em nova aba)": `[PREENCHER: links das lojas]`
+    2. "No app, baixe a audiodescrição de Crime Sem Castigo."
+    3. "No dia, traga seu fone de ouvido."
+- Bloco "No local": "Uma equipe da Iguale recebe o público, com atendimento em Libras."
 
 ### 5.5 Programação
 - `h2`: "Programação"
@@ -281,7 +286,7 @@ Use HTML semântico: `header`, `nav` com `aria-label="Navegação principal"`, `
 ## 9. SEO e compartilhamento
 
 - `title`: "Sessão Acessível · Crime Sem Castigo · 15/11 · Iguale"
-- `meta description`: "Sessão gratuita de Crime Sem Castigo com audiodescrição, Libras e legendas descritivas abertas, no Espaço Petrobras de Cinema, em 15/11/2026. Faça sua inscrição."
+- `meta description` e `og:description`: "Sessão gratuita de Crime Sem Castigo com Libras e legendas descritivas na tela e audiodescrição pelo app MovieReading, no Espaço Petrobras de Cinema, em 15/11/2026. Faça sua inscrição." O `twitter:description` usa o mesmo texto sem a última frase.
 - Open Graph e Twitter Card com imagem 1200×630 feita a partir do cartaz, com `og:image:alt`.
 - Favicon `[PREENCHER: usar o da Iguale]`.
 
@@ -331,7 +336,7 @@ Envie em texto real, com versão em texto simples, uma coluna, corpo com pelo me
 >
 > **Quando:** domingo, 15 de novembro de 2026. A casa abre às 9h30, e a sessão começa às 10h.
 > **Onde:** Espaço Petrobras de Cinema, sala 1 – Rua Augusta, 1475 – Consolação, São Paulo (SP).
-> **Recursos:** audiodescrição no som da sala, Libras e legendas descritivas na tela, abertos para todo o público. Depois do filme, bate-papo sobre acessibilidade no cinema.
+> **Recursos:** Libras e legendas descritivas na tela, abertas para todo o público, e audiodescrição pelo app MovieReading. Antes da sessão, baixe o app e a audiodescrição do filme, e traga seu fone de ouvido. Depois do filme, bate-papo sobre acessibilidade no cinema.
 > **Ingresso:** gratuito, com combo de pipoca e refrigerante.
 > **Classificação indicativa:** 16 anos.
 >

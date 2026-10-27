@@ -19,6 +19,11 @@ window.CSC_CONFIG = {
   // [PREENCHER: ID do vídeo sinopse]
   youtubeIdSinopse: "",
 
+  // Links do app MovieReading nas lojas (bloco "Como usar a audiodescrição pelo MovieReading").
+  // [PREENCHER: links das lojas]
+  appStoreUrl: "",
+  googlePlayUrl: "",
+
   // Link do atendimento em Libras pelo iCom da Iguale.
   // [PREENCHER: link do iCom da Iguale]
   icomUrl: "",
