@@ -31,7 +31,7 @@ python3 -m http.server 8000
 | `evento` | identificador enviado no campo `evento` | `"crime-sem-castigo-2026-11-15"` |
 | `youtubeId` | só o ID do vídeo convite no YouTube | `""` · `[PREENCHER]` (V1) |
 | `movieReadingUrl` | link que abre Crime Sem Castigo direto no app MovieReading. Gera o QR Code do bloco `#audiodescricao-app` (só em telas a partir de 768 px) e ativa o botão "Abrir Crime Sem Castigo no MovieReading". O QR Code é desenhado na própria página pela biblioteca `assets/js/vendor/qrcode-generator-1.4.4.js` (MIT, Kazuhiko Arase) | `""` · `[PREENCHER]` |
-| `appStoreUrl`, `googlePlayUrl` | links do app MovieReading nas lojas, no bloco "Como usar a audiodescrição pelo MovieReading" (`#audiodescricao-app`). Vazios, o texto dos links aparece sem link, com o marcador ao lado | `""` · `[PREENCHER]` |
+| `downloadUrl`, `appStoreUrl`, `googlePlayUrl` | botão "Clique para baixar o MovieReading" (passo 1 do bloco `#audiodescricao-app`). Com `downloadUrl` (link único que já leva à loja certa), o botão usa ele; sem ele, leva à App Store no iPhone/iPad e à Google Play no Android (no computador, Google Play). O marcador some quando há `downloadUrl` ou as duas lojas | `""` · `[PREENCHER]` |
 | `icomUrl` | link do atendimento em Libras pelo iCom da Iguale | `""` · `[PREENCHER]` |
 | `gtmId` | ID do Google Tag Manager (`GTM-XXXXXXX`). Vazio = sem analytics | `""` · `[PREENCHER]` |
 | `inscricoesAbertas` | `false` esconde os botões "Fazer inscrição" e o formulário, e mostra "As inscrições estão encerradas." | `true` |
@@ -193,7 +193,7 @@ Todos os marcadores aparecem visíveis na página, com borda tracejada, até ser
 | Autorização de imagem e voz (texto final, quem recebe, por quanto tempo) | `inscricao/index.html`, checkbox `autorizacao_imagem_voz`; `index.html`, FAQ "A sessão vai ser gravada?" | P16 |
 | Link do filme no MovieReading (QR Code e botão) | `assets/js/config.js` → `movieReadingUrl` | — |
 | Versão negativa (branca) oficial do logo do MovieReading. A do rodapé foi gerada a partir do logo colorido, trocando as cores por branco | `assets/img/logos/moviereading.*` | — |
-| Links do MovieReading na App Store e no Google Play | `assets/js/config.js` → `appStoreUrl` e `googlePlayUrl` | — |
+| Link para baixar o MovieReading (um link único ou os links das duas lojas) | `assets/js/config.js` → `downloadUrl`, ou `appStoreUrl` e `googlePlayUrl` | — |
 | Link do iCom da Iguale | `assets/js/config.js` → `icomUrl` | — |
 | Endpoint do back-end | `assets/js/config.js` → `endpoint` | P09 |
 | ID do Google Tag Manager | `assets/js/config.js` → `gtmId` | — |

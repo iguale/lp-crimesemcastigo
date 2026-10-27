@@ -116,15 +116,19 @@
     document.querySelectorAll("[data-icom-pendente]").forEach(function (m) { m.hidden = !!url; });
   }
 
-  /* ---------- Links do MovieReading nas lojas: viram link quando a URL está no config ---------- */
+  /* ---------- Botão "Clique para baixar o MovieReading": link único ou a loja do aparelho ---------- */
   function iniciarLojas() {
-    var todas = true;
-    document.querySelectorAll("[data-loja]").forEach(function (link) {
-      var url = (config[link.getAttribute("data-loja")] || "").trim();
-      if (url) link.href = url;
-      else todas = false;
-    });
-    document.querySelectorAll("[data-loja-pendente]").forEach(function (m) { m.hidden = todas; });
+    var botao = document.querySelector("[data-mr-baixar]");
+    if (!botao) return;
+    var ua = navigator.userAgent || "";
+    var ios = /iPhone|iPad|iPod/i.test(ua) || (/Macintosh/i.test(ua) && navigator.maxTouchPoints > 1);
+    var android = /Android/i.test(ua);
+    var unico = (config.downloadUrl || "").trim();
+    var apple = (config.appStoreUrl || "").trim();
+    var google = (config.googlePlayUrl || "").trim();
+    var url = unico || (ios ? apple : android ? google : google || apple) || apple || google;
+    if (url) botao.href = url;
+    document.querySelectorAll("[data-loja-pendente]").forEach(function (m) { m.hidden = !!(unico || (apple && google)); });
   }
 
   /* ---------- QR Code e botão do filme no MovieReading ---------- */

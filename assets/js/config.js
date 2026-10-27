@@ -19,8 +19,12 @@ window.CSC_CONFIG = {
   // [PREENCHER: ID do vídeo sinopse]
   youtubeIdSinopse: "",
 
-  // Links do app MovieReading nas lojas (bloco "Como usar a audiodescrição pelo MovieReading").
-  // [PREENCHER: links das lojas]
+  // Botão "Clique para baixar o MovieReading" (passo 1 do bloco de audiodescrição).
+  // Se houver um link único de download (que já leva à loja certa), use downloadUrl.
+  // Sem ele, o botão leva à App Store no iPhone/iPad e à Google Play no Android
+  // (no computador, usa o link da Google Play, ou o da App Store se só ele existir).
+  // [PREENCHER: link para baixar o MovieReading]
+  downloadUrl: "",
   appStoreUrl: "",
   googlePlayUrl: "",
 
