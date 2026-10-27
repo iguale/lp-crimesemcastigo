@@ -757,7 +757,7 @@ main:focus-visible, section:focus-visible, nav:focus-visible, [tabindex="-1"]:fo
 .ad-app__qr { margin: 0.75rem 0 0; }
 .ad-app__qr-codigo { width: 10rem; aspect-ratio: 1; max-width: 100%; }
 .ad-app__qr-codigo svg { display: block; width: 100%; height: 100%; border-radius: 0.25rem; }
-.ad-app__qr figcaption { margin-top: 0.5rem; font-size: 0.875rem; color: var(--texto-suave); max-width: 10rem; }
+.ad-app__qr figcaption { margin-top: 0.5rem; font-size: 0.875rem; color: var(--texto-suave); white-space: nowrap; }
 .ad-app__link { margin: 0.75rem 0 0; }
 .ad-app__ajuda { margin: 1.5rem 0 0; padding-top: 1rem; border-top: 1px solid var(--linha); font-weight: 700; }
 .ad-dicas {
