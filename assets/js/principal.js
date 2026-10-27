@@ -127,6 +127,35 @@
     document.querySelectorAll("[data-loja-pendente]").forEach(function (m) { m.hidden = todas; });
   }
 
+  /* ---------- QR Code e botão do filme no MovieReading ---------- */
+  function iniciarMovieReading() {
+    var url = (config.movieReadingUrl || "").trim();
+    var link = document.querySelector("[data-mr-link]");
+    var caixa = document.querySelector("[data-mr-qr-codigo]");
+    if (!url) {
+      // sem link ainda: o botão fica como texto e a caixa do QR mostra o marcador
+      if (link) link.insertAdjacentHTML("afterend", ' <span class="marcador">[PREENCHER: link do filme no MovieReading]</span>');
+      return;
+    }
+    if (link) link.href = url;
+    if (!caixa || typeof window.qrcode !== "function") return;
+    var qr = window.qrcode(0, "M");
+    qr.addData(url);
+    qr.make();
+    var n = qr.getModuleCount();
+    var margem = 4;
+    var total = n + margem * 2;
+    var caminho = "";
+    for (var y = 0; y < n; y++) {
+      for (var x = 0; x < n; x++) {
+        if (qr.isDark(y, x)) caminho += "M" + (x + margem) + " " + (y + margem) + "h1v1h-1z";
+      }
+    }
+    caixa.className = "ad-app__qr-codigo";
+    caixa.innerHTML = '<svg viewBox="0 0 ' + total + " " + total + '" role="img" aria-label="QR Code que abre Crime Sem Castigo no app MovieReading" shape-rendering="crispEdges">' +
+      '<rect width="' + total + '" height="' + total + '" fill="#FFFFFF"/><path d="' + caminho + '" fill="#1E1C1A"/></svg>';
+  }
+
   /* ---------- Abre o <details> quando a âncora aponta para dentro dele ---------- */
   function abrirDetalhesDaAncora() {
     if (!location.hash) return;
@@ -173,6 +202,7 @@
     iniciarInscricoes();
     iniciarIcom();
     iniciarLojas();
+    iniciarMovieReading();
     abrirDetalhesDaAncora();
     corrigirAncoraInicial();
     window.addEventListener("hashchange", abrirDetalhesDaAncora);

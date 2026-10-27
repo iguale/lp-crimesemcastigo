@@ -30,6 +30,7 @@ python3 -m http.server 8000
 | `endpoint` | URL do back-end que recebe as inscrições. `"mock"` simula as respostas | `"mock"` · `[PREENCHER]` (P09) |
 | `evento` | identificador enviado no campo `evento` | `"crime-sem-castigo-2026-11-15"` |
 | `youtubeId` | só o ID do vídeo convite no YouTube | `""` · `[PREENCHER]` (V1) |
+| `movieReadingUrl` | link que abre Crime Sem Castigo direto no app MovieReading. Gera o QR Code do bloco `#audiodescricao-app` (só em telas a partir de 768 px) e ativa o botão "Abrir Crime Sem Castigo no MovieReading". O QR Code é desenhado na própria página pela biblioteca `assets/js/vendor/qrcode-generator-1.4.4.js` (MIT, Kazuhiko Arase) | `""` · `[PREENCHER]` |
 | `appStoreUrl`, `googlePlayUrl` | links do app MovieReading nas lojas, no bloco "Como usar a audiodescrição pelo MovieReading" (`#audiodescricao-app`). Vazios, o texto dos links aparece sem link, com o marcador ao lado | `""` · `[PREENCHER]` |
 | `icomUrl` | link do atendimento em Libras pelo iCom da Iguale | `""` · `[PREENCHER]` |
 | `gtmId` | ID do Google Tag Manager (`GTM-XXXXXXX`). Vazio = sem analytics | `""` · `[PREENCHER]` |
@@ -190,6 +191,8 @@ Todos os marcadores aparecem visíveis na página, com borda tracejada, até ser
 | Contato para dúvidas (e-mail e/ou WhatsApp) | `index.html` (Contato), `acessibilidade/index.html` (Fale com a gente), `assets/js/inscricao.js` (constante `CONTATO`, usada nos estados "CPF duplicado" e "erro"), e-mail de confirmação | P11 |
 | Aviso de privacidade (texto final e link) | `inscricao/index.html`, checkbox `consentimento_lgpd` | P16 |
 | Autorização de imagem e voz (texto final, quem recebe, por quanto tempo) | `inscricao/index.html`, checkbox `autorizacao_imagem_voz`; `index.html`, FAQ "A sessão vai ser gravada?" | P16 |
+| Link do filme no MovieReading (QR Code e botão) | `assets/js/config.js` → `movieReadingUrl` | — |
+| Versão negativa (branca) oficial do logo do MovieReading. A do rodapé foi gerada a partir do logo colorido, trocando as cores por branco | `assets/img/logos/moviereading.*` | — |
 | Links do MovieReading na App Store e no Google Play | `assets/js/config.js` → `appStoreUrl` e `googlePlayUrl` | — |
 | Link do iCom da Iguale | `assets/js/config.js` → `icomUrl` | — |
 | Endpoint do back-end | `assets/js/config.js` → `endpoint` | P09 |

@@ -724,7 +724,7 @@ main:focus-visible, section:focus-visible, nav:focus-visible, [tabindex="-1"]:fo
 
 /* Como usar a audiodescrição pelo MovieReading (âncora do e-mail marketing) */
 .ad-app {
-  margin-top: 2rem;
+  margin-top: 1.5rem;
   padding: 1.5rem;
   border-left: 4px solid var(--vermelho);
   border-radius: var(--raio);
@@ -732,7 +732,7 @@ main:focus-visible, section:focus-visible, nav:focus-visible, [tabindex="-1"]:fo
   scroll-margin-top: 1rem;
 }
 .ad-app .subtitulo { margin-top: 0; }
-.passos { counter-reset: passo; margin: 0; padding: 0; list-style: none; display: grid; gap: 1rem; }
+.passos { counter-reset: passo; margin: 0; padding: 0; list-style: none; display: grid; gap: 1.25rem; align-content: start; }
 .passos > li { counter-increment: passo; display: grid; grid-template-columns: 2.25rem minmax(0, 1fr); gap: 0 1rem; align-items: start; }
 .passos > li::before {
   content: counter(passo);
@@ -751,6 +751,27 @@ main:focus-visible, section:focus-visible, nav:focus-visible, [tabindex="-1"]:fo
 .passos p { margin: 0.35rem 0 0; font-size: 1.125rem; }
 .passos__lojas { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 1.25rem; }
 .passos__lojas a { display: inline-flex; align-items: center; min-height: 2.75rem; font-weight: 700; }
+.ad-app__intro { margin: -0.25rem 0 1.25rem; color: var(--texto-suave); }
+.ad-app__grade { display: grid; gap: 2rem; }
+.ad-app__lateral { display: grid; gap: 1rem; align-content: start; }
+.ad-app__qr { display: none; margin: 0; }
+.ad-app__qr-codigo { width: 11rem; aspect-ratio: 1; max-width: 100%; }
+.ad-app__qr-codigo svg { display: block; width: 100%; height: 100%; border-radius: 0.25rem; }
+.ad-app__qr figcaption { margin-top: 0.5rem; font-size: 0.9375rem; color: var(--texto-suave); max-width: 14rem; }
+.ad-app__link { margin: 0; }
+.ad-app__dicas { padding: 1rem 1.25rem; border: 1px solid var(--linha); border-radius: var(--raio); }
+.ad-app__dicas-titulo { margin: 0 0 0.5rem; font-size: 1.125rem; }
+.ad-app__dicas ul { margin: 0; padding-left: 1.25rem; }
+.ad-app__dicas li + li { margin-top: 0.4rem; }
+.ad-app__dicas li::marker { color: var(--areia); }
+.ad-app__ajuda { margin: 1.5rem 0 0; padding-top: 1rem; border-top: 1px solid var(--linha); font-weight: 700; }
+/* QR Code só em telas maiores: no celular, a pessoa toca no botão */
+@media (min-width: 48em) {
+  .ad-app__qr { display: block; }
+}
+@media (min-width: 64em) {
+  .ad-app__grade { grid-template-columns: minmax(0, 1fr) 20rem; gap: 3rem; }
+}
 
 /* Crédito da Iguale em destaque */
 .credito-iguale {
@@ -860,6 +881,8 @@ main:focus-visible, section:focus-visible, nav:focus-visible, [tabindex="-1"]:fo
 .regua__logos { display: flex; flex-wrap: wrap; align-items: center; gap: 1.5rem; }
 .regua__logo { height: 4rem; width: auto; max-width: 100%; object-fit: contain; }
 .regua__logo--petrobras { height: 1.5rem; }
+.regua__logo--mr { height: 2.25rem; }
+.regua__grupo--parceiros .regua__logos { gap: 1.5rem 3.5rem; }
 .regua__pendente { width: 13rem; min-height: 4rem; padding: 0.25rem 0.5rem; font-size: 0.75rem; }
 .rodape__regras { margin-bottom: 1.5rem; }
 .rodape__lei { color: var(--texto-suave); font-size: 0.8125rem; }

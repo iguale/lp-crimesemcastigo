@@ -24,6 +24,11 @@ window.CSC_CONFIG = {
   appStoreUrl: "",
   googlePlayUrl: "",
 
+  // Link que abre a página de Crime Sem Castigo direto no app MovieReading.
+  // Gera o QR Code do bloco de audiodescrição e o botão "Abrir Crime Sem Castigo no MovieReading".
+  // [PREENCHER: link do filme no MovieReading]
+  movieReadingUrl: "",
+
   // Link do atendimento em Libras pelo iCom da Iguale.
   // [PREENCHER: link do iCom da Iguale]
   icomUrl: "",

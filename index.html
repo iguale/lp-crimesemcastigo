@@ -34,6 +34,7 @@
   <link rel="stylesheet" href="id_a11y/id_a11y.css">
   <script src="assets/js/config.js"></script>
   <script src="assets/js/barra-acessibilidade.js"></script>
+  <script src="assets/js/vendor/qrcode-generator-1.4.4.js" defer></script>
   <script src="assets/js/principal.js" defer></script>
 </head>
 <body>
@@ -193,21 +194,6 @@
             <p>Língua de modalidade gestual-visual, reconhecida por lei como meio de comunicação e expressão. É por meio dela que muitas pessoas surdas se comunicam. A interpretação em Libras aparece na tela.</p>
           </li>
         </ul>
-        <div id="audiodescricao-app" class="ad-app">
-          <h3 class="subtitulo">Como usar a audiodescrição pelo MovieReading</h3>
-          <ol class="passos">
-            <li>
-              <p>Antes da sessão, baixe o app MovieReading no seu celular.</p>
-              <p class="passos__lojas">
-                <a data-loja="appStoreUrl" target="_blank" rel="noopener">Baixar o MovieReading na App Store (abre em nova aba)</a>
-                <a data-loja="googlePlayUrl" target="_blank" rel="noopener">Baixar o MovieReading no Google Play (abre em nova aba)</a>
-                <span class="marcador" data-loja-pendente>[PREENCHER: links das lojas]</span>
-              </p>
-            </li>
-            <li><p>No app, baixe a audiodescrição de Crime Sem Castigo.</p></li>
-            <li><p>No dia, traga seu fone de ouvido.</p></li>
-          </ol>
-        </div>
         <div class="credito-iguale">
           <img class="credito-iguale__logo" src="assets/img/logos/iguale.webp" width="240" height="240" alt="" loading="lazy">
           <p class="credito-iguale__texto">Os recursos de acessibilidade desta sessão foram produzidos pela <strong>Iguale</strong>.</p>
@@ -215,6 +201,44 @@
         <div class="no-local">
           <h3 class="subtitulo">No local</h3>
           <p>Uma equipe da Iguale recebe o público, com atendimento em Libras.</p>
+        </div>
+        <div id="audiodescricao-app" class="ad-app">
+          <h3 class="subtitulo">Como usar a audiodescrição pelo MovieReading</h3>
+          <p class="ad-app__intro">Recomendamos fazer os três primeiros passos antes de ir ao cinema.</p>
+          <div class="ad-app__grade">
+            <ol class="passos">
+              <li>
+                <p><strong>Baixe o app MovieReading no seu celular.</strong> Ele é gratuito na Google Play (Android) e na App Store (iOS).</p>
+                <p class="passos__lojas">
+                  <a data-loja="googlePlayUrl" target="_blank" rel="noopener">Baixar o MovieReading no Google Play (abre em nova aba)</a>
+                  <a data-loja="appStoreUrl" target="_blank" rel="noopener">Baixar o MovieReading na App Store (abre em nova aba)</a>
+                  <span class="marcador" data-loja-pendente>[PREENCHER: links das lojas]</span>
+                </p>
+              </li>
+              <li><p><strong>Abra Crime Sem Castigo no app.</strong> Aponte a câmera do celular para o QR Code ou, se estiver no celular, toque no botão “Abrir Crime Sem Castigo no MovieReading”. Você também pode buscar o filme no catálogo do app.</p></li>
+              <li><p><strong>Baixe a audiodescrição.</strong> Depois do download, ela fica na seção “Meus Filmes” do app.</p></li>
+              <li><p><strong>Na sessão, sincronize.</strong> Em “Meus Filmes”, abra a audiodescrição e toque em “OK”. O app reconhece o áudio do filme e sincroniza a narração.</p></li>
+            </ol>
+            <div class="ad-app__lateral">
+              <figure class="ad-app__qr" data-mr-qr>
+                <div class="ad-app__qr-codigo marcador-caixa" data-mr-qr-codigo>[PREENCHER: link do filme no MovieReading]</div>
+                <figcaption>Aponte a câmera para abrir o filme no MovieReading.</figcaption>
+              </figure>
+              <p class="ad-app__link">
+                <a class="botao botao--secundario" data-mr-link target="_blank" rel="noopener">Abrir Crime Sem Castigo no MovieReading (abre em nova aba)</a>
+              </p>
+              <div class="ad-app__dicas">
+                <h4 class="ad-app__dicas-titulo">Dicas</h4>
+                <ul>
+                  <li>Carregue o celular antes de ir ao cinema.</li>
+                  <li>Leve fones de ouvido para usar a audiodescrição.</li>
+                  <li>Permita que o MovieReading acesse o microfone do celular.</li>
+                  <li>Para uma sincronização mais eficiente, evite cobrir o microfone com a mão ou com capas protetoras.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <p class="ad-app__ajuda">Se precisar de ajuda, procure a equipe da Iguale no cinema.</p>
         </div>
       </div>
     </section>
@@ -344,6 +368,7 @@
         <li class="regua__grupo regua__grupo--parceiros">
           <div class="regua__logos">
             <img class="regua__logo regua__logo--iguale" src="assets/img/logos/iguale.webp" width="240" height="240" alt="Iguale" loading="lazy">
+            <img class="regua__logo regua__logo--mr" src="assets/img/logos/moviereading.webp" width="513" height="120" alt="MovieReading" loading="lazy">
             <img class="regua__logo regua__logo--petrobras" src="assets/img/logos/espaco-petrobras-cinema.webp" width="574" height="31" alt="Espaço Petrobras de Cinema" loading="lazy">
           </div>
         </li>
