@@ -752,25 +752,33 @@ main:focus-visible, section:focus-visible, nav:focus-visible, [tabindex="-1"]:fo
 .passos__lojas { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 1.25rem; }
 .passos__lojas a { display: inline-flex; align-items: center; min-height: 2.75rem; font-weight: 700; }
 .ad-app__intro { margin: -0.25rem 0 1.25rem; color: var(--texto-suave); }
-.ad-app__grade { display: grid; gap: 2rem; }
-.ad-app__lateral { display: grid; gap: 1rem; align-content: start; }
-.ad-app__qr { display: none; margin: 0; }
-.ad-app__qr-codigo { width: 11rem; aspect-ratio: 1; max-width: 100%; }
+.botao--loja { min-height: 2.75rem; padding: 0.4rem 1rem; font-size: 1rem; }
+.passos__lojas > span:first-child { font-weight: 700; }
+.ad-app__qr { margin: 0; }
+.ad-app__qr-codigo { width: 10rem; aspect-ratio: 1; max-width: 100%; }
 .ad-app__qr-codigo svg { display: block; width: 100%; height: 100%; border-radius: 0.25rem; }
-.ad-app__qr figcaption { margin-top: 0.5rem; font-size: 0.9375rem; color: var(--texto-suave); max-width: 14rem; }
-.ad-app__link { margin: 0; }
-.ad-app__dicas { padding: 1rem 1.25rem; border: 1px solid var(--linha); border-radius: var(--raio); }
-.ad-app__dicas-titulo { margin: 0 0 0.5rem; font-size: 1.125rem; }
-.ad-app__dicas ul { margin: 0; padding-left: 1.25rem; }
-.ad-app__dicas li + li { margin-top: 0.4rem; }
-.ad-app__dicas li::marker { color: var(--areia); }
+.ad-app__qr figcaption { margin-top: 0.5rem; font-size: 0.875rem; color: var(--texto-suave); max-width: 10rem; }
+.ad-app__link { margin: 0.75rem 0 0; }
 .ad-app__ajuda { margin: 1.5rem 0 0; padding-top: 1rem; border-top: 1px solid var(--linha); font-weight: 700; }
-/* QR Code só em telas maiores: no celular, a pessoa toca no botão */
-@media (min-width: 48em) {
-  .ad-app__qr { display: block; }
+.ad-dicas {
+  margin-top: 1.5rem;
+  padding: 1.25rem 1.5rem;
+  border: 1px solid var(--linha);
+  border-radius: var(--raio);
+  background: rgba(30, 28, 26, 0.6);
 }
-@media (min-width: 64em) {
-  .ad-app__grade { grid-template-columns: minmax(0, 1fr) 20rem; gap: 3rem; }
+.ad-dicas__titulo { margin: 0 0 0.75rem; font-size: 1.125rem; }
+.ad-dicas ul { margin: 0; padding-left: 1.25rem; display: grid; gap: 0.4rem 2.5rem; }
+.ad-dicas li::marker { color: var(--areia); }
+@media (min-width: 48em) { .ad-dicas ul { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+/* QR Code no desktop (alinhado ao passo 2); botão só no celular, como em Gramado */
+.so-desktop { display: none; }
+@media (min-width: 48em) {
+  .so-celular { display: none; }
+  span.so-desktop { display: inline; }
+  .ad-app__qr.so-desktop { display: block; }
+  .passos__qr > .passos__texto, .passos__qr > .ad-app__qr { grid-column: auto; }
+  .passos > li.passos__qr { grid-template-columns: 2.25rem minmax(0, 1fr) auto; }
 }
 
 /* Crédito da Iguale em destaque */
