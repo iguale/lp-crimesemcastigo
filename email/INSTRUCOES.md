@@ -118,7 +118,7 @@ Três opções. A recomendada é a A.
 |---|---|---|---|
 | **A** | Um convite para você: cinema acessível em 15/11 | Crime Sem Castigo com audiodescrição, Libras e legendas descritivas. Entrada gratuita. | convite pessoal |
 | B | A vida clandestina de um médico nazista no Brasil | Sessão gratuita e acessível de Crime Sem Castigo, domingo, 15/11, em São Paulo. | curiosidade pela história |
-| C | Cinema gratuito, com pipoca, em 15/11: vagas limitadas | Sessão de Crime Sem Castigo com recursos de acessibilidade abertos para todo o público. | benefício e urgência |
+| C | Cinema gratuito, com pipoca, em 15/11: vagas limitadas | Sessão de Crime Sem Castigo com Libras e legendas descritivas na tela e audiodescrição pelo app. | benefício e urgência |
 
 ### 5.2 Corpo, bloco a bloco
 
@@ -129,7 +129,7 @@ Três opções. A recomendada é a A.
 - **Sobretítulo** (texto pequeno): "Lapfilme apresenta"
 - **Título 1:** "Sessão Acessível de Crime Sem Castigo"
 - **Linha de serviço:** "Domingo, 15 de novembro, às 10h · Espaço Petrobras de Cinema · São Paulo"
-- **Parágrafo:** "Olá! A Lapfilme e a Iguale convidam você para uma sessão de cinema com recursos de acessibilidade abertos para todo o público: audiodescrição, Libras e legendas descritivas. A entrada é gratuita, com pipoca e refrigerante."
+- **Parágrafo:** "Olá! A Lapfilme e a Iguale convidam você para uma sessão de cinema com Libras e legendas descritivas na tela e audiodescrição pelo app MovieReading. A entrada é gratuita, com pipoca e refrigerante."
 - **Botão:** "Fazer minha inscrição gratuita" → link de inscrição
 - **Nota abaixo do botão:** "As vagas são limitadas."
 
@@ -140,12 +140,16 @@ Três opções. A recomendada é a A.
 - **Link:** "Leia a sinopse completa e a ficha técnica na página da sessão" → link do filme
 
 **Bloco 4 · Acessibilidade**
-- **Título 2:** "Acessibilidade aberta para todo o público"
-- **Parágrafo:** "Os recursos ficam abertos para todo mundo, direto na tela e no som da sala:"
+- **Título 2:** "Acessibilidade na sessão"
+- **Parágrafo:** "Libras e legendas descritivas ficam abertas para todo o público, direto na tela. A audiodescrição fica no app MovieReading:"
 - **Lista:**
-  - "**Audiodescrição:** a narração das imagens e do contexto visual do filme sai no som da sala." `[CONFIRMAR: AD aberta no som da sala – P25]`
+  - "**Audiodescrição pelo app MovieReading:** a narração das imagens e do contexto visual do filme, para ouvir no próprio celular, com fone de ouvido."
   - "**Legendas descritivas:** falas, ruídos, músicas e outros sons aparecem em legendas na tela."
   - "**Libras:** a interpretação em Língua Brasileira de Sinais aparece na tela."
+- **Destaque** (logo depois da lista, com fundo diferente, no estilo dos outros destaques do e-mail):
+  - **Título:** "Vai usar a audiodescrição?"
+  - **Texto:** "Antes da sessão, baixe o app MovieReading e a audiodescrição do filme. No dia, traga seu fone de ouvido."
+  - **Link:** "Veja o passo a passo na página da sessão" → página da sessão + `#audiodescricao-app`
 - **Parágrafo:** "Depois do filme, vamos bater um papo sobre acessibilidade no cinema. A abertura e o bate-papo têm interpretação em Libras e audiodescrição ao vivo, e a equipe da Iguale recebe o público com atendimento em Libras."
 - **Crédito** (texto menor): "Os recursos de acessibilidade desta sessão foram produzidos pela Iguale."
 
