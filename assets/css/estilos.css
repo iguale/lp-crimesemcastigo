@@ -754,7 +754,7 @@ main:focus-visible, section:focus-visible, nav:focus-visible, [tabindex="-1"]:fo
 .ad-app__intro { margin: -0.25rem 0 1.25rem; color: var(--texto-suave); }
 .botao--loja { min-height: 2.75rem; padding: 0.4rem 1rem; font-size: 1rem; }
 .passos__lojas > span:first-child { font-weight: 700; }
-.ad-app__qr { margin: 0; }
+.ad-app__qr { margin: 0.75rem 0 0; }
 .ad-app__qr-codigo { width: 10rem; aspect-ratio: 1; max-width: 100%; }
 .ad-app__qr-codigo svg { display: block; width: 100%; height: 100%; border-radius: 0.25rem; }
 .ad-app__qr figcaption { margin-top: 0.5rem; font-size: 0.875rem; color: var(--texto-suave); max-width: 10rem; }
@@ -771,14 +771,12 @@ main:focus-visible, section:focus-visible, nav:focus-visible, [tabindex="-1"]:fo
 .ad-dicas ul { margin: 0; padding-left: 1.25rem; display: grid; gap: 0.4rem 2.5rem; }
 .ad-dicas li::marker { color: var(--areia); }
 @media (min-width: 48em) { .ad-dicas ul { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-/* QR Code no desktop (alinhado ao passo 2); botão só no celular, como em Gramado */
+/* QR Code no desktop, abaixo do texto do passo 2; botão só no celular, como em Gramado */
 .so-desktop { display: none; }
 @media (min-width: 48em) {
   .so-celular { display: none; }
   span.so-desktop { display: inline; }
   .ad-app__qr.so-desktop { display: block; }
-  .passos__qr > .passos__texto, .passos__qr > .ad-app__qr { grid-column: auto; }
-  .passos > li.passos__qr { grid-template-columns: 2.25rem minmax(0, 1fr) auto; }
 }
 
 /* Crédito da Iguale em destaque */
