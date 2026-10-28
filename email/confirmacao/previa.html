@@ -1,0 +1,264 @@
+<title>Inscrição confirmada – Sessão Acessível de Crime Sem Castigo</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+  /* Moldura da prévia (fora do e-mail): uma coluna central que imita um cliente de e-mail. O e-mail usa cores fixas. */
+  :root {
+    --fundo: #E4E1DA;
+    --cartao: #FFFFFF;
+    --texto: #1E1C1A;
+    --texto-suave: #57514A;
+    --linha: #CFC9BE;
+    --foco: #1E1C1A;
+    --marca: #3A342E;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --fundo: #141311; --cartao: #23211E; --texto: #F2EFE8; --texto-suave: #B9B1A3; --linha: #3F3A34; --foco: #F2EFE8; --marca: #C9BCA4; color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --fundo: #141311; --cartao: #23211E; --texto: #F2EFE8; --texto-suave: #B9B1A3; --linha: #3F3A34; --foco: #F2EFE8; --marca: #C9BCA4; color-scheme: dark;
+  }
+  body { background: var(--fundo); color: var(--texto); font-family: Arial, Helvetica, sans-serif; font-size: 16px; line-height: 1.5; }
+  .moldura { max-width: 640px; margin: 0 auto; padding-block: 24px 48px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); display: grid; gap: 20px; }
+  .rotulo { margin: 0; font-size: 13px; font-weight: bold; letter-spacing: 0.06em; text-transform: uppercase; color: var(--texto-suave); }
+
+  .caixa { background: var(--cartao); border: 1px solid var(--linha); border-radius: 8px; padding: 16px; display: grid; grid-template-columns: 44px 1fr; gap: 4px 12px; align-items: start; }
+  .caixa__avatar { grid-row: span 3; width: 44px; height: 44px; border-radius: 50%; background: var(--marca); color: var(--cartao); display: grid; place-items: center; font-weight: bold; font-size: 18px; }
+  .caixa__topo { display: flex; justify-content: space-between; gap: 8px; min-width: 0; flex-wrap: wrap; }
+  .caixa__de { font-weight: bold; }
+  .caixa__end { color: var(--texto-suave); font-weight: normal; font-size: 14px; overflow-wrap: anywhere; }
+  .caixa__hora { color: var(--texto-suave); font-size: 14px; white-space: nowrap; }
+  .caixa__assunto { font-weight: bold; min-width: 0; }
+  .caixa__pre { color: var(--texto-suave); font-size: 15px; min-width: 0; }
+  .caixa__responder { grid-column: 2; color: var(--texto-suave); font-size: 14px; margin-top: 6px; overflow-wrap: anywhere; }
+
+  .controles { display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; }
+  .controles fieldset { border: 0; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+  .controles legend { padding: 0; margin-bottom: 6px; font-size: 14px; color: var(--texto-suave); }
+  .controles label { display: inline-flex; align-items: center; gap: 6px; min-height: 44px; padding: 0 14px; border: 1px solid var(--linha); border-radius: 22px; background: var(--cartao); cursor: pointer; font-size: 15px; }
+  .controles input:checked + span { font-weight: bold; }
+  .controles label:has(input:checked) { border-color: var(--texto); box-shadow: inset 0 0 0 1px var(--texto); }
+  .controles input:focus-visible { outline: 2px solid var(--foco); outline-offset: 2px; }
+
+  .palco { display: flex; justify-content: center; }
+  .email-caixa { width: 100%; max-width: 600px; transition: max-width .2s; box-shadow: 0 1px 3px rgba(0,0,0,.18); }
+  .palco.celular .email-caixa { max-width: 360px; }
+  @media (prefers-reduced-motion: reduce) { .email-caixa { transition: none; } }
+  .palco.escuro .email-caixa { filter: invert(1) hue-rotate(180deg); }
+  .palco.escuro .email-caixa img { filter: invert(1) hue-rotate(180deg); }
+
+  /* Regras de celular do e-mail: as mesmas do @media do confirmacao.html */
+  @media (max-width: 620px) {
+    .e-pad { padding-left: 20px !important; padding-right: 20px !important; }
+    .e-card { padding-left: 16px !important; padding-right: 16px !important; }
+    .e-h1 { font-size: 28px !important; }
+    .e-btn, .e-btn td, .e-btn a { display: block !important; width: 100% !important; box-sizing: border-box; }
+  }
+  .palco.celular .e-pad { padding-left: 20px !important; padding-right: 20px !important; }
+  .palco.celular .e-card { padding-left: 16px !important; padding-right: 16px !important; }
+  .palco.celular .e-h1 { font-size: 28px !important; }
+  .palco.celular .e-btn, .palco.celular .e-btn td, .palco.celular .e-btn a { display: block !important; width: 100% !important; box-sizing: border-box; }
+  .email-caixa a:focus-visible { outline: 3px solid #C9BCA4; outline-offset: 2px; }
+
+  .faixa { margin: 12px 0 0; padding: 14px 16px; border-radius: 6px; background: var(--marca); color: var(--cartao); font-weight: bold; text-align: center; }
+  .arquivos h2 { font-size: 22px; margin: 0 0 4px; text-wrap: balance; }
+  .arquivos > p { margin: 0 0 16px; color: var(--texto-suave); }
+  .arquivos ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+  .arquivo { background: var(--cartao); border: 1px solid var(--linha); border-radius: 8px; padding: 16px; display: grid; gap: 6px; min-width: 0; }
+  .arquivo__nome { font-family: "JetBrains Mono", Consolas, monospace; font-size: 15px; font-weight: bold; overflow-wrap: anywhere; }
+  .arquivo__meta { font-size: 14px; color: var(--texto-suave); font-variant-numeric: tabular-nums; }
+  .arquivo__alt { font-size: 14px; margin: 0; }
+  .arquivo a { color: var(--texto); font-weight: bold; display: inline-flex; align-items: center; min-height: 44px; overflow-wrap: anywhere; }
+  .arquivo a:focus-visible { outline: 2px solid var(--foco); outline-offset: 2px; }
+  .mk { font-family: "JetBrains Mono", Consolas, monospace; font-size: 13px; overflow-wrap: anywhere; }
+</style>
+
+<div class="moldura">
+  <p class="rotulo">Caixa de entrada (simulação)</p>
+  <div class="caixa" aria-label="Como o e-mail aparece na caixa de entrada">
+    <div class="caixa__avatar" aria-hidden="true">L</div>
+    <div class="caixa__topo"><span class="caixa__de">Lapfilme e Iguale <span class="caixa__end">&lt;eventos@iguale.com.br&gt;</span></span><span class="caixa__hora">agora</span></div>
+    <div class="caixa__assunto">Inscrição confirmada: Sessão Acessível de Crime Sem Castigo</div>
+    <div class="caixa__pre">Domingo, 15/11, às 10h, no Espaço Petrobras de Cinema</div>
+    <div class="caixa__responder">Responder para: eventos@iguale.com.br</div>
+  </div>
+
+  <div class="controles">
+    <fieldset>
+      <legend>Largura</legend>
+      <label><input type="radio" name="largura" id="largura-600" value="600" checked><span>Computador (600 px)</span></label>
+      <label><input type="radio" name="largura" id="largura-360" value="360"><span>Celular (360 px)</span></label>
+    </fieldset>
+    <fieldset>
+      <legend>Cores</legend>
+      <label><input type="radio" name="cores" id="cores-normal" value="normal" checked><span>Normais</span></label>
+      <label><input type="radio" name="cores" id="cores-escuro" value="escuro"><span>Modo escuro com inversão (aproximação)</span></label>
+    </fieldset>
+  </div>
+
+  <p class="rotulo">E-mail · exemplo com {primeiro_nome} ainda sem valor</p>
+  <div class="palco" id="palco">
+  <div class="email-caixa" lang="pt-BR" style="background-color:#E4E1DA;">
+<!-- INÍCIO DO E-MAIL -->
+
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="width:100%;max-width:600px;margin:0 auto;font-family:Arial,Helvetica,sans-serif;">
+
+  <!-- 1 · Topo -->
+  <tr><td style="background-color:#1E1C1A;padding:0;">
+    <a href="https://iguale.com.br/crimesemcastigo/?utm_source=email-confirmacao&amp;utm_medium=email&amp;utm_campaign=sessao-acessivel-csc" target="_blank" style="display:block;">
+      <img src="img/topo-1200.jpg" width="600" height="350" alt="“Crime Sem Castigo”, em letras brancas, com o S de “sem” em forma de raio vermelho. Ao lado, em tons sépia, o rosto sério de um homem de cabelo escuro, com camisa branca e gravata escura." style="display:block;width:100%;max-width:600px;height:auto;border:0;color:#F2EFE8;font-size:16px;">
+    </a>
+  </td></tr>
+
+  <!-- 2 · Confirmação -->
+  <tr><td class="e-pad" style="background-color:#1E1C1A;padding:32px 40px 40px;color:#F2EFE8;">
+    <h1 class="e-h1" style="margin:0 0 16px;font-family:Arial,Helvetica,sans-serif;font-size:34px;line-height:1.15;font-weight:bold;color:#FFFFFF;">Inscrição confirmada!</h1>
+    <p style="margin:0;font-family:Arial,Helvetica,sans-serif;font-size:16px;line-height:1.5;color:#F2EFE8;">Olá, {primeiro_nome}! Sua inscrição para a Sessão Acessível de Crime Sem Castigo <strong>está confirmada</strong>.</p>
+  </td></tr>
+
+  <!-- 3 · Serviço (destaque em sépia escuro) -->
+  <tr><td class="e-pad" style="background-color:#3A342E;padding:32px 40px 36px;color:#F2EFE8;">
+    <p style="margin:0 0 10px;font-family:Arial,Helvetica,sans-serif;font-size:16px;line-height:1.5;color:#F2EFE8;">📅 <strong>Quando:</strong> domingo, 15 de novembro de 2026</p>
+    <p style="margin:0 0 10px;font-family:Arial,Helvetica,sans-serif;font-size:16px;line-height:1.5;color:#F2EFE8;">⌚ <strong>Horário:</strong> o cinema abre às 9h30, e a sessão começa às 10h</p>
+    <p style="margin:0 0 10px;font-family:Arial,Helvetica,sans-serif;font-size:16px;line-height:1.5;color:#F2EFE8;">📍 <strong>Onde:</strong> Espaço Petrobras de Cinema, sala 1 – Rua Augusta, 1475 – Consolação, São Paulo (SP)</p>
+    <p style="margin:0 0 10px;font-family:Arial,Helvetica,sans-serif;font-size:16px;line-height:1.5;color:#F2EFE8;">🎟️ <strong>Ingresso:</strong> gratuito, com combo de pipoca e refrigerante</p>
+    <p style="margin:0 0 20px;font-family:Arial,Helvetica,sans-serif;font-size:16px;line-height:1.5;color:#F2EFE8;"><strong>Classificação indicativa:</strong> 16 anos</p>
+    <p style="margin:0;font-family:Arial,Helvetica,sans-serif;font-size:16px;line-height:1.5;"><a href="https://iguale.com.br/crimesemcastigo/?utm_source=email-confirmacao&amp;utm_medium=email&amp;utm_campaign=sessao-acessivel-csc#local" target="_blank" style="color:#F2EFE8;text-decoration:underline;">Veja como chegar na página da sessão</a></p>
+  </td></tr>
+
+  <!-- 4 · Recursos de acessibilidade -->
+  <tr><td class="e-pad" style="background-color:#F2EFE8;padding:40px 40px 32px;color:#1E1C1A;">
+    <h2 style="display:inline-block;margin:0 0 20px;padding:0 0 8px;border-bottom:4px solid #B3261E;font-family:Arial,Helvetica,sans-serif;font-size:22px;line-height:1.3;font-weight:bold;color:#1E1C1A;">Recursos de acessibilidade</h2>
+
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="width:100%;">
+      <tr>
+        <td width="48" valign="middle" style="width:48px;padding:0 16px 12px 0;"><img src="img/icone-libras-96.png" width="48" height="48" alt="" style="display:block;width:48px;height:48px;border:0;"></td>
+        <td valign="middle" style="padding:0 0 12px;font-family:Arial,Helvetica,sans-serif;font-size:16px;line-height:1.5;color:#1E1C1A;"><strong>Libras:</strong> interpretação na tela, aberta para todo o público.</td>
+      </tr>
+      <tr>
+        <td width="48" valign="middle" style="width:48px;padding:0 16px 12px 0;"><img src="img/icone-lse-96.png" width="48" height="48" alt="" style="display:block;width:48px;height:48px;border:0;"></td>
+        <td valign="middle" style="padding:0 0 12px;font-family:Arial,Helvetica,sans-serif;font-size:16px;line-height:1.5;color:#1E1C1A;"><strong>Legendas descritivas:</strong> na tela, abertas para todo o público.</td>
+      </tr>
+      <tr>
+        <td width="48" valign="middle" style="width:48px;padding:0 16px 0 0;"><img src="img/icone-ad-96.png" width="48" height="48" alt="" style="display:block;width:48px;height:48px;border:0;"></td>
+        <td valign="middle" style="padding:0;font-family:Arial,Helvetica,sans-serif;font-size:16px;line-height:1.5;color:#1E1C1A;"><strong>Audiodescrição:</strong> pelo app MovieReading, no seu celular, com fone de ouvido.</td>
+      </tr>
+    </table>
+
+    <!-- Destaque: audiodescrição -->
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="width:100%;margin:28px 0 24px;border-collapse:separate;">
+      <tr><td class="e-card" style="background-color:#C9BCA4;border-radius:6px;padding:24px 24px 26px;color:#1E1C1A;">
+        <h3 style="margin:0 0 8px;font-family:Arial,Helvetica,sans-serif;font-size:18px;line-height:1.3;font-weight:bold;color:#1E1C1A;">Vai usar a audiodescrição?</h3>
+        <p style="margin:0 0 20px;font-family:Arial,Helvetica,sans-serif;font-size:16px;line-height:1.5;color:#1E1C1A;">Antes da sessão, baixe o app MovieReading e a audiodescrição do filme. No dia, <strong>traga seu fone de ouvido</strong>.</p>
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" class="e-btn" style="border-collapse:separate;">
+          <tr><td style="background-color:#B3261E;border:2px solid #FFFFFF;border-radius:6px;text-align:center;mso-padding-alt:14px 28px;">
+            <a href="https://iguale.com.br/crimesemcastigo/?utm_source=email-confirmacao&amp;utm_medium=email&amp;utm_campaign=sessao-acessivel-csc#audiodescricao-app" target="_blank" style="display:inline-block;padding:14px 28px;font-family:Arial,Helvetica,sans-serif;font-size:16px;line-height:1.5;font-weight:bold;color:#FFFFFF;text-decoration:none;">Ver o passo a passo do app</a>
+          </td></tr>
+        </table>
+      </td></tr>
+    </table>
+
+    <p style="margin:0;font-family:Arial,Helvetica,sans-serif;font-size:16px;line-height:1.5;color:#1E1C1A;">Depois do filme, vamos bater um papo sobre acessibilidade no cinema.</p>
+  </td></tr>
+
+  <!-- Divisor -->
+  <tr><td class="e-pad" style="background-color:#F2EFE8;padding:0 40px;"><div style="border-top:1px solid #5E5548;font-size:0;line-height:0;">&nbsp;</div></td></tr>
+
+  <!-- 5 · Acompanhantes -->
+  <tr><td class="e-pad" style="background-color:#F2EFE8;padding:32px 40px;color:#1E1C1A;">
+    <h2 style="display:inline-block;margin:0 0 20px;padding:0 0 8px;border-bottom:4px solid #B3261E;font-family:Arial,Helvetica,sans-serif;font-size:22px;line-height:1.3;font-weight:bold;color:#1E1C1A;">Vai com alguém?</h2>
+    <p style="margin:0 0 16px;font-family:Arial,Helvetica,sans-serif;font-size:16px;line-height:1.5;color:#1E1C1A;">Cada pessoa precisa fazer a própria inscrição, <strong>inclusive acompanhantes</strong>.</p>
+    <p style="margin:0;font-family:Arial,Helvetica,sans-serif;font-size:16px;line-height:1.5;"><a href="https://iguale.com.br/crimesemcastigo/inscricao/?utm_source=email-confirmacao&amp;utm_medium=email&amp;utm_campaign=sessao-acessivel-csc" target="_blank" style="color:#1E1C1A;text-decoration:underline;font-weight:bold;">Ir para o formulário de inscrição</a></p>
+  </td></tr>
+
+  <!-- Divisor -->
+  <tr><td class="e-pad" style="background-color:#F2EFE8;padding:0 40px;"><div style="border-top:1px solid #5E5548;font-size:0;line-height:0;">&nbsp;</div></td></tr>
+
+  <!-- 6 · Bom saber -->
+  <tr><td class="e-pad" style="background-color:#F2EFE8;padding:32px 40px;color:#1E1C1A;">
+    <h2 style="display:inline-block;margin:0 0 20px;padding:0 0 8px;border-bottom:4px solid #B3261E;font-family:Arial,Helvetica,sans-serif;font-size:22px;line-height:1.3;font-weight:bold;color:#1E1C1A;">Bom saber</h2>
+    <ul style="margin:0 0 16px;padding-left:24px;font-family:Arial,Helvetica,sans-serif;font-size:16px;line-height:1.5;color:#1E1C1A;">
+      <li style="margin:0 0 8px;">A sessão terá fotos e vídeos para divulgação.</li>
+      <li style="margin:0;">É proibido gravar e fotografar durante a exibição.</li>
+    </ul>
+    <p style="margin:0;font-family:Arial,Helvetica,sans-serif;font-size:16px;line-height:1.5;"><a href="https://iguale.com.br/crimesemcastigo/?utm_source=email-confirmacao&amp;utm_medium=email&amp;utm_campaign=sessao-acessivel-csc#duvidas" target="_blank" style="color:#1E1C1A;text-decoration:underline;font-weight:bold;">Veja as dúvidas frequentes na página da sessão</a></p>
+  </td></tr>
+
+  <!-- Divisor -->
+  <tr><td class="e-pad" style="background-color:#F2EFE8;padding:0 40px;"><div style="border-top:1px solid #5E5548;font-size:0;line-height:0;">&nbsp;</div></td></tr>
+
+  <!-- 7 · Fechamento -->
+  <tr><td class="e-pad" style="background-color:#F2EFE8;padding:32px 40px 40px;color:#1E1C1A;">
+    <p style="margin:0 0 4px;font-family:Arial,Helvetica,sans-serif;font-size:20px;line-height:1.4;font-weight:bold;color:#1E1C1A;">Esperamos você!</p>
+    <p style="margin:0;font-family:Arial,Helvetica,sans-serif;font-size:16px;line-height:1.5;color:#1E1C1A;">Lapfilme e Iguale</p>
+  </td></tr>
+
+  <!-- 8 · Rodapé -->
+  <tr><td class="e-pad" style="background-color:#1E1C1A;padding:28px 40px 32px;color:#C9BCA4;">
+    <p style="margin:0 0 12px;font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:1.5;color:#C9BCA4;">Produzido com recursos da Lei Paulo Gustavo – Governo Federal, Ministério da Cultura e Governo do Estado de São Paulo, por meio da Secretaria da Cultura, Economia e Indústria Criativas.</p>
+    <p style="margin:0;font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:1.5;color:#C9BCA4;">Você recebeu este e-mail porque se inscreveu na Sessão Acessível de Crime Sem Castigo.</p>
+  </td></tr>
+
+</table>
+
+
+  </div>
+  </div>
+
+  <p class="faixa">Fim do e-mail · Arquivos</p>
+
+  <section class="arquivos" aria-labelledby="titulo-arquivos">
+    <h2 id="titulo-arquivos">Arquivos</h2>
+    <p>Cada link abre o arquivo em uma nova aba. Para baixar, use “Salvar como…”. Nas imagens, use “Salvar imagem como…”.</p>
+    <ul>
+      <li class="arquivo">
+        <span class="arquivo__nome">confirmacao.html</span>
+        <span class="arquivo__meta">E-mail em HTML para o back-end · 13 KB</span>
+        <p class="arquivo__alt">As imagens usam a base provisória https://iguale.com.br/crimesemcastigo/email/confirmacao/img/ e ainda não aparecem ao abrir este arquivo. <span class="mk">[CONFIRMAR: endereço público das imagens – Robson]</span></p>
+        <a href="confirmacao.html" target="_blank">Abrir confirmacao.html (abre em nova aba)</a>
+      </li>
+      <li class="arquivo">
+        <span class="arquivo__nome">confirmacao.txt</span>
+        <span class="arquivo__meta">Versão em texto simples · 2 KB</span>
+        <a href="confirmacao.txt" target="_blank">Abrir confirmacao.txt (abre em nova aba)</a>
+      </li>
+      <li class="arquivo">
+        <span class="arquivo__nome">img/topo-1200.jpg</span>
+        <span class="arquivo__meta">Topo · 1200 × 700 px, exibida a 600 px · 56 KB</span>
+        <p class="arquivo__alt"><strong>Texto alternativo:</strong> “Crime Sem Castigo”, em letras brancas, com o S de “sem” em forma de raio vermelho. Ao lado, em tons sépia, o rosto sério de um homem de cabelo escuro, com camisa branca e gravata escura.</p>
+        <a href="img/topo-1200.jpg" target="_blank">Abrir topo-1200.jpg (abre em nova aba)</a>
+      </li>
+      <li class="arquivo">
+        <span class="arquivo__nome">img/icone-libras-96.png</span>
+        <span class="arquivo__meta">Ícone de Libras · 96 × 96 px, exibido a 48 px · 2 KB · texto alternativo vazio</span>
+        <a href="img/icone-libras-96.png" target="_blank">Abrir icone-libras-96.png (abre em nova aba)</a>
+      </li>
+      <li class="arquivo">
+        <span class="arquivo__nome">img/icone-lse-96.png</span>
+        <span class="arquivo__meta">Ícone de legendas descritivas · 96 × 96 px, exibido a 48 px · 1 KB · texto alternativo vazio</span>
+        <a href="img/icone-lse-96.png" target="_blank">Abrir icone-lse-96.png (abre em nova aba)</a>
+      </li>
+      <li class="arquivo">
+        <span class="arquivo__nome">img/icone-ad-96.png</span>
+        <span class="arquivo__meta">Ícone de audiodescrição · 96 × 96 px, exibido a 48 px · 1 KB · texto alternativo vazio</span>
+        <a href="img/icone-ad-96.png" target="_blank">Abrir icone-ad-96.png (abre em nova aba)</a>
+      </li>
+    </ul>
+  </section>
+</div>
+
+<script>
+  document.documentElement.lang = 'pt-BR';
+  (function () {
+    var palco = document.getElementById('palco');
+    function aplicar() {
+      var largura = document.querySelector('input[name="largura"]:checked').value;
+      var cores = document.querySelector('input[name="cores"]:checked').value;
+      palco.classList.toggle('celular', largura === '360');
+      palco.classList.toggle('escuro', cores === 'escuro');
+    }
+    document.querySelectorAll('.controles input').forEach(function (i) { i.addEventListener('change', aplicar); });
+    aplicar();
+  })();
+</script>
